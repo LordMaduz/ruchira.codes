@@ -1,10 +1,13 @@
-import image from "../assets/Ruchira.png";
+import imageBlack from "../assets/Ruchira_Black.png";
+import imageWhite from "../assets/Ruchira_White.png";
+import { useThemeStore } from "../store/themeStore";
 
 interface HomeSectionProps {
   setActiveSection: (section: string) => void;
 }
 
 export default function HomeSection({ setActiveSection }: HomeSectionProps) {
+  const theme = useThemeStore((state) => state.theme);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -28,7 +31,7 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
         <div className="mb-6 sm:mb-8 flex justify-center">
           <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-gray-300 dark:border-zinc-800 hover:border-black dark:hover:border-white transition-colors duration-300 shadow-2xl">
             <img
-              src={image}
+              src={theme === 'dark' ? imageBlack : imageWhite}
               alt="Ruchira Rajapaksha"
               className="w-full h-full object-cover scale-105"
               style={{ objectPosition: "50% 20%" }}
