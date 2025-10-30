@@ -51,8 +51,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
           {/* My Approach */}
           <div className="hover:border-[#007AFF] transition-colors duration-300 pl-6 sm:pl-8 mb-6 sm:mb-8">
             <div className="flex items-center gap-3 sm:gap-4 mb-4">
-              <div className="w-6 sm:w-8 h-[2px] bg-[#007AFF]"></div>
-              <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">Here is My Approach</span>
+              <span className="text-xs sm:text-sm font-semibold text-[#007AFF] uppercase tracking-wider">Here is My Approach</span>
             </div>
 
             <div className="space-y-4 sm:space-y-5">
@@ -69,8 +68,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
           {/* Why Hire Me */}
           <div className="hover:border-[#007AFF] transition-colors duration-300 pl-6 sm:pl-8">
             <div className="flex items-center gap-3 sm:gap-4 mb-4">
-              <div className="w-6 sm:w-8 h-[2px] bg-[#007AFF]"></div>
-              <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">Why Hire Me</span>
+              <span className="text-xs sm:text-sm font-semibold text-[#007AFF] uppercase tracking-wider">Why Hire Me</span>
             </div>
 
             <div className="space-y-4 sm:space-y-5">
