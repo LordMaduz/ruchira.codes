@@ -42,7 +42,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
               </p>
 
               <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I am also a featured Baeldung Author. I turn late-night sessions and production incidents into
+                I am also a featured Baeldung Author. I turn late night sessions and production incidents into
                 lessons that help developers worldwide, because best knowledge is the knowledge shared.
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
               </p>
 
               <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                Over the years, I’ve realized that while code evolves and gets replaced, the real legacy lies in the people you work with and the culture you shape. That's why i put my energy in to solving problems that matter, helping teams grow stronger, and sharing what I’ve learned so others can build even better things.
+                Over the years, I've realized that while code evolves and gets replaced, the real legacy lies in the people you work with and the culture you shape. That's why i put my energy in to solving problems that matter, helping teams grow stronger, and sharing what I've learned so others can build even better things.
               </p>
             </div>
           </div>

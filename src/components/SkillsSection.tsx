@@ -148,7 +148,7 @@ export default function SkillsSection() {
               <span className="text-black dark:text-white">What I Can Do</span>
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl text-center mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-400 max-w-4xl text-center mx-auto leading-relaxed px-4">
             Technology is just a tool. What matters is how you wield it, not to show off technical prowess, but to solve real problems and make people's lives better.
           </p>
         </div>
