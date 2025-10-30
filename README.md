@@ -1,4 +1,4 @@
-# Portfolio - Ruchira Rajapaksha
+# Modern Minimalistic Portfolio - Ruchira Rajapaksha
 
 [![React](https://img.shields.io/badge/React-19.1.1-61DAFB?style=flat&logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
