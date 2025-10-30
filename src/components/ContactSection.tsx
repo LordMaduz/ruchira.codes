@@ -66,7 +66,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto px-8 lg:px-16 relative z-12">
+      <div className="max-w-4xl mx-auto px-12 sm:px-14 lg:px-16 relative z-12">
         {/* Section Header */}
         <div className="mb-6 sm:mb-8">
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black dark:text-white mb-2">
