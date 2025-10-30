@@ -8,6 +8,13 @@ interface NavigationProps {
   setActiveSection: (section: string) => void;
 }
 
+interface SocialLink {
+  icon: any;
+  href: string;
+  label: string;
+  isInternal?: boolean;
+}
+
 export default function Navigation({ activeSection, setActiveSection }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme } = useThemeStore();
@@ -44,8 +51,8 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
     }
   };
 
-  const socialLinks = [
-    { icon: Mail, href: "mailto:maduz.ruchira@gmail.com", label: "Email" },
+  const socialLinks: SocialLink[] = [
+    { icon: Mail, href: "#contact", label: "Email", isInternal: true },
     { icon: Linkedin, href: "https://www.linkedin.com/in/ruchirarajapaksha/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/LordMaduz", label: "GitHub" },
     { icon: Twitter, href: "https://x.com/maduz_ruchira", label: "Twitter" },
@@ -79,18 +86,29 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
 
             {/* Social Media Icons - Desktop Only */}
             <div className="hidden md:flex items-center gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
-              ))}
+              {socialLinks.map((social) =>
+                social.isInternal ? (
+                  <button
+                    key={social.label}
+                    onClick={() => scrollToSection('contact')}
+                    className="p-1.5 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </button>
+                ) : (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </a>
+                )
+              )}
             </div>
           </div>
 
@@ -140,18 +158,29 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             <div>
               <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-3 font-medium">Connect</p>
               <div className="flex items-center gap-2 flex-wrap">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-4 h-4" />
-                  </a>
-                ))}
+                {socialLinks.map((social) =>
+                  social.isInternal ? (
+                    <button
+                      key={social.label}
+                      onClick={() => scrollToSection('contact')}
+                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-4 h-4" />
+                    </button>
+                  ) : (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-4 h-4" />
+                    </a>
+                  )
+                )}
               </div>
             </div>
 

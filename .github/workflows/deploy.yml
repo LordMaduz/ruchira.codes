@@ -41,9 +41,12 @@ jobs:
           
       - name: Install dependencies
         run: pnpm install
-        
+
       - name: Build
         run: pnpm run build
+        env:
+          VITE_RESUME_DRIVE_FILE_ID: ${{ secrets.VITE_RESUME_DRIVE_FILE_ID }}
+          VITE_WEB3FORMS_ACCESS_KEY: ${{ secrets.VITE_WEB3FORMS_ACCESS_KEY }}
         
       - name: Setup Pages
         uses: actions/configure-pages@v4

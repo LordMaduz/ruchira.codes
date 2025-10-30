@@ -33,6 +33,9 @@ export default function Index() {
         {/* Projects Section */}
         <ProjectsSection />
 
+        {/* Contact Section */}
+        <ContactSection />
+
         {/* Footer */}
         <Footer />
       </main>

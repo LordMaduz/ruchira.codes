@@ -68,6 +68,7 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
             Hire me
           </a>
           <button
+            onClick={() => scrollToSection('contact')}
             className="px-8 py-3 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-sm font-semibold rounded-full hover:bg-emerald-500/20 transition-all duration-200 border border-emerald-500/20 w-full sm:w-auto"
           >
             Open to Opportunities
