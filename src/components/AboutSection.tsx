@@ -24,8 +24,8 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
         {/* Section Header */}
         <div className="mb-6 sm:mb-8">
           <div className="text-center mb-4 sm:mb-5">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight">
-              <span className="text-black dark:text-white">STORY BEHIND THE CODE</span>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.05] tracking-tight">
+              <span className="text-black dark:text-white">Story Behind the Code</span>
             </h2>
           </div>
 

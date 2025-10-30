@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   X,
   ArrowRight,
@@ -9,7 +9,9 @@ import {
   Network,
   Globe,
   TrendingUp,
-  Code
+  Code,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import dbs from '../assets/dbs.png';
 import grubtech from '../assets/grubtech.png';
@@ -18,6 +20,7 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<string>("overview");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
@@ -38,6 +41,34 @@ export default function ProjectsSection() {
       });
     }
   };
+
+  const handlePrevious = () => {
+    const newIndex = activeIndex > 0 ? activeIndex - 1 : projects.length - 1;
+    scrollToCard(newIndex);
+  };
+
+  const handleNext = () => {
+    const newIndex = activeIndex < projects.length - 1 ? activeIndex + 1 : 0;
+    scrollToCard(newIndex);
+  };
+
+  // Keyboard navigation (only when section is hovered)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isHovered) return; // Only respond when hovering over this section
+
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        handlePrevious();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        handleNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeIndex, isHovered]);
 
   const projects = [
     {
@@ -227,14 +258,36 @@ export default function ProjectsSection() {
         {/* Section Header */}
         <div className="mb-8 sm:mb-10 md:mb-12">
           <div className="text-center mb-4 sm:mb-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight">
-              <span className="text-black dark:text-white">WHAT I'VE BUILT AND WHY</span>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.05] tracking-tight">
+              <span className="text-black dark:text-white">What I've Built and Why</span>
             </h2>
           </div>
         </div>
 
         {/* Horizontal Scroll Gallery */}
-        <div className="relative">
+        <div
+          className="relative group"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Left Arrow - Desktop Only */}
+          <button
+            onClick={handlePrevious}
+            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center bg-white dark:bg-zinc-900 border-2 border-gray-300 dark:border-white/20 rounded-full opacity-0 group-hover:opacity-100 hover:border-[#007AFF] hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300 shadow-lg"
+            aria-label="Previous project"
+          >
+            <ChevronLeft className="w-6 h-6 text-black dark:text-white" />
+          </button>
+
+          {/* Right Arrow - Desktop Only */}
+          <button
+            onClick={handleNext}
+            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center bg-white dark:bg-zinc-900 border-2 border-gray-300 dark:border-white/20 rounded-full opacity-0 group-hover:opacity-100 hover:border-[#007AFF] hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300 shadow-lg"
+            aria-label="Next project"
+          >
+            <ChevronRight className="w-6 h-6 text-black dark:text-white" />
+          </button>
+
           {/* Scroll Container */}
           <div
             ref={scrollContainerRef}

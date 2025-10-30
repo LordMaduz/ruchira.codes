@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ExpertiseCategory {
   id: string;
@@ -11,6 +12,7 @@ interface ExpertiseCategory {
 
 export default function SkillsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
@@ -31,6 +33,34 @@ export default function SkillsSection() {
       });
     }
   };
+
+  const handlePrevious = () => {
+    const newIndex = activeIndex > 0 ? activeIndex - 1 : expertiseCategories.length - 1;
+    scrollToCard(newIndex);
+  };
+
+  const handleNext = () => {
+    const newIndex = activeIndex < expertiseCategories.length - 1 ? activeIndex + 1 : 0;
+    scrollToCard(newIndex);
+  };
+
+  // Keyboard navigation (only when section is hovered)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isHovered) return; // Only respond when hovering over this section
+
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        handlePrevious();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        handleNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeIndex, isHovered]);
 
   const expertiseCategories: ExpertiseCategory[] = [
     {
@@ -114,8 +144,8 @@ export default function SkillsSection() {
         {/* Section Header */}
         <div className="mb-8 sm:mb-10 md:mb-12">
           <div className="text-center mb-4 sm:mb-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight">
-              <span className="text-black dark:text-white">WHAT I CAN DO</span>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.05] tracking-tight">
+              <span className="text-black dark:text-white">What I Can Do</span>
             </h2>
           </div>
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl text-center mx-auto leading-relaxed">
@@ -124,7 +154,29 @@ export default function SkillsSection() {
         </div>
 
         {/* Horizontal Scroll Gallery */}
-        <div className="relative">
+        <div
+          className="relative group"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Left Arrow - Desktop Only */}
+          <button
+            onClick={handlePrevious}
+            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center bg-white dark:bg-zinc-900 border-2 border-gray-300 dark:border-white/20 rounded-full opacity-0 group-hover:opacity-100 hover:border-[#007AFF] hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300 shadow-lg"
+            aria-label="Previous skill"
+          >
+            <ChevronLeft className="w-6 h-6 text-black dark:text-white" />
+          </button>
+
+          {/* Right Arrow - Desktop Only */}
+          <button
+            onClick={handleNext}
+            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center bg-white dark:bg-zinc-900 border-2 border-gray-300 dark:border-white/20 rounded-full opacity-0 group-hover:opacity-100 hover:border-[#007AFF] hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300 shadow-lg"
+            aria-label="Next skill"
+          >
+            <ChevronRight className="w-6 h-6 text-black dark:text-white" />
+          </button>
+
           {/* Scroll Container */}
           <div
             ref={scrollContainerRef}
