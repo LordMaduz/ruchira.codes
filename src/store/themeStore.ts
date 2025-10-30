@@ -12,7 +12,7 @@ interface ThemeState {
 export const useThemeStore = create<ThemeState>()(
   persist(
     (set, get) => ({
-      theme: 'dark', // default to dark theme
+      theme: 'light', // default to light theme
       setTheme: (theme: Theme) => {
         set({ theme });
         applyTheme(theme);
@@ -49,12 +49,12 @@ function applyTheme(theme: Theme) {
 // Initialize theme on load
 export function initializeTheme() {
   const stored = localStorage.getItem('theme-storage');
-  let theme: Theme = 'dark'; // default
+  let theme: Theme = 'light'; // default
 
   if (stored) {
     try {
       const parsed = JSON.parse(stored);
-      theme = parsed.state?.theme || 'dark';
+      theme = parsed.state?.theme || 'light';
     } catch (e) {
       console.error('Failed to parse theme from localStorage', e);
     }
