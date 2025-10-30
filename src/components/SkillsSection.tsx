@@ -144,7 +144,7 @@ export default function SkillsSection() {
         {/* Section Header */}
         <div className="mb-8 sm:mb-10 md:mb-12">
           <div className="text-center mb-4 sm:mb-6">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.05] tracking-tight">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-[1.05] tracking-tight">
               <span className="text-black dark:text-white">What I Can Do</span>
             </h2>
           </div>
@@ -216,7 +216,7 @@ export default function SkillsSection() {
 
 
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-black dark:text-white leading-tight pt-1">
+                    <h3 className="text-sm sm:text-sm md:text-lg lg:text-xl font-bold text-black dark:text-white leading-tight pt-1">
                       {category.title}
                     </h3>
                   </div>

@@ -258,7 +258,7 @@ export default function ProjectsSection() {
         {/* Section Header */}
         <div className="mb-8 sm:mb-10 md:mb-12">
           <div className="text-center mb-4 sm:mb-6">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.05] tracking-tight">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-[1.05] tracking-tight">
               <span className="text-black dark:text-white">What I've Built and Why</span>
             </h2>
           </div>
@@ -327,7 +327,7 @@ export default function ProjectsSection() {
                       <div className="mb-4">
                         {/* Title */}
                         <div className="flex items-start gap-3 mb-3">
-                          <h3 className="text-md sm:text-base md:text-lg lg:text-xl font-bold text-black dark:text-white leading-tight pt-1">
+                          <h3 className="text-sm sm:text-sm md:text-lg lg:text-xl font-bold text-black dark:text-white leading-tight pt-1">
                             {project.title}
                           </h3>
                         </div>
@@ -402,7 +402,7 @@ export default function ProjectsSection() {
                 <div className="flex items-start gap-3 sm:gap-4 flex-1 pr-2">
                   <div className="flex items-center justify-center flex-shrink-0"/>
                   <div className="min-w-0 flex-1">
-                    <h2 className="text-md sm:text-lg lg:text-xl font-bold text-black dark:text-white mb-2 leading-tight">{selectedProjectData.title}</h2>
+                    <h2 className="text-sm sm:text-sm md:text-lg lg:text-xl font-bold text-black dark:text-white mb-2 leading-tight">{selectedProjectData.title}</h2>
                     <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                       <div className="flex items-center gap-2">
                         <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -460,7 +460,7 @@ export default function ProjectsSection() {
                   <div className="grid grid-cols-1 gap-4 sm:gap-6">
                     {/* Challenge */}
                      <div className="bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-800 p-3 sm:p-4">
-                      <h4 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-2 sm:mb-3">CHALLENGE</h4>
+                      <h4 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-2 sm:mb-3">Challenge</h4>
                       <p className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
                         {selectedProjectData.fullDetails.challenge}
                       </p>
@@ -468,7 +468,7 @@ export default function ProjectsSection() {
 
                     {/* Solution */}
                     <div className="bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-800 p-3 sm:p-4">
-                      <h4 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-2 sm:mb-3">SOLUTION</h4>
+                      <h4 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-2 sm:mb-3">Solution</h4>
                       <p className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
                         {selectedProjectData.fullDetails.solution}
                       </p>
@@ -477,7 +477,7 @@ export default function ProjectsSection() {
 
                   {/* Technology Stack */}
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-black dark:text-white mb-3 sm:mb-4">Technology Stack</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-3 sm:mb-4">Technology Stack</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProjectData.technologies.map((tech, index) => (
                         <span
@@ -497,7 +497,7 @@ export default function ProjectsSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {selectedProjectData.fullDetails.keyResults.map((result, index) => (
                       <div key={index} className="bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-800 p-3 sm:p-4">
-                        <h5 className="text-sm sm:text-base font-bold text-black dark:text-white mb-2">{result.metric}</h5>
+                        <h5 className="text-sm sm:text-base font-semibold  text-black dark:text-white mb-2">{result.metric}</h5>
                         <div className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm">
                           {result.improvement}
                         </div>
@@ -508,7 +508,7 @@ export default function ProjectsSection() {
                   {/* Recognition */}
                   {selectedProjectData.fullDetails.recognition && (
                     <div className="bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-800 p-4 sm:p-6">
-                      <h4 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-2 sm:mb-3">RECOGNITION</h4>
+                      <h4 className="text-sm sm:text-base font-semibold text-[#007AFF] mb-2 sm:mb-3">Recognition</h4>
                       <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{selectedProjectData.fullDetails.recognition}</p>
                     </div>
                   )}
@@ -517,7 +517,7 @@ export default function ProjectsSection() {
 
               {activeTab === 'impact' && (
                 <div className="space-y-4">
-                  <h4 className="text-base sm:text-lg font-bold text-black dark:text-white mb-3 sm:mb-4">Stakeholder Benefits</h4>
+                  <h4 className="text-sm sm:text-base  font-semibold text-black dark:text-white mb-3 sm:mb-4">Stakeholder Benefits</h4>
                   {selectedProjectData.fullDetails.stakeholders.map((stakeholder, index) => (
                     <div key={index} className="bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-800 p-3 sm:p-4">
                       <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{stakeholder}</p>

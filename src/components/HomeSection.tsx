@@ -44,7 +44,7 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 leading-tight">
           Hey, I'm Ruchira.
           <br />
-          <span className="text-gray-600 dark:text-gray-400">Engineer & AWS Certified Solutions Architect.</span>
+          <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-600 dark:text-gray-400">Engineer & AWS Solutions Architect</span>
         </h1>
 
         {/* Description */}
