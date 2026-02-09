@@ -55,11 +55,14 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
     { icon: Linkedin, href: "https://www.linkedin.com/in/ruchirarajapaksha/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/LordMaduz", label: "GitHub" },
     { icon: Cpu, href: "https://huggingface.co/maduzrajapaksha", label: "Hugging Face – AI Projects" },
-    { icon: BookOpen, href: "https://www.baeldung.com/author/ruchiramadhushanrajapaksha", label: "Baeldung" },
     { icon: Award, href: "https://www.credly.com/users/ruchira-madhushan-rajapaksha/badges#credly", label: "AWS Certifications" },
-    { icon: Mail, href: "#contact", label: "Email", isInternal: true },
-    { icon: Link, href: "https://linktr.ee/ruchirarajapaksha", label: "Linktree" },
-    { icon: Twitter, href: "https://x.com/maduz_ruchira", label: "Twitter" }
+    { icon: Mail, href: "#contact", label: "Email", isInternal: true }
+  ];
+
+  const secondarySocialLinks: SocialLink[] = [
+    { icon: BookOpen, href: "https://www.baeldung.com/author/ruchiramadhushanrajapaksha", label: "Baeldung" },
+    { icon: Twitter, href: "https://x.com/maduz_ruchira", label: "Twitter" },
+    { icon: Link, href: "https://linktr.ee/ruchirarajapaksha", label: "Linktree" }
   ];
 
   return (
@@ -69,10 +72,10 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
           ? 'linear-gradient(to bottom, rgba(39, 39, 42, 0.95), rgba(24, 24, 27, 0.95))'
           : 'rgba(255, 255, 255, 0.95)'
       }}>
-        <div className="flex items-center justify-between h-11 sm:h-14">
+        <div className="flex items-center justify-between h-11 sm:h-14 flex-nowrap">
 
           {/* Left: Icon Navigation */}
-          <div className="flex items-center gap-1.5 sm:gap-6">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Home Icon */}
             <button
               onClick={() => scrollToSection('home')}
@@ -87,7 +90,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             </button>
 
             {/* Social Media Icons - Desktop Only */}
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-1.5">
               {socialLinks.map((social) =>
                 social.isInternal ? (
                   <button
@@ -159,30 +162,47 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             {/* Social Links */}
             <div>
               <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-3 font-medium">Connect</p>
-              <div className="flex items-center gap-2 flex-wrap">
-                {socialLinks.map((social) =>
-                  social.isInternal ? (
-                    <button
-                      key={social.label}
-                      onClick={() => scrollToSection('contact')}
-                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
-                      aria-label={social.label}
-                    >
-                      <social.icon className="w-4 h-4" />
-                    </button>
-                  ) : (
+              <div className="overflow-x-auto scrollbar-hide -mx-2 px-2">
+                <div className="flex items-center gap-2 w-max">
+                  {socialLinks.map((social) =>
+                    social.isInternal ? (
+                      <button
+                        key={social.label}
+                        onClick={() => scrollToSection('contact')}
+                        className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800 flex-shrink-0"
+                        aria-label={social.label}
+                      >
+                        <social.icon className="w-4 h-4" />
+                      </button>
+                    ) : (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800 flex-shrink-0"
+                        aria-label={social.label}
+                      >
+                        <social.icon className="w-4 h-4" />
+                      </a>
+                    )
+                  )}
+                  {/* Divider */}
+                  <div className="w-px h-6 bg-gray-300 dark:bg-gray-700 mx-1 flex-shrink-0"></div>
+                  {/* Secondary Links */}
+                  {secondarySocialLinks.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
+                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800 flex-shrink-0"
                       aria-label={social.label}
                     >
                       <social.icon className="w-4 h-4" />
                     </a>
-                  )
-                )}
+                  ))}
+                </div>
               </div>
             </div>
 
