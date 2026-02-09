@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, Mail, Linkedin, Github, Twitter, BookOpen, Menu, X, Award, FileDown, Link, Cpu } from "lucide-react";
+import { Home, Mail, Linkedin, Github, Menu, X, FileDown, Link, Cpu, Award } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useThemeStore } from "../store/themeStore";
 
@@ -59,11 +59,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
     { icon: Mail, href: "#contact", label: "Email", isInternal: true }
   ];
 
-  const secondarySocialLinks: SocialLink[] = [
-    { icon: BookOpen, href: "https://www.baeldung.com/author/ruchiramadhushanrajapaksha", label: "Baeldung" },
-    { icon: Twitter, href: "https://x.com/maduz_ruchira", label: "Twitter" },
-    { icon: Link, href: "https://linktr.ee/ruchirarajapaksha", label: "Linktree" }
-  ];
+  const linktreeUrl = "https://linktr.ee/ruchirarajapaksha";
 
   return (
     <nav className="fixed top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 z-50">
@@ -114,6 +110,18 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                   </a>
                 )
               )}
+
+              {/* Highlighted Linktree Button */}
+              <a
+                href={linktreeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 text-white text-xs font-semibold rounded-full hover:from-green-600 hover:to-emerald-600 dark:hover:from-green-700 dark:hover:to-emerald-700 transition-all duration-200 shadow-md hover:shadow-lg"
+                aria-label="Connect"
+              >
+                <Link className="w-3.5 h-3.5" />
+                <span>Connect</span>
+              </a>
             </div>
           </div>
 
@@ -162,49 +170,43 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             {/* Social Links */}
             <div>
               <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-3 font-medium">Connect</p>
-              <div className="overflow-x-auto scrollbar-hide -mx-2 px-2">
-                <div className="flex items-center gap-2 w-max">
-                  {socialLinks.map((social) =>
-                    social.isInternal ? (
-                      <button
-                        key={social.label}
-                        onClick={() => scrollToSection('contact')}
-                        className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800 flex-shrink-0"
-                        aria-label={social.label}
-                      >
-                        <social.icon className="w-4 h-4" />
-                      </button>
-                    ) : (
-                      <a
-                        key={social.label}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800 flex-shrink-0"
-                        aria-label={social.label}
-                      >
-                        <social.icon className="w-4 h-4" />
-                      </a>
-                    )
-                  )}
-                  {/* Divider */}
-                  <div className="w-px h-6 bg-gray-300 dark:bg-gray-700 mx-1 flex-shrink-0"></div>
-                  {/* Secondary Links */}
-                  {secondarySocialLinks.map((social) => (
+              <div className="flex items-center gap-2 flex-wrap">
+                {socialLinks.map((social) =>
+                  social.isInternal ? (
+                    <button
+                      key={social.label}
+                      onClick={() => scrollToSection('contact')}
+                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-4 h-4" />
+                    </button>
+                  ) : (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800 flex-shrink-0"
+                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
                       aria-label={social.label}
                     >
                       <social.icon className="w-4 h-4" />
                     </a>
-                  ))}
-                </div>
+                  )
+                )}
               </div>
             </div>
+
+            {/* Highlighted Linktree Button - Mobile */}
+            <a
+              href={linktreeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 text-white text-sm font-semibold rounded-full hover:from-green-600 hover:to-emerald-600 dark:hover:from-green-700 dark:hover:to-emerald-700 transition-all duration-200 shadow-lg"
+            >
+              <Link className="w-4 h-4" />
+              <span>More Ways to Connect</span>
+            </a>
 
             {/* Resume Download - Mobile */}
             <button
