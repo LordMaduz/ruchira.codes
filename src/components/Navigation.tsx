@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, Mail, Linkedin, Github, Menu, X, FileDown, Link, Cpu, Award } from "lucide-react";
+import { Home, Mail, Linkedin, Github, Menu, X, FileDown, Cpu, Award } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useThemeStore } from "../store/themeStore";
 
@@ -116,11 +116,10 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 href={linktreeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-1 flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 text-white text-xs font-semibold rounded-full hover:from-green-600 hover:to-emerald-600 dark:hover:from-green-700 dark:hover:to-emerald-700 transition-all duration-200 shadow-md hover:shadow-lg"
+                className="ml-1 px-3 py-1.5 bg-gradient-to-r from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 text-white text-xs font-semibold rounded-full hover:from-green-600 hover:to-emerald-600 dark:hover:from-green-700 dark:hover:to-emerald-700 transition-all duration-200 shadow-md hover:shadow-lg"
                 aria-label="Connect"
               >
-                <Link className="w-3.5 h-3.5" />
-                <span>Connect</span>
+                Connect
               </a>
             </div>
           </div>
@@ -202,10 +201,9 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
               href={linktreeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 text-white text-sm font-semibold rounded-full hover:from-green-600 hover:to-emerald-600 dark:hover:from-green-700 dark:hover:to-emerald-700 transition-all duration-200 shadow-lg"
+              className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 text-white text-sm font-semibold rounded-full hover:from-green-600 hover:to-emerald-600 dark:hover:from-green-700 dark:hover:to-emerald-700 transition-all duration-200 shadow-lg"
             >
-              <Link className="w-4 h-4" />
-              <span>More Ways to Connect</span>
+              More Ways to Connect
             </a>
 
             {/* Resume Download - Mobile */}
