@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, Mail, Linkedin, Github, Twitter, BookOpen, Menu, X, Award, FileDown } from "lucide-react";
+import { Home, Mail, Linkedin, Github, Twitter, BookOpen, Menu, X, Award, FileDown, Link, Cpu } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useThemeStore } from "../store/themeStore";
 
@@ -44,7 +44,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
 
   const downloadResume = () => {
     try {
-      const pdfResume = `https://drive.google.com/uc?export=download&id=${RESUME_DRIVE_FILE_ID}`;
+      const pdfResume = `https://drive.google.com/file/d/${RESUME_DRIVE_FILE_ID}`;
       window.open(pdfResume, '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Download failed:', error);
@@ -52,12 +52,14 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
   };
 
   const socialLinks: SocialLink[] = [
-    { icon: Mail, href: "#contact", label: "Email", isInternal: true },
     { icon: Linkedin, href: "https://www.linkedin.com/in/ruchirarajapaksha/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/LordMaduz", label: "GitHub" },
-    { icon: Twitter, href: "https://x.com/maduz_ruchira", label: "Twitter" },
+    { icon: Cpu, href: "https://huggingface.co/maduzrajapaksha", label: "Hugging Face – AI Projects" },
     { icon: BookOpen, href: "https://www.baeldung.com/author/ruchiramadhushanrajapaksha", label: "Baeldung" },
-    { icon: Award, href: "https://www.credly.com/users/ruchira-madhushan-rajapaksha/badges#credly", label: "AWS Certifications" }
+    { icon: Award, href: "https://www.credly.com/users/ruchira-madhushan-rajapaksha/badges#credly", label: "AWS Certifications" },
+    { icon: Mail, href: "#contact", label: "Email", isInternal: true },
+    { icon: Link, href: "https://linktr.ee/ruchirarajapaksha", label: "Linktree" },
+    { icon: Twitter, href: "https://x.com/maduz_ruchira", label: "Twitter" }
   ];
 
   return (
