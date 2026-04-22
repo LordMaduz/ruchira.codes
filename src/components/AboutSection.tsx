@@ -33,7 +33,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
           <div className="hover:border-[#007AFF] transition-colors duration-300 pl-6 sm:pl-8 mb-6 sm:mb-8">
             <div className="space-y-4 sm:space-y-5">
               <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I'm an engineer based in Singapore but born in Sri Lanka. Programming found me by accident during a moment of curiosity and that curiosity became an obsession that shaped everything I build today.
+                I'm an engineer relocating from Singapore to Auckland, New Zealand in June 2026. Born in Sri Lanka. Programming found me by accident during a moment of curiosity and that curiosity became an obsession that shaped everything I build today.
               </p>
 
               <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">

@@ -64,8 +64,16 @@ export default function SkillsSection() {
 
   const expertiseCategories: ExpertiseCategory[] = [
     {
-      id: "backend",
+      id: "ai-engineering",
       number: "01",
+      title: "AI Engineering & Production LLM Systems",
+      technologies: ["Agentic AI", "Context Window Management", "Prompt Engineering", "RAG Pipeline", "Vector Search", "Hugging Face", "Python"],
+      story: "I build AI systems designed to survive production, not just impress in demos. My approach treats the AI layer as an enhancement, never a single point of failure. Critical paths run on deterministic logic, with AI enriching the experience on top. Every RAG pipeline I build is grounded in real retrieval, not hallucinated context, so users get answers they can trust. Streaming via SSE keeps interactions feeling instant. Users should never feel like they are waiting for a model to think.",
+      impact: "AI features that ship to production and stay there. Systems where the AI layer enhances the experience without becoming a single point of failure."
+    },
+    {
+      id: "backend",
+      number: "02",
       title: "Backend Engineering & Microservices",
       technologies: ["Java 21", "Spring Boot", "Spring Framework", "Go", "Node.js"],
       story: "I build backend systems that handle millions of requests. My approach is simple where I design APIs that feel intuitive to developers while being robust enough for enterprise scale. Every endpoint I create is crafted thinking about the developer experience first, clear contracts, predictable behavior, and responses that make sense. Because when backend systems just work, everyone's day gets better.",

@@ -57,6 +57,21 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
            Not just code. End-to-end solutions that don't break when they scale.
         </p>
 
+        {/* Availability Status */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-6 sm:mb-8">
+          <div className="flex items-center gap-2">
+            <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 rounded-full border border-gray-200 dark:border-white/10">
+              Auckland, New Zealand
+            </span>
+            <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 rounded-full border border-gray-200 dark:border-white/10">
+              Available June 2026
+            </span>
+          </div>
+          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 rounded-full border border-gray-200 dark:border-white/10">
+            NZ Work Visa Secured
+          </span>
+        </div>
+
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <a

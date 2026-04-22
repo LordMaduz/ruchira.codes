@@ -10,6 +10,7 @@ import {
   Globe,
   TrendingUp,
   Code,
+  Brain,
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
@@ -71,6 +72,42 @@ export default function ProjectsSection() {
   }, [activeIndex, isHovered]);
 
   const projects = [
+        {
+      id: "landednz",
+      number: "01",
+      title: "LandedNZ - AI Settlement Companion",
+      company: "LandedNZ",
+      role: "Sole Architect & Engineer",
+      timeline: "February 2026 - Present",
+      teamSize: "Sole architect and Engineer",
+      description: "Full-stack AI-powered settlement companion for skilled migrants relocating to New Zealand. Personalised task roadmap, RAG pipeline, pgvector, Claude API, and SSE streaming built end to end.",
+      icon: <Brain className="w-6 h-6" />,
+      metrics: [
+        { label: "Roadmap Engine", value: "AI", change: "RAG pipeline" },
+        { label: "Response Time", value: "<1s", change: "SSE streaming" },
+        { label: "Task Coverage", value: "21", change: "90-day plan" }
+      ],
+      technologies: ["Next.js", "React", "Node.js", "Fastify", "PostgreSQL", "pgvector", "Claude API", "RAG", "SSE", "Supabase", "React Native", "Expo", "TypeScript", "Docker"],
+      impact: "A missed IRD application in week one costs skilled migrants 45% of every paycheck in emergency tax. LandedNZ eliminates that risk with a personalised 90-day settlement roadmap generated before they arrive, built on a production RAG pipeline with pgvector, Claude API, and SSE streaming.",
+      fullDetails: {
+        overview: "LandedNZ is a full-stack AI-powered settlement companion for skilled migrants relocating to New Zealand. The system generates a personalised, prioritised task roadmap and provides context-aware settlement guidance through a RAG-powered chat advisor.",
+        challenge: "Skilled migrants arriving in New Zealand face an invisible problem. There is no single source of truth for what to do, in what order, and why it matters. Missing an IRD number application in week one results in 45% emergency tax on every paycheck. Signing a lease before researching school zones costs thousands. The consequences are real, financial, and avoidable. But only if you know the order of operations before you arrive.",
+        solution: "Built LandedNZ, a full-stack AI-powered settlement companion that generates a personalised, prioritised task roadmap based on visa type, city, family situation, and arrival date. The system is architecturally split into two isolated concerns: a deterministic roadmap engine that handles task sequencing and dependency resolution, and a generative AI chat advisor powered by a RAG pipeline for context-aware settlement guidance. The roadmap never fails because the AI does.",
+        keyResults: [
+          { metric: "Roadmap Personalisation", improvement: "Visa, city, family, job, arrival date, the 5 inputs generate a fully sequenced settlement plan" },
+          { metric: "AI Response Time", improvement: "Real-time streaming chat via Server-Sent Events which generates responses under 1 second" },
+          { metric: "Task Coverage", improvement: "21 settlement tasks across 3 phases covering the first 90 days in New Zealand" },
+          { metric: "Architecture Isolation", improvement: "Deterministic engine and AI layer fully decoupled, zero AI dependency on critical path" }
+        ],
+        stakeholders: [
+          "Skilled Migrants: Personalised settlement roadmap from day one. Know exactly what to do, in what order, before costly mistakes happen",
+          "Partner Visa Holders: Specific task sequences for dependants. IRD, tax code, bank account, and work rights handled correctly from arrival",
+          "NZ Employers: New hires who arrive with their IRD number and tax code sorted, no emergency tax rate complications from day one",
+          "NZ Tech Community: Open demonstration of production AI engineering, RAG pipeline, vector search, and streaming chat built without framework abstractions"
+        ],
+        recognition: "Solo full-stack build, sole architect and engineer across frontend, backend, AI pipeline, and mobile"
+      }
+    },
     {
       id: "hedge-accounting",
       number: "01",
