@@ -66,82 +66,42 @@ export default function SkillsSection() {
     {
       id: "ai-engineering",
       number: "01",
-      title: "AI Engineering & Production LLM Systems",
-      technologies: ["Agentic AI", "Context Window Management", "Prompt Engineering", "RAG Pipeline", "Vector Search", "Hugging Face", "Python"],
-      story: "I build AI systems designed to survive production, not just impress in demos. My approach treats the AI layer as an enhancement, never a single point of failure. Critical paths run on deterministic logic, with AI enriching the experience on top. Every RAG pipeline I build is grounded in real retrieval, not hallucinated context, so users get answers they can trust. Streaming via SSE keeps interactions feeling instant. Users should never feel like they are waiting for a model to think.",
+      title: "AI Engineering",
+      technologies: ["Agentic AI", "Prompt Engineering", "RAG Pipeline", "Vector Search"],
+      story: "Most AI impresses in the demo and quietly fails after. I'm interested in the part that comes after the demo.",
       impact: "AI features that ship to production and stay there. Systems where the AI layer enhances the experience without becoming a single point of failure."
-    },
-    {
-      id: "backend",
-      number: "02",
-      title: "Backend Engineering & Microservices",
-      technologies: ["Java 21", "Spring Boot", "Spring Framework", "Go", "Node.js"],
-      story: "I build backend systems that handle millions of requests. My approach is simple where I design APIs that feel intuitive to developers while being robust enough for enterprise scale. Every endpoint I create is crafted thinking about the developer experience first, clear contracts, predictable behavior, and responses that make sense. Because when backend systems just work, everyone's day gets better.",
-      impact: "Users get instant responses. Developers get APIs they actually enjoy working with. Operations teams sleep peacefully at night."
     },
     {
       id: "distributed",
       number: "02",
-      title: "Distributed Systems & Event-Driven Architecture",
+      title: "Distributed Systems",
       technologies: ["Microservices", "Event-Driven Design", "CQRS", "Domain-Driven Design"],
-      story: "I architect systems where services communicate like a well-orchestrated conversation, not shouting at each other, but listening, responding, and staying in sync. When one service processes data, others react in real-time without polling or waiting. This isn't just about technical elegance; it's about building systems that scale naturally and degrade gracefully when things go wrong.",
+      story: "A million things happening at once, and nobody should feel any of it. That's the invisible work I find most satisfying.",
       impact: "Real-time experiences without the complexity. Systems that grow with your business, not against it."
     },
     {
-      id: "kafka",
-      number: "03",
-      title: "Event Streaming & Real-Time Data",
-      technologies: ["Apache Kafka", "Kafka Streams", "CloudEvents", "AWS Kinesis", "Reactor Kafka"],
-      story: "I design event streams that ensure users never wait for something that can happen in the background. When a customer places an order, they get instant confirmation, not because of magic, but because of well-architected event pipelines that prioritize user experience over system complexity. Every event tells a story, and I make sure that story reaches the right audience at the right time.",
-      impact: "Instant user feedback. Zero data loss. Systems that feel responsive even under heavy load."
-    },
-    {
-      id: "reactive",
-      number: "04",
-      title: "Reactive Programming & High-Performance Systems",
-      technologies: ["Project Reactor", "Spring WebFlux", "Non-blocking I/O", "Backpressure Handling"],
-      story: "I write code that doesn't waste time waiting. While traditional systems sit idle waiting for databases or external APIs, reactive systems I build keep working, handling thousands of concurrent users without spinning up thousands of threads. It's about respecting server resources while delivering blazing-fast responses to users. Every millisecond saved is a better user experience delivered.",
-      impact: "Sub-20ms response times. Servers that handle 10x more load with the same resources. Smooth experiences even during traffic spikes."
-    },
-    {
-      id: "cloud",
-      number: "05",
-      title: "Cloud-Native Architecture & Infrastructure",
-      technologies: ["AWS (EC2, S3, Lambda, ECS, EKS)", "Kubernetes", "Docker", "OpenShift", "Terraform"],
-      story: "I build applications that were born for the cloud not retrofitted into it. Auto-scaling when traffic surges, self-healing when things fail, and costing pennies when idle. My infrastructure code is as important as application code, because reliability and cost-efficiency shouldn't be afterthoughts. I design systems that operations teams can deploy with confidence and finance teams can approve without hesitation.",
-      impact: "20% lower infrastructure costs. Zero-downtime deployments. Systems that scale automatically when you need them."
-    },
-    {
-      id: "database",
-      number: "06",
-      title: "Data Architecture & Caching Strategies",
-      technologies: ["PostgreSQL", "Redis", "MongoDB", "Elasticsearch", "DynamoDB"],
-      story: "I choose databases like a chef choosing ingredients, each one serving a specific purpose. PostgreSQL for transactional integrity, Redis for lightning-fast caching, MongoDB for flexible schemas, Elasticsearch for powerful search. But it's not just about picking the right database; it's about designing data flows where users get instant results while maintaining consistency behind the scenes. Smart caching means users see their changes immediately, even if the full save happens later.",
-      impact: "35% faster API responses. 40% reduced database load. Users see instant updates without compromise on data integrity."
-    },
-    {
-      id: "api",
-      number: "07",
-      title: "API Design & Integration",
-      technologies: ["RESTful APIs", "GraphQL", "gRPC", "OpenAPI 3.0", "Apache Camel", "WebSockets"],
-      story: "I design APIs that feel like conversations, not contracts. Whether it's REST for simplicity, GraphQL for flexibility, or gRPC for performance, I choose the right protocol for the right job. Every endpoint is documented, every error message is helpful, and every response is structured in a way that makes frontend developers smile. Integration shouldn't be painful, it should be predictable and pleasant.",
-      impact: "Developers integrate in hours, not days. Clear documentation means fewer support tickets. APIs that evolve without breaking existing clients."
-    },
-    {
       id: "security",
-      number: "08",
-      title: "Security & Access Control",
-      technologies: ["Zero-Trust Architecture", "ABAC (Cedar, OPA)", "OAuth 2.0", "RBAC", "APISIX Gateway"],
-      story: "I build security into systems from day one, not as an afterthought. Zero-trust means never assuming anyone or anything is safe by default. Attribute-based access control means users can do exactly what they need, nothing more, nothing less. And when something goes wrong, audit trails tell us exactly what happened. Security doesn't have to be a user experience nightmare; it should be invisible to legitimate users and impenetrable to bad actors.",
+      number: "03",
+      title: "Security",
+      technologies: ["Zero-Trust Architecture", "ABAC", "OAuth 2.0", "RBAC", "API Gateway"],
+      story: "The best security is the kind nobody notices. Invisible to the people who belong. Absolute to the ones who don't.",
       impact: "99.9% uptime with zero security breaches. Users stay secure without friction. Compliance teams get audit trails that actually make sense."
     },
     {
       id: "observability",
-      number: "09",
-      title: "Observability & Performance Monitoring",
-      technologies: ["OpenTelemetry", "Grafana", "Prometheus", "Distributed Tracing", "APM Tools"],
-      story: "I build systems that tell me when something's wrong before users notice. Distributed tracing means I can follow a single request across dozens of services and pinpoint exactly where the slowdown happened. Metrics and dashboards aren't just pretty graphs, they're early warning systems that help teams fix issues in minutes instead of hours. When production incidents happen, my monitoring setup tells us exactly what, where, and why.",
+      number: "04",
+      title: "Observability",
+      technologies: ["OpenTelemetry", "Grafana", "Prometheus", "Distributed Tracing"],
+      story: "I'd rather know your system is about to break before you do. Usually I do.",
       impact: "80% faster incident detection. 75% faster resolution times. Problems fixed before customers complain."
+    },
+    {
+      id: "api",
+      number: "05",
+      title: "API Design",
+      technologies: ["REST APIs", "GraphQL", "gRPC", "Apache Camel", "WebSockets"],
+      story: "An API is a conversation between two systems. I design the kind people don't complain about.",
+      impact: "Developers integrate in hours, not days. Clear documentation means fewer support tickets. APIs that evolve without breaking existing clients."
     }
   ];
 
@@ -157,7 +117,9 @@ export default function SkillsSection() {
             </h2>
           </div>
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-400 max-w-4xl text-center mx-auto leading-relaxed px-4">
-            Technology is just a tool. What matters is how you wield it, not to show off technical prowess, but to solve real problems and make people's lives better.
+            I don't think about technology. I think about the puzzle inside it.
+            The moment something clicks, time comes back and someone somewhere has a better day.
+            That's the job.
           </p>
         </div>
 
@@ -232,8 +194,8 @@ export default function SkillsSection() {
 
                 </div>
 
-                {/* Technologies Pills */}
-                <div className="flex flex-wrap gap-2 mb-3">
+                {/* Technologies Pills — visible only on active card */}
+                <div className={`flex flex-wrap gap-2 transition-all duration-300 ${activeIndex === idx ? 'opacity-100 max-h-40 mb-3' : 'opacity-0 max-h-0 overflow-hidden mb-0'}`}>
                   {category.technologies.map((tech, idx) => (
                     <span
                       key={idx}

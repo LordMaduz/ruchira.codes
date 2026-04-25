@@ -75,7 +75,7 @@ export default function ProjectsSection() {
         {
       id: "landednz",
       number: "01",
-      title: "LandedNZ - AI Settlement Companion",
+      title: "LandedNZ: AI Settlement Companion",
       company: "LandedNZ",
       role: "Sole Architect & Engineer",
       timeline: "February 2026 - Present",
@@ -88,7 +88,7 @@ export default function ProjectsSection() {
         { label: "Task Coverage", value: "21", change: "90-day plan" }
       ],
       technologies: ["Next.js", "React", "Node.js", "Fastify", "PostgreSQL", "pgvector", "Claude API", "RAG", "SSE", "Supabase", "React Native", "Expo", "TypeScript", "Docker"],
-      impact: "A missed IRD application in week one costs skilled migrants 45% of every paycheck in emergency tax. LandedNZ eliminates that risk with a personalised 90-day settlement roadmap generated before they arrive, built on a production RAG pipeline with pgvector, Claude API, and SSE streaming.",
+      impact: "My wife got into university in Auckland. We started planning the move and suddenly we were drowning in Google tabs, conflicting answers, and zero way to know what was actually true. I got frustrated enough to build the solution myself. LandedNZ is what came out of that night.",
       fullDetails: {
         overview: "LandedNZ is a full-stack AI-powered settlement companion for skilled migrants relocating to New Zealand. The system generates a personalised, prioritised task roadmap and provides context-aware settlement guidance through a RAG-powered chat advisor.",
         challenge: "Skilled migrants arriving in New Zealand face an invisible problem. There is no single source of truth for what to do, in what order, and why it matters. Missing an IRD number application in week one results in 45% emergency tax on every paycheck. Signing a lease before researching school zones costs thousands. The consequences are real, financial, and avoidable. But only if you know the order of operations before you arrive.",
@@ -109,79 +109,9 @@ export default function ProjectsSection() {
       }
     },
     {
-      id: "hedge-accounting",
-      number: "01",
-      title: "Corporate Banking Hedge Accounting Platform",
-      company: "DBS Bank Singapore",
-      role: "Technical Lead",
-      timeline: "June 2024 - Present",
-      teamSize: "Cross-functional team across 5+ departments",
-      description: "Built enterprise scale hedge accounting platform processing 1M+ daily transactions with reactive microservices, supporting fair value, cash flow, and net investment hedges for corporate banking clients.",
-      icon: <Database className="w-6 h-6" />,
-      metrics: [
-        { label: "Daily Transactions", value: "1M+", change: "12K req/sec" },
-        { label: "Response Time", value: "20ms", change: "Low latency" },
-        { label: "System Uptime", value: "99.9%", change: "High availability" }
-      ],
-      technologies: ["Java 21", "Spring Boot", "Kafka", "CloudEvents", "Project Reactor", "Redis", "PostgreSQL", "Kubernetes"],
-      impact: "Processed 1M+ daily hedge accounting transactions (12K requests per second) with 20ms latency and 99.9% uptime, enabling real-time hedge effectiveness testing and valuation for corporate banking clients.",
-      fullDetails: {
-        overview: "Architected and implemented large-scale hedge accounting platform for corporate banking, enabling real-time processing of fair value hedges (interest rate risk), cash flow hedges (FX risk), and net investment hedges (foreign subsidiaries) with event-driven reactive microservices architecture.",
-        challenge: "Legacy batch-processing systems couldn't handle real-time hedge accounting requirements for corporate clients, causing delays in hedge effectiveness testing and valuation. System needed to process 1M+ daily transactions with sub-20ms latency while maintaining data consistency across multiple hedge types and accounting standards (IFRS 9, FAS 133).",
-        solution: "Built event-driven hedge accounting platform using Kafka and CloudEvents for real-time financial event streaming. Implemented reactive microservices with Project Reactor for non-blocking transaction handling. Designed distributed Redis caching for high-speed hedge valuation calculations and query performance across multiple hedge relationships.",
-        keyResults: [
-          { metric: "Transaction Volume", improvement: "1M+ daily transactions at 12K requests/second" },
-          { metric: "Processing Speed", improvement: "Sub-20ms latency for hedge valuations" },
-          { metric: "System Reliability", improvement: "99.9% uptime for critical banking operations" },
-          { metric: "Operational Efficiency", improvement: "Real-time hedge effectiveness testing vs daily batch" }
-        ],
-        stakeholders: [
-          "Corporate Clients: Real-time hedge accounting for interest rate, FX, and equity risks",
-          "Treasury Teams: Immediate hedge effectiveness testing and rebalancing decisions",
-          "Risk & Compliance: Reduced codebase issues by 30% through comprehensive testing standards"
-        ],
-        recognition: "Led technical architecture sessions elevating engineering standards across 15+ microservices"
-      }
-    },
-    {
-      id: "notification-platform",
-      number: "02",
-      title: "Dynamic Multi-Channel Notification Orchestration Platform",
-      company: "DBS Bank Singapore",
-      role: "Technical Lead",
-      timeline: "June 2024 - Present",
-      teamSize: "Platform engineering team",
-      description: "Designed enterprise notification orchestration platform with dynamic channel integration (Email, Teams, Mobile, Webhooks), reducing cross-department coordination time from 48 hours to 4 hours (92%).",
-      icon: <Network className="w-6 h-6" />,
-      metrics: [
-        { label: "Coordination Time", value: "92%", change: "Reduced" },
-        { label: "Channels", value: "Multi", change: "Email/Teams/App" },
-        { label: "Response Time", value: "50%", change: "Improved" }
-      ],
-      technologies: ["Java 21", "Spring Boot", "Apache Camel", "Kafka", "CloudEvents", "REST APIs", "Webhooks", "Kubernetes"],
-      impact: "Reduced cross-department coordination time by 92% (48 hours to 4 hours) and improved operational responsiveness by 50% through dynamic multi-channel notification platform supporting Email, Teams, Mobile, and custom Webhooks.",
-      fullDetails: {
-        overview: "Built standalone enterprise notification orchestration platform enabling dynamic channel integration and configurable workflow-based alerts, supporting Email, Microsoft Teams, mobile app notifications, and custom webhooks for real-time business process automation.",
-        challenge: "Disparate notification systems across departments created communication silos and coordination delays. Each team built custom notification implementations, making it difficult to implement timely workflow updates, approval alerts, and cross-functional collaboration. Manual coordination took 48 hours for critical business processes.",
-        solution: "Designed centralized notification orchestration platform with dynamic channel plugins supporting Email, Teams, mobile push, and custom webhooks. Built configurable workflow triggers enabling business users to define notification rules without code changes. Implemented event-driven architecture using Kafka and CloudEvents for reliable message delivery across channels.",
-        keyResults: [
-          { metric: "Coordination Efficiency", improvement: "48 hours → 4 hours (92% reduction)" },
-          { metric: "Channel Integration", improvement: "Multi-channel support (Email, Teams, App, Webhooks)" },
-          { metric: "Operational Response", improvement: "50% faster response to workflow updates" },
-          { metric: "Configuration", improvement: "Self-service workflow trigger configuration" }
-        ],
-        stakeholders: [
-          "Platform Teams: Centralized notification infrastructure reducing maintenance overhead",
-          "Business Users: Self-service configuration for workflow-based notifications",
-          "Operations: 92% faster cross-department coordination through real-time alerts"
-        ],
-        recognition: "Standalone platform enabling real-time workflow automation across business units"
-      }
-    },
-    {
       id: "globe",
       number: "03",
-      title: "GloBE: Tax Compliance Engine for Global MNEs",
+      title: "GloBE: Tax Compliance Engine",
       company: "DBS Bank Singapore",
       role: "Lead Solutions Architect",
       timeline: "June 2024 - June 2025",
@@ -194,7 +124,7 @@ export default function ProjectsSection() {
         { label: "Jurisdictions", value: "15+", change: "Coverage" }
       ],
       technologies: ["MVEL", "Java", "Spring Boot", "HFM", "MongoDB", "Docker"],
-      impact: "Cut processing time from 5 days to 2 hours per jurisdiction (96% reduction) while achieving 100% OECD compliance 3 months ahead of mandatory deadline.",
+      impact: "Fifteen countries. One deadline. One wrong calculation and a multinational corporation fails a global tax audit. I built the engine that made sure that never happened.",
       fullDetails: {
         overview: "Designed and implemented externalized tax calculation engine enabling rapid adaptation to evolving OECD regulations while reducing technical dependencies for tax professionals.",
         challenge: "OECD BEPS 2.0 Pillar Two regulations mandating 15% global minimum tax by FY2025, with complex jurisdiction-specific formulas requiring quarterly provisioning and legacy system limitations.",
@@ -216,7 +146,7 @@ export default function ProjectsSection() {
     {
       id: "derivative-trading",
       number: "04",
-      title: "Derivative Trading File Processing & Settlement System",
+      title: "DEGA: Derivative Trading & Settlement System",
       company: "DBS Bank Singapore",
       role: "Senior Application Developer",
       timeline: "September 2022 - April 2024",
@@ -229,7 +159,7 @@ export default function ProjectsSection() {
         { label: "Cost Reduction", value: "20%", change: "Infrastructure" }
       ],
       technologies: ["Java 17", "Spring WebFlux", "AWS SDK v2", "AWS S3", "Project Reactor", "OpenShift", "Docker"],
-      impact: "Achieved 60% faster trade file processing and 20% infrastructure cost reduction while handling 50,000+ monthly files for 1,000+ daily trading users, supporting derivative trading operations and market data integration.",
+      impact: "Financial markets don't wait. When Bloomberg sends a file, the trading desk needs it processed before the next tick. I built the system that made sure they never had to ask twice.",
       fullDetails: {
         overview: "Developed high-performance file processing system for derivative trading operations, enabling efficient ingestion of trade data and market data from Bloomberg and external sources for trade settlement, risk management, and compliance reporting.",
         challenge: "Traditional blocking I/O for trade file processing caused bottlenecks during market volatility periods when file volumes spike. Legacy systems struggled with large trade confirmation files (100MB+) from Bloomberg and market data feeds, causing delays in settlement and risk reporting for trading desk operations.",
@@ -251,7 +181,7 @@ export default function ProjectsSection() {
     {
       id: "food-ordering",
       number: "05",
-      title: "High-Volume Food Order Management & Inventory System",
+      title: "High-Volume Food Order Management System",
       company: "GrubTech Sri Lanka",
       role: "Senior Software Engineer",
       timeline: "April 2022 - September 2022",
@@ -264,7 +194,7 @@ export default function ProjectsSection() {
         { label: "Response Time", value: "35%", change: "Faster" }
       ],
       technologies: ["Java 11", "Spring Boot", "Redis", "Redisson", "MongoDB", "Confluent Kafka", "AWS", "Docker"],
-      impact: "Processed 500,000+ daily food orders with 40% reduced database load and 35% faster API response times, enabling instant order confirmation and real-time inventory synchronization across multiple restaurant brands.",
+      impact: "Five hundred thousand food orders a day. Every single one of them is someone who is hungry and waiting. That's enough reason to get it right.",
       fullDetails: {
         overview: "Engineered high-performance order processing system for multi-brand food delivery platform, handling real-time order placement, inventory management, and order tracking for multiple restaurant brands simultaneously with write-behind caching architecture.",
         challenge: "High-volume order placement during peak hours (lunch/dinner) overwhelmed database systems, causing slow order confirmations and inventory sync delays. Platform needed to handle 500K+ daily orders across multiple restaurant brands with instant response times while maintaining accurate real-time inventory to prevent overselling.",
@@ -299,6 +229,10 @@ export default function ProjectsSection() {
               <span className="text-black dark:text-white">What I've Built and Why</span>
             </h2>
           </div>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-400 max-w-4xl text-center mx-auto leading-relaxed px-4">
+            I don't build things to add them to a CV.
+            I build them because something is broken and it's bothering me.
+          </p>
         </div>
 
         {/* Horizontal Scroll Gallery */}

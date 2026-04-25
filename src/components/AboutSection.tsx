@@ -29,59 +29,35 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
             </h2>
           </div>
 
-          {/* About Me */}
-          <div className="hover:border-[#007AFF] transition-colors duration-300 pl-6 sm:pl-8 mb-6 sm:mb-8">
-            <div className="space-y-4 sm:space-y-5">
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I'm an engineer relocating from Singapore to Auckland, New Zealand in June 2026. Born in Sri Lanka. Programming found me by accident during a moment of curiosity and that curiosity became an obsession that shaped everything I build today.
-              </p>
-
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                An anime fan who discovered that the best perspectives come from unexpected places. When I'm not
-                coding, I'm learning life lessons from stories that somehow always find their way back into my work.
-              </p>
-
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I am also a featured Baeldung Author. I turn late night sessions and production incidents into
-                lessons that help developers worldwide, because best knowledge is the knowledge shared.
-              </p>
-            </div>
-          </div>
-
-          {/* My Approach */}
-          <div className="hover:border-[#007AFF] transition-colors duration-300 pl-6 sm:pl-8 mb-6 sm:mb-8">
-            <div className="flex items-center gap-3 sm:gap-4 mb-4">
-              <span className="text-xs sm:text-sm font-semibold text-[#007AFF] uppercase tracking-wider">Here is My Approach</span>
-            </div>
-
-            <div className="space-y-4 sm:space-y-5">
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I ask WHY until we hit the real problem, not just the symptom, and I challenge "that's how we've always done it" with respect because the best ideas often hide behind assumptions. Also I make complex things simple, not for elegance, but because simplicity is kindness to the next engineer who has to maintain it.
-              </p>
-
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I build systems, but I also build connections by mentoring without ego and listening more than I talk. Great work isn't just about what you build, it's about who you build it with.
-              </p>
-            </div>
-          </div>
-
-          {/* Why Hire Me */}
+          {/* Story */}
           <div className="hover:border-[#007AFF] transition-colors duration-300 pl-6 sm:pl-8">
-            <div className="flex items-center gap-3 sm:gap-4 mb-4">
-              <span className="text-xs sm:text-sm font-semibold text-[#007AFF] uppercase tracking-wider">Why Hire Me</span>
-            </div>
-
             <div className="space-y-4 sm:space-y-5">
               <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I work on systems where reliability isn't optional and scale isn't theoretical, but what truly drives me isn't the tech, it's the impact on real people and the teams I work with.
+                I grew up completely obsessed with video games. Not playing them, 
+                well yes that too, but mostly staring at the screen wondering how 
+                something like this even exists. I was just a kid in Sri Lanka with 
+                a lot of questions and zero answers.
               </p>
 
               <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I translate business needs into solutions people trust, mentor without making others feel small, and say "I don't know, but I'll find out" without shame because that's how real growth happens.
+                That curiosity never went away. It just found a new home.
               </p>
 
               <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                Over the years, I've realized that while code evolves and gets replaced, the real legacy lies in the people you work with and the culture you shape. That's why i put my energy in to solving problems that matter, helping teams grow stronger, and sharing what I've learned so others can build even better things.
+                The other thing that made me who I am is anime. I know how that sounds.
+                But anime taught me things I didn't find anywhere else. How to be selfless.
+                How to respect the people who came before you. How to keep going when you
+                have every reason to stop.
+              </p>
+
+              <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                You don't just watch those stories, you live inside them,
+                and the memories stay with you the same way real ones do.
+              </p>
+
+              <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                Between a kid who wanted to understand how things are built, and years of living
+                with characters who refused to give up, I think that's actually where I come from.
               </p>
             </div>
           </div>
