@@ -49,12 +49,12 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
 
         {/* Description */}
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-2 sm:mb-3 leading-relaxed max-w-xl mx-auto">
-          Engineer who designs distributed systems that process
-          millions of transactions, then builds them in production.
+          I started out wanting to build video games as a kid.
+          <br />
+          Ended up building something far more interesting instead.
         </p>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 leading-relaxed max-w-xl mx-auto">
-           Not just diagrams.
-           Not just code. End-to-end solutions that don't break when they scale.
+          Now I'm headed to Auckland, and I'm just getting started.
         </p>
 
         {/* Availability Status */}
