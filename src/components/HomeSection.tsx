@@ -47,6 +47,31 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
           <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-600 dark:text-gray-400">Engineer & AWS Solutions Architect</span>
         </h1>
 
+        {/* Recruiter Status Row */}
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mb-6 sm:mb-8">
+          <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
+            <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+            <span className="text-sm font-semibold">Open Work Visa</span>
+          </div>
+          <span className="text-gray-300 dark:text-gray-700 select-none">·</span>
+          <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
+            <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+            <span className="text-sm font-semibold">No Sponsorship Required</span>
+          </div>
+          <span className="text-gray-300 dark:text-gray-700 select-none">·</span>
+          <div className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400">
+            <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <span className="text-sm font-medium">Auckland, New Zealand</span>
+          </div>
+        </div>
+
         {/* Description */}
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-2 sm:mb-3 leading-relaxed max-w-xl mx-auto">
           I started out wanting to build video games as a kid.
@@ -54,23 +79,8 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
           Ended up building something far more interesting instead.
         </p>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 leading-relaxed max-w-xl mx-auto">
-          Now I'm headed to Auckland, and I'm just getting started.
+          I'm one of those engineers who lives in both enterprise architecture and AI, and I genuinely can't wait to do that work in Auckland.
         </p>
-
-        {/* Availability Status */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-6 sm:mb-8">
-          <div className="flex items-center gap-2">
-            <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 rounded-full border border-gray-200 dark:border-white/10">
-              Auckland, New Zealand
-            </span>
-            <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 rounded-full border border-gray-200 dark:border-white/10">
-              Available June 2026
-            </span>
-          </div>
-          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 rounded-full border border-gray-200 dark:border-white/10">
-            NZ Work Visa Secured
-          </span>
-        </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
