@@ -74,7 +74,7 @@ Portfolio: https://lordmaduz.github.io/ruchira.codes/
 - I only bring in a framework or tool when the problem needs it.
 - I write the design first: the problem, the approach and how it can fail. Then build, then review for failure modes, rollback and the next reader.
 - My Claude Code setup runs in phases: research, a plan checked by a validator agent against architecture rules I wrote, then build with tests enforced by hooks and a reviewer agent after each piece. A /learn step saves each correction so the next session starts smarter.
-- I think AI-assisted development is undersold. People who treat it as autocomplete get average results; people who design the workflow around it get a lot more.
+- Most teams still lean on prompt engineering and throw one generic agent at every kind of task. Then they either let the agent decide everything or keep a person watching every step. Both are old habits, and neither is efficient.
 - Overrated: autonomous agent pipelines with fragile orchestration, and microservices as the default. Underrated: deterministic logic under AI features, so reliability is designed in.
 - What I push back on: clever abstractions nobody can read, AI-generated code dropped into a PR without thought, tech picked because it sounds good, and building for scale you won't hit.
 - After building the same agent across four frameworks: smolagents suits a manager handing work to specialists, LangGraph suits explicit state machines, LlamaIndex suits retrieval-heavy work, and the raw SDK is where you learn what the frameworks hide.
@@ -318,6 +318,7 @@ Before moving into AI work full time, I spent about five months building the sam
 - I use MCP integrations for the ticket tracker, ELK log search, and Playwright screenshots and layout checks.
 - At Arbitr I adopted, extended and operationalised the team's AI tooling, and wrote a brand skill and guard tests that check later contributors' changes.
 - I did about 35 AI-assisted peer reviews and helped 2 QA colleagues set up AI tooling.
+- I moved from a Java stack to Python and Vue at Arbitr and made about 1,500 commits in four and a half months, using a spec-first, test-driven agent workflow with cross-model review on every change. That review caught two critical bugs before merge. I also evaluated two agent-workflow frameworks on live tickets, and my write-up informed the team's choice.
 
 ## Proof
 

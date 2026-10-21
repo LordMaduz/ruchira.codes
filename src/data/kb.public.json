@@ -636,7 +636,7 @@
     {
       "id": "opinion-ai",
       "topic": "opinions",
-      "text": "I think AI-assisted development is undersold. People who treat it as autocomplete get average results; people who design the workflow around it get a lot more.",
+      "text": "Most teams still lean on prompt engineering and throw one generic agent at every kind of task. Then they either let the agent decide everything or keep a person watching every step. Both are old habits, and neither is efficient.",
       "evidence": "own-statement"
     },
     {
@@ -1874,6 +1874,15 @@
         "35",
         "2"
       ]
+    },
+    {
+      "id": "ai-recruiters-pub",
+      "topic": "loop",
+      "text": "I moved from a Java stack to Python and Vue at Arbitr and made about 1,500 commits in four and a half months, using a spec-first, test-driven agent workflow with cross-model review on every change. That review caught two critical bugs before merge. I also evaluated two agent-workflow frameworks on live tickets, and my write-up informed the team's choice.",
+      "metrics": [
+        "1,500"
+      ],
+      "evidence": "own-statement"
     }
   ]
 }
