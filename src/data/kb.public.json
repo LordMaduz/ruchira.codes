@@ -69,13 +69,11 @@
     "education": [
       {
         "degree": "MSc Software Engineering, research in blockchain",
-        "school": "University of Westminster, United Kingdom",
-        "when": "June 2025"
+        "school": "University of Westminster, United Kingdom"
       },
       {
         "degree": "BSc Statistics and Operational Research",
-        "school": "University of Peradeniya, Sri Lanka",
-        "when": "March 2019"
+        "school": "University of Peradeniya, Sri Lanka"
       }
     ],
     "skills": [
@@ -184,8 +182,7 @@
         "0.80"
       ],
       "text": "Capped a quality score at 0.80 for one enterprise client, so doubtful machine translation goes to a human reviewer. Deploy verified in production.",
-      "evidence": "production",
-      "source": "straker-cv-reference S18"
+      "evidence": "production"
     },
     {
       "id": "arbitr-credits",
@@ -194,8 +191,7 @@
         "9,084"
       ],
       "text": "Built the recovery path for a stuck 12-language client job within about a day, so 9,084 credits the client had already paid for were not charged again. A senior engineer ran the recovery.",
-      "evidence": "production",
-      "source": "straker-cv-reference S1"
+      "evidence": "production"
     },
     {
       "id": "arbitr-xss",
@@ -204,8 +200,7 @@
         "5"
       ],
       "text": "Closed a stored XSS flaw across 5 services in my second week, on a stack I'd just started learning.",
-      "evidence": "merged",
-      "source": "straker-cv-reference S3"
+      "evidence": "merged"
     },
     {
       "id": "arbitr-reviews",
@@ -214,8 +209,7 @@
         "35"
       ],
       "text": "Reviewed about 35 of my teammates' pull requests.",
-      "evidence": "own-statement",
-      "source": "straker-cv-reference S20"
+      "evidence": "own-statement"
     },
     {
       "id": "landed-tasks",
@@ -224,8 +218,7 @@
         "21"
       ],
       "text": "The plan covers 21 tasks across your first 90 days.",
-      "evidence": "production",
-      "source": "src/data/projects.ts"
+      "evidence": "production"
     },
     {
       "id": "landed-inputs",
@@ -234,8 +227,7 @@
         "5"
       ],
       "text": "5 things shape the plan: visa, city, family, job and arrival date.",
-      "evidence": "production",
-      "source": "src/data/projects.ts"
+      "evidence": "production"
     },
     {
       "id": "landed-stream",
@@ -244,8 +236,7 @@
         "<1s"
       ],
       "text": "The chat's answer starts streaming in under a second.",
-      "evidence": "production",
-      "source": "career-bank LandedNZ"
+      "evidence": "production"
     },
     {
       "id": "globe-time",
@@ -255,8 +246,7 @@
         "5 days"
       ],
       "text": "Processing went from 5 days to 2 hours per country.",
-      "evidence": "production",
-      "source": "career-bank GloBE"
+      "evidence": "production"
     },
     {
       "id": "globe-countries",
@@ -265,8 +255,7 @@
         "15+"
       ],
       "text": "One engine covers 15+ countries.",
-      "evidence": "production",
-      "source": "career-bank GloBE"
+      "evidence": "production"
     },
     {
       "id": "globe-it",
@@ -275,8 +264,7 @@
         "60%"
       ],
       "text": "IT involvement in rule changes dropped by 60%.",
-      "evidence": "production",
-      "source": "career-bank GloBE (100% to 40%)"
+      "evidence": "production"
     },
     {
       "id": "globe-early",
@@ -285,8 +273,7 @@
         "3 months"
       ],
       "text": "Ready 3 months before the FY2025 deadline.",
-      "evidence": "production",
-      "source": "career-bank GloBE"
+      "evidence": "production"
     },
     {
       "id": "globe-team",
@@ -295,8 +282,7 @@
         "8"
       ],
       "text": "Led an 8-person technical team on the tax engine, working with stakeholders in more than 15 countries.",
-      "evidence": "own-statement",
-      "source": "user, 2026-10-21"
+      "evidence": "own-statement"
     },
     {
       "id": "dega-files",
@@ -305,8 +291,7 @@
         "50K+"
       ],
       "text": "Handles 50K+ trade files a month.",
-      "evidence": "production",
-      "source": "career-bank DBS SAD"
+      "evidence": "production"
     },
     {
       "id": "dega-speed",
@@ -316,8 +301,7 @@
         "1,000+"
       ],
       "text": "Uploads and downloads got 60% faster for more than 1,000 daily users.",
-      "evidence": "production",
-      "source": "career-bank DBS SAD"
+      "evidence": "production"
     },
     {
       "id": "dega-cost",
@@ -326,8 +310,7 @@
         "20%"
       ],
       "text": "Infrastructure cost dropped by 20%.",
-      "evidence": "production",
-      "source": "career-bank DBS SAD"
+      "evidence": "production"
     },
     {
       "id": "grub-orders",
@@ -336,8 +319,7 @@
         "500K+"
       ],
       "text": "The platform took 500K+ orders a day.",
-      "evidence": "production",
-      "source": "career-bank GrubTech"
+      "evidence": "production"
     },
     {
       "id": "grub-db",
@@ -346,8 +328,7 @@
         "40%"
       ],
       "text": "Database write load fell by 40%.",
-      "evidence": "production",
-      "source": "career-bank GrubTech"
+      "evidence": "production"
     },
     {
       "id": "grub-confirm",
@@ -356,8 +337,7 @@
         "35%"
       ],
       "text": "Order confirmations got 35% faster.",
-      "evidence": "production",
-      "source": "career-bank GrubTech"
+      "evidence": "production"
     },
     {
       "id": "grub-mttd",
@@ -367,8 +347,7 @@
         "9"
       ],
       "text": "Time to spot an incident went from 45 minutes to 9 after I added tracing.",
-      "evidence": "production",
-      "source": "career-bank GrubTech; STAR 7.9"
+      "evidence": "production"
     },
     {
       "id": "hawk-accuracy",
@@ -378,7 +357,6 @@
       ],
       "text": "HAWK's accuracy went from about 60% to 99.5% in production, with business rules checking every step the agents take.",
       "evidence": "production",
-      "source": "user, 2026-10-21; projects.md#hawk",
       "topic": "hawk"
     },
     {
@@ -388,7 +366,6 @@
       ],
       "text": "HAWK cut operational cost by about 60% in production.",
       "evidence": "production",
-      "source": "user, 2026-10-21; career-bank",
       "topic": "hawk"
     },
     {
@@ -398,7 +375,6 @@
       ],
       "text": "HAWK covers the bank's structural FX hedges, more than S$100B.",
       "evidence": "production",
-      "source": "projects.md#hawk",
       "topic": "hawk"
     },
     {
@@ -409,7 +385,6 @@
       ],
       "text": "Services at DBS handled 1M+ transactions a day at 12K requests a second.",
       "evidence": "production",
-      "source": "career-bank DBS",
       "topic": "dbs"
     },
     {
@@ -420,7 +395,6 @@
       ],
       "text": "An access control engine built on Cedar at the API gateway covered 30+ services and cut unauthorised access attempts by 95%.",
       "evidence": "production",
-      "source": "career-bank DBS SAD",
       "topic": "dega"
     },
     {
@@ -430,7 +404,6 @@
       ],
       "text": "Live config with Spring Cloud Config and Spring Cloud Bus across 40+ service instances ended config-related outages.",
       "evidence": "production",
-      "source": "career-bank DBS SAD",
       "topic": "dega"
     },
     {
@@ -441,14 +414,12 @@
       ],
       "text": "Team of 6 at DBS. I made the design calls, split and reviewed work, and coached 4 engineers.",
       "evidence": "own-statement",
-      "source": "user, 2026-10-21",
       "topic": "dbs"
     },
     {
       "id": "teams-other",
       "text": "Team sizes: GrubTech 3, DirectFN 5, Arbitr NZ engineering 4.",
       "evidence": "own-statement",
-      "source": "user, 2026-10-21",
       "topic": "dbs"
     },
     {
@@ -458,7 +429,6 @@
       ],
       "text": "Built a multi-agent system for the GAIA benchmark that got 85% on 20 medium-level tasks.",
       "evidence": "offline",
-      "source": "career-bank Independent AI",
       "topic": "research"
     },
     {
@@ -469,7 +439,6 @@
       ],
       "text": "About 80 posts on Medium and 6 tutorials on Baeldung.",
       "evidence": "own-statement",
-      "source": "career-bank §7",
       "topic": "writing"
     },
     {
@@ -480,30 +449,26 @@
       ],
       "text": "Trading apps on Akka got 45% more throughput and 30% lower latency.",
       "evidence": "production",
-      "source": "career-bank DirectFN",
       "topic": "directfn"
     },
     {
       "id": "edu-msc",
       "topic": "education",
       "text": "MSc in Software Engineering from the University of Westminster, with research in blockchain.",
-      "evidence": "own-statement",
-      "source": "career-bank §5"
+      "evidence": "own-statement"
     },
     {
       "id": "edu-bsc",
       "topic": "education",
       "text": "BSc in Statistics and Operational Research from the University of Peradeniya.",
-      "evidence": "own-statement",
-      "source": "career-bank §5"
+      "evidence": "own-statement"
     },
     {
       "id": "arbitr-ramp",
       "topic": "arbitr",
       "project": "straker",
       "text": "Learned Python, FastAPI, SQLAlchemy, Alembic and Vue 3 with Nuxt on the job at Arbitr, and had security fixes merged for release in the second week.",
-      "evidence": "merged",
-      "source": "straker-cv-reference §2"
+      "evidence": "merged"
     },
     {
       "id": "arbitr-volume",
@@ -514,8 +479,7 @@
         "1,500"
       ],
       "text": "About 350 merged pull requests across pre-production and production branches, and about 1,500 unique commits, in roughly four and a half months.",
-      "evidence": "own-statement",
-      "source": "straker-cv-reference §3"
+      "evidence": "own-statement"
     },
     {
       "id": "arbitr-tests",
@@ -525,8 +489,7 @@
         "80k"
       ],
       "text": "About 80k lines of tests at Arbitr.",
-      "evidence": "own-statement",
-      "source": "straker-cv-reference §3"
+      "evidence": "own-statement"
     },
     {
       "id": "arbitr-specs",
@@ -536,8 +499,7 @@
         "271"
       ],
       "text": "Wrote 271 design specs and implementation plans at Arbitr before building.",
-      "evidence": "own-statement",
-      "source": "straker-cv-reference §3"
+      "evidence": "own-statement"
     },
     {
       "id": "dbs-kafka",
@@ -547,8 +509,7 @@
         "4"
       ],
       "text": "Reactive Kafka pipelines on Project Reactor cut data processing from 48 hours to about 4.",
-      "evidence": "production",
-      "source": "career-bank DBS"
+      "evidence": "production"
     },
     {
       "id": "dbs-redis",
@@ -557,8 +518,7 @@
         "40%"
       ],
       "text": "Redis caching with careful invalidation made queries 40% faster across services.",
-      "evidence": "production",
-      "source": "career-bank DBS"
+      "evidence": "production"
     },
     {
       "id": "dbs-latency",
@@ -568,8 +528,7 @@
         "99.9%"
       ],
       "text": "Those services ran at 20ms latency with 99.9% uptime.",
-      "evidence": "production",
-      "source": "career-bank DBS"
+      "evidence": "production"
     },
     {
       "id": "dbs-quality",
@@ -579,37 +538,32 @@
         "15+"
       ],
       "text": "Shared standards across 15+ services cut codebase issues by 30%.",
-      "evidence": "production",
-      "source": "career-bank DBS; STAR 7.2"
+      "evidence": "production"
     },
     {
       "id": "dbs-promotion",
       "topic": "dbs",
       "text": "Promoted from Senior Application Developer to technical lead in mid-2024, after the file processing and access control work landed.",
-      "evidence": "own-statement",
-      "source": "Stories 02a"
+      "evidence": "own-statement"
     },
     {
       "id": "hawk-modes",
       "topic": "hawk",
       "text": "HAWK has two modes: role-gated prompt templates for everyday work, and a free-form agent mode for unusual questions.",
-      "evidence": "production",
-      "source": "projects.md#hawk"
+      "evidence": "production"
     },
     {
       "id": "hawk-audit",
       "topic": "hawk",
       "text": "Every HAWK agent action carries an audit trail, and anything that books a deal or posts to the ledger waits for a person to approve it.",
-      "evidence": "production",
-      "source": "projects.md#hawk"
+      "evidence": "production"
     },
     {
       "id": "grub-sdk",
       "topic": "grubtech",
       "project": "grubtech",
       "text": "Built an order SDK in Android and Flutter versions, so any front end could fetch nearby orders and get live order updates.",
-      "evidence": "production",
-      "source": "career-bank GrubTech"
+      "evidence": "production"
     },
     {
       "id": "grub-mttr",
@@ -619,8 +573,7 @@
         "75%"
       ],
       "text": "Incident fix time fell by 75% after tracing went in.",
-      "evidence": "production",
-      "source": "career-bank GrubTech"
+      "evidence": "production"
     },
     {
       "id": "directfn-memory",
@@ -629,107 +582,92 @@
         "60%"
       ],
       "text": "Fixed performance bottlenecks that cut memory use by 60% on the trading platform.",
-      "evidence": "production",
-      "source": "career-bank DirectFN"
+      "evidence": "production"
     },
     {
       "id": "landed-eng",
       "topic": "landednz",
       "project": "landednz",
       "text": "LandedNZ has a typed error hierarchy, a versioned prompt registry, and thin adapters around the Claude API and storage, all in one TypeScript monorepo.",
-      "evidence": "production",
-      "source": "projects.md#landednz"
+      "evidence": "production"
     },
     {
       "id": "medium-sdk",
       "topic": "writing",
       "text": "Wrote up the AWS SDK v2 getObjectAsBytes memory problem on Medium so other teams migrating would avoid it.",
-      "evidence": "own-statement",
-      "source": "STAR 7.5"
+      "evidence": "own-statement"
     },
     {
       "id": "rule-explain",
       "topic": "how-i-work",
       "text": "I don't ship code I can't explain line by line, whether a person or an AI wrote it.",
-      "evidence": "own-statement",
-      "source": "about-me rules"
+      "evidence": "own-statement"
     },
     {
       "id": "rule-fallback",
       "topic": "how-i-work",
       "text": "I don't put AI on a critical path without a plain, deterministic path underneath it.",
-      "evidence": "own-statement",
-      "source": "about-me rules"
+      "evidence": "own-statement"
     },
     {
       "id": "rule-prod",
       "topic": "how-i-work",
       "text": "Nothing goes to production without logs, metrics and a way to roll back.",
-      "evidence": "own-statement",
-      "source": "about-me rules"
+      "evidence": "own-statement"
     },
     {
       "id": "rule-tools",
       "topic": "how-i-work",
       "text": "I only bring in a framework or tool when the problem needs it.",
-      "evidence": "own-statement",
-      "source": "about-me rules"
+      "evidence": "own-statement"
     },
     {
       "id": "design-first",
       "topic": "how-i-work",
       "text": "I write the design first: the problem, the approach and how it can fail. Then build, then review for failure modes, rollback and the next reader.",
-      "evidence": "own-statement",
-      "source": "about-me"
+      "evidence": "own-statement"
     },
     {
       "id": "ai-workflow",
       "topic": "how-i-work",
       "text": "My Claude Code setup runs in phases: research, a plan checked by a validator agent against architecture rules I wrote, then build with tests enforced by hooks and a reviewer agent after each piece. A /learn step saves each correction so the next session starts smarter.",
-      "evidence": "own-statement",
-      "source": "Straker interview prep, story 1"
+      "evidence": "own-statement"
     },
     {
       "id": "opinion-ai",
       "topic": "opinions",
       "text": "I think AI-assisted development is undersold. People who treat it as autocomplete get average results; people who design the workflow around it get a lot more.",
-      "evidence": "own-statement",
-      "source": "about-me"
+      "evidence": "own-statement"
     },
     {
       "id": "opinion-overrated",
       "topic": "opinions",
       "text": "Overrated: autonomous agent pipelines with fragile orchestration, and microservices as the default. Underrated: deterministic logic under AI features, so reliability is designed in.",
-      "evidence": "own-statement",
-      "source": "about-me"
+      "evidence": "own-statement"
     },
     {
       "id": "opinion-hate",
       "topic": "opinions",
       "text": "What I push back on: clever abstractions nobody can read, AI-generated code dropped into a PR without thought, tech picked because it sounds good, and building for scale you won't hit.",
-      "evidence": "own-statement",
-      "source": "about-me"
+      "evidence": "own-statement"
     },
     {
       "id": "gaia-lessons",
       "topic": "research",
       "text": "After building the same agent across four frameworks: smolagents suits a manager handing work to specialists, LangGraph suits explicit state machines, LlamaIndex suits retrieval-heavy work, and the raw SDK is where you learn what the frameworks hide.",
-      "evidence": "offline",
-      "source": "projects.md#independent-ai-gaia"
+      "evidence": "offline"
     },
     {
       "id": "settleagent",
       "topic": "research",
       "text": "Built SettleAgent on the raw Anthropic SDK with vector memory in ChromaDB, to see how agents work with no framework in the way.",
-      "evidence": "offline",
-      "source": "career-bank Independent AI"
+      "evidence": "offline"
     },
     {
       "id": "hf-cert",
       "topic": "certifications",
       "text": "Hugging Face Agentic AI certificate, January 2026. AWS Certified Solutions Architect, Associate, valid to January 2028.",
-      "evidence": "own-statement",
-      "source": "career-bank §6"
+      "evidence": "own-statement"
     }
   ],
   "stories": [
@@ -741,7 +679,6 @@
         "Tell me about a complex project you led."
       ],
       "evidence": "production",
-      "source": "STAR 7.1",
       "publicText": "Tax rules were hard-coded, so every regulation change meant code, a release and a retest. The people who understand the rules are tax professionals, so I built an engine where they write the rules themselves, versioned so an audit can replay any quarter. When the regulator changed its rules twice mid-build, the engine took both with no redeploy."
     },
     {
@@ -752,7 +689,6 @@
         "How do you build alignment without authority?"
       ],
       "evidence": "production",
-      "source": "STAR 7.2",
       "publicText": "Three teams, 15+ services, and each had its own way of logging, testing and handling errors. None of them reported to me. I started open weekly sessions on real problems in our code, moved my own service first so there was a working example, then sat with each team lead for an afternoon. Issues across the platform dropped 30% over two quarters, and the sessions kept going after I moved on."
     },
     {
@@ -763,7 +699,6 @@
         "How do you grow engineers around you?"
       ],
       "evidence": "own-statement",
-      "source": "STAR 7.3; user (4 coached in total)",
       "publicText": "Two engineers joined within a few weeks of each other, one from Java and one from Node. I paired with each on a real first feature, end to end. For the Node engineer I used what they already knew about event loops as the bridge into reactive Java. Both shipped on their own within the first month, and the Node engineer's write-up became our onboarding guide."
     },
     {
@@ -774,7 +709,6 @@
         "Tell me about a disagreement with a senior engineer."
       ],
       "evidence": "own-statement",
-      "source": "STAR 7.4",
       "publicText": "A senior engineer wanted to keep tax rules in code with a fast deploy pipeline. I wrote a one-page comparison against three real changes already coming from the regulator. He raised the runtime cost, which was fair, so I came back with benchmarks. He came round, and later pushed the same pattern on other projects himself."
     },
     {
@@ -786,7 +720,6 @@
         "Tell me about a time something went wrong."
       ],
       "evidence": "production",
-      "source": "STAR 7.5",
       "publicText": "During the AWS SDK v2 migration I picked getObjectAsBytes because it looked like the clean replacement. Tests passed, then production ran out of memory. The method has a hidden 25MB cap, and our real files were bigger. We rolled back in about ten minutes with no data lost. I moved to streaming, added a test file sized like production, and wrote it up on Medium so other teams wouldn't hit the same wall."
     },
     {
@@ -797,7 +730,6 @@
         "Tell me about delivering under pressure."
       ],
       "evidence": "production",
-      "source": "STAR 7.6",
       "publicText": "About three weeks before a milestone, the regulator changed the structure of the rules, which meant engineering work on our side. I ran it in two streams: we reworked the structure and the editor while the tax team checked which of their rules had to change. We froze anything non-essential and ran old and new formats side by side. We still finished 3 months before the FY2025 deadline, with a clean audit trail."
     },
     {
@@ -808,7 +740,6 @@
         "What decision would you make differently?"
       ],
       "evidence": "own-statement",
-      "source": "STAR 7.7; user (company: DBS)",
       "publicText": "At DBS I split notifications and audit into two services because I thought they'd scale separately. Two months in it was clearly wrong: duplicated code, two pipelines on the same events, network calls where a function call used to be. I merged them back in about two weeks. My rule now: if you're not sure, keep it together and split when there's a concrete reason."
     },
     {
@@ -819,7 +750,6 @@
         "How do you decide without full information?"
       ],
       "evidence": "production",
-      "source": "STAR 7.8",
       "publicText": "On HAWK the agent was grounded by a rules library that wasn't finished, and we had a ship date. The question was what happens when no rule matches. I pushed for a hard reject that says why, instead of letting the agent guess on something with financial outcomes. The compliance lead backed it straight away. The 'rule not found' count became the rules team's priority list."
     },
     {
@@ -830,7 +760,6 @@
         "How have you run services you built?"
       ],
       "evidence": "production",
-      "source": "STAR 7.9",
       "publicText": "At GrubTech the same few engineers built the order service and took the on-call pages. So I added distributed tracing from day one, built dashboards around what diners actually see, and wrote runbooks while the design was fresh. Time to spot an incident went from 45 minutes to 9, and fixes got 75% faster."
     },
     {
@@ -841,7 +770,6 @@
         "Tell me about working with non-engineers."
       ],
       "evidence": "production",
-      "source": "STAR 7.10",
       "publicText": "The brief said 'Excel-like UI' and I wanted a form builder. I spent two afternoons watching the tax team work instead. They lived in worksheets: jumping between cells, tracing formulas back. So we built a sheet with named cells and formulas that compiled to rules underneath, and the tax team ran the design reviews. Alignment on a rule change went from 6 weeks to 2."
     },
     {
@@ -852,7 +780,6 @@
         "Tell me about a production incident."
       ],
       "evidence": "production",
-      "source": "straker-cv-reference S1",
       "publicText": "A paid 12-language job got stuck halfway through machine translation. I traced it through the logs and a read-only view of the production database: a timeout, then a pod restart that killed the request with nothing to pick the work back up. The obvious fix would have charged the client again, so I built a recovery that only re-ran the pending work. A senior engineer ran it, and the 9,084 credits the client had paid weren't charged twice."
     },
     {
@@ -863,7 +790,6 @@
         "How do you put guardrails on AI agents?"
       ],
       "evidence": "production",
-      "source": "straker-cv-reference S11",
       "publicText": "A new product's first clients needed only approved vendors picked by the AI vendor-selection agent. Instead of changing the agent, the workflow service filters its top 15 picks and sends the job to a person if none qualify. A project manager can override it, with the reason logged. It went live for the product's first client jobs."
     },
     {
@@ -874,7 +800,6 @@
         "Have you designed an LLM agent?"
       ],
       "evidence": "own-statement",
-      "source": "straker-cv-reference S-AGENT",
       "publicText": "Clients register exact terms, and machine translation didn't always use them. I designed an LLM repair agent that runs after the other agents, puts the exact term in and fixes the grammar around it. It's deterministic, it never trusts the model's own report of what it changed, and quality scoring waits until its repairs land."
     },
     {
@@ -886,7 +811,6 @@
         "How do you find a root cause?"
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S2",
       "publicText": "Automated purchase orders for a new product were going out at $0 an hour. Working from production data, I found a recent filter had hidden about 93% of vendor rates from pricing. I worked with the person who wrote the filter to keep what they meant it to do, built a fix that reprices live $0 orders, and prepared corrections for 8 affected orders worth $1,594.67."
     },
     {
@@ -898,7 +822,6 @@
         "Tell me about security work."
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S3",
       "publicText": "In my second week, on a stack I'd just started learning, I closed a stored XSS flaw. I wrote down why encoding on output wouldn't work for us, then moved 138 request schemas across 5 services onto a shared sanitising base model with an explicit opt-out. Review feedback turned into a wider audit of 171 classes, fixed in phases."
     },
     {
@@ -909,7 +832,6 @@
         "Tell me about a performance problem."
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S5",
       "publicText": "Sending offers to vendors timed out, and retries created duplicates the operations team had to clean up by hand. The logs showed a loop making 2 calls per vendor behind a 30 second gateway limit. I added a bulk endpoint so it's one call per language pair, checked the logs again after deploy, and moved the remaining slow parts to background work."
     },
     {
@@ -920,7 +842,6 @@
         "Tell me about working with product on a fix."
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S6",
       "publicText": "An enterprise client's project sat in review for 17.5 hours. I built a timeline from logs, the database and audit records: completion waited on 6 of 13 vendor orders being confirmed. With a senior engineer I got a product decision to separate client-facing completion from that, then fixed it and 3 cancel paths that also left projects stuck."
     },
     {
@@ -931,7 +852,6 @@
         "Tell me about a database optimisation."
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S7",
       "publicText": "The project dashboard filtered on a loaded page of 50 rows, so matching jobs on later pages never showed. I moved filtering, sorting and counts into one SQL query and skipped a schema change. When a reviewer worried about speed, I benchmarked it on real PostgreSQL: about 4.4x faster at 20k jobs."
     },
     {
@@ -942,7 +862,6 @@
         "Have you done data migrations at scale?"
       ],
       "evidence": "pre-prod",
-      "source": "straker-cv-reference S8",
       "publicText": "To remove duplicate glossary terms I added a normalised column, a batched backfill, a constraint and a search filter, across two repos. In pre-production it backfilled 3,007,543 rows in a little over 2 hours with no errors. When an early constraint crash-looped a container there, I traced it in the logs and reverted."
     },
     {
@@ -953,7 +872,6 @@
         "Tell me about background jobs you've built."
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S9",
       "publicText": "Vendors who accepted an offer but never confirmed the order were never chased, and I found about 347 stale batches. I designed a sweep that reminds at 20% of the window, sends a final notice at 30%, then raises it for a person. A cross-model AI review caught a bug where the limit ran before the due filter, which could starve the sweep."
     },
     {
@@ -964,7 +882,6 @@
         "Have you built a feature end to end?"
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S10",
       "publicText": "Client complaints lived outside the system with no audit trail. I built the workflow across 4 services: tables, a state machine, an event log that can't be edited, and pushes to the operations console and vendor defect tracking that don't block the main save. After UX feedback the picker became a modal."
     },
     {
@@ -975,7 +892,6 @@
         "How do you make AI decisions auditable?"
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S12",
       "publicText": "To support EU AI Act transparency, I added an insert-only record of how each vendor was chosen, covering all 4 ways a vendor gets picked, plus a 'selection details' view. In review we made sure it keeps no personal data and clears stale agent evidence when it falls back."
     },
     {
@@ -986,7 +902,6 @@
         "How do you evaluate AI?"
       ],
       "evidence": "offline",
-      "source": "straker-cv-reference S19",
       "publicText": "I built an offline, repeatable benchmark for an adaptive machine translation option: 16 language pairs, 100 segments each, scored by the in-house quality model. It found a small but statistically significant drop for English into other languages, before anyone decided to adopt it."
     },
     {
@@ -997,7 +912,6 @@
         "What does human-in-the-loop look like in practice?"
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S24",
       "publicText": "The platform only knew whether a whole job was meant to be automated, so after a step moved on it couldn't tell which stages should still be automatic. I tested two designs. One failed a test because it would undo a manager's switch to manual; the other had a hidden bug a proof test found, which I fixed with a guard. I also built the exception console the agents raise work into, and an early warning before offers expire."
     },
     {
@@ -1008,7 +922,6 @@
         "Tell me about a tricky bug."
       ],
       "evidence": "merged",
-      "source": "straker-cv-reference S23",
       "publicText": "PDF uploads were creating duplicate deliverables, a bug that had been fixed before. The git history showed how a later rework brought it back, and there were 2 causes: conversion changed the file id, and two insert paths could race. I fixed the first with a source-file column and the second with a partial unique index built concurrently, using ON CONFLICT DO NOTHING against that exact index."
     },
     {
@@ -1019,7 +932,6 @@
         "How do you help your team?"
       ],
       "evidence": "own-statement",
-      "source": "straker-cv-reference S20",
       "publicText": "I reviewed about 35 of my teammates' pull requests and caught a tenant-isolation issue and a broken migration chain before they reached shared environments. I kept pre-production deployable with 10+ migration fixes, wrote runbooks for the operations team, and helped 2 QA colleagues start using AI tools."
     },
     {
@@ -1031,7 +943,6 @@
         "Why Cedar?"
       ],
       "evidence": "production",
-      "source": "Stories 02a; career-bank DBS",
       "publicText": "We had 30+ services in a zero-trust setup and no consistent way to check attributes at the gateway. I built a standalone policy engine on Cedar, inside the gateway process. Unauthorised access attempts dropped 95%, and it became the pattern for new services."
     },
     {
@@ -1042,7 +953,6 @@
         "How do you make deploys safer?"
       ],
       "evidence": "production",
-      "source": "Stories 02a; career-bank DBS",
       "publicText": "Any config change across our 40+ service instances meant a restart, and restarts at a bank aren't free. I set up Spring Cloud Config Server with Spring Cloud Bus so changes reach every instance live. Config-related outages stopped."
     },
     {
@@ -1054,7 +964,6 @@
         "How do you stop hallucinations?"
       ],
       "evidence": "production",
-      "source": "projects.md#hawk; Straker prep story 5",
       "publicText": "HAWK started as a broad brief: bring the hedge accounting lifecycle, spread across teams and manual steps, into one platform using AI. I chose agents over a fixed workflow because the rules kept changing and people asked one-off questions. A proxy agent screens requests, an orchestrator splits the work, and specialist agents handle allocation, booking and posting. The business rules live in a knowledge base the model can't override, and a person approves anything with real side effects."
     },
     {
@@ -1065,7 +974,6 @@
         "Tell me about your earlier work."
       ],
       "evidence": "production",
-      "source": "Stories 02a; career-bank DirectFN",
       "publicText": "At DirectFN the main project was Athena, an order management system that lets insurance and hedge funds split large orders over time with algorithms like TWAP and VWAP so they don't move the market. Each algorithm ran as its own Akka actor with its own state and supervision. Tuning mailboxes, dispatchers and serialisation gave 45% more throughput and 30% lower latency."
     },
     {
@@ -1076,7 +984,6 @@
         "Tell me about your earlier work."
       ],
       "evidence": "production",
-      "source": "Stories 02a; career-bank DirectFN",
       "publicText": "I also worked on an anti-money-laundering engine that looks for suspicious trading patterns across several sliding time windows at once, without keeping every transaction in memory. It ran on typed Akka actors and Akka HTTP."
     },
     {
@@ -1088,7 +995,6 @@
         "How do you pick a framework?"
       ],
       "evidence": "offline",
-      "source": "projects.md#independent-ai-gaia",
       "publicText": "Before moving into AI work full time, I spent about five months building the same kind of agent system in smolagents, LangGraph, LlamaIndex and the raw Anthropic SDK, against the GAIA benchmark. The smolagents version, a manager with research and audio/video specialists, got 85% on 20 medium tasks. I wanted my own view of which framework fits which problem."
     }
   ],
@@ -1099,8 +1005,7 @@
       "chose": "Filtered the agent's top 15 picks in our workflow service, keeping only approved vendors.",
       "over": "Changing the agent itself.",
       "because": "Other products use the same agent and rely on how it works today. If none of the 15 qualified, the job went to a person to assign.",
-      "evidence": "production",
-      "source": "straker-cv-reference S11"
+      "evidence": "production"
     },
     {
       "project": "straker",
@@ -1108,8 +1013,7 @@
       "chose": "Checked the repaired text itself to see which terms are there.",
       "over": "Taking the model's own report of what it changed.",
       "because": "That record is the client's proof that their terms were followed. It shouldn't depend on a model describing its own work.",
-      "evidence": "own-statement",
-      "source": "straker-cv-reference S-AGENT"
+      "evidence": "own-statement"
     },
     {
       "project": "straker",
@@ -1117,8 +1021,7 @@
       "chose": "Sent the client's glossary along with each job.",
       "over": "Calling the terminology service to look up terms for every segment (one sentence of the document).",
       "because": "That call took about 7.3 seconds per 500 segments against a 5 second timeout, and it had already killed whole batches.",
-      "evidence": "own-statement",
-      "source": "straker-cv-reference S-AGENT"
+      "evidence": "own-statement"
     },
     {
       "project": "landednz",
@@ -1126,8 +1029,7 @@
       "chose": "A rules engine that orders the steps for the person's situation.",
       "over": "Letting the AI write the plan.",
       "because": "A wrong step costs people real time and money. The AI answers questions about the plan but can't change it, so the plan still works when the AI is down.",
-      "evidence": "production",
-      "source": "projects.md#landednz"
+      "evidence": "production"
     },
     {
       "project": "landednz",
@@ -1135,8 +1037,7 @@
       "chose": "In the main PostgreSQL database, using the pgvector extension.",
       "over": "A separate database just for AI search.",
       "because": "The data is small. One database means one backup and one thing to run.",
-      "evidence": "production",
-      "source": "projects.md#landednz"
+      "evidence": "production"
     },
     {
       "project": "globe",
@@ -1144,8 +1045,7 @@
       "chose": "Moved the rules into templates (written in MVEL) that the tax team edits themselves.",
       "over": "Keeping the rules in code and speeding up releases.",
       "because": "The rules changed too often for a release cycle, and benchmarks showed the templates ran fast enough for our volume.",
-      "evidence": "production",
-      "source": "STAR 7.4; projects.md#globe-dtt"
+      "evidence": "production"
     },
     {
       "project": "globe",
@@ -1153,8 +1053,7 @@
       "chose": "Gave every rule template a version number and kept the old versions.",
       "over": "Editing rules in place.",
       "because": "We can rerun any calculation against the exact version of the rules that applied on that date.",
-      "evidence": "production",
-      "source": "projects.md#globe-dtt"
+      "evidence": "production"
     },
     {
       "project": "globe",
@@ -1162,8 +1061,7 @@
       "chose": "A worksheet-style editor with named cells and formulas.",
       "over": "A form builder, which was my first idea.",
       "because": "I spent two afternoons watching the tax team work. They think in cells and formulas, and a form would have fought them at every step.",
-      "evidence": "production",
-      "source": "STAR 7.10"
+      "evidence": "production"
     },
     {
       "project": "dega",
@@ -1171,8 +1069,7 @@
       "chose": "Streamed each file through in pieces.",
       "over": "Loading each whole file into memory.",
       "because": "The method we first used, getObjectAsBytes, has a hidden 25MB cap, and real trade files are bigger.",
-      "evidence": "production",
-      "source": "STAR 7.5"
+      "evidence": "production"
     },
     {
       "project": "dega",
@@ -1180,8 +1077,7 @@
       "chose": "Used the reactive version of the SDK with WebFlux.",
       "over": "Keeping blocking calls.",
       "because": "We had to move to v2 anyway, and the blocking calls were the part that slowed down when markets got busy.",
-      "evidence": "production",
-      "source": "STAR 7.5; user, 2026-10-21"
+      "evidence": "production"
     },
     {
       "project": "grubtech",
@@ -1189,8 +1085,7 @@
       "chose": "Confirmed orders from a Redis cache and wrote them to MongoDB shortly after (write-behind caching).",
       "over": "Writing every order straight to MongoDB.",
       "because": "The database was the bottleneck at peak times. The cache takes the burst, and the writes catch up a moment later.",
-      "evidence": "production",
-      "source": "career-bank GrubTech"
+      "evidence": "production"
     },
     {
       "project": "grubtech",
@@ -1198,8 +1093,7 @@
       "chose": "What diners see, such as how long a kitchen update takes to reach the diner's screen.",
       "over": "Only the service's internal metrics.",
       "because": "The diner's screen is where problems show first, and I wanted to find the cause from one dashboard when paged at 3am.",
-      "evidence": "production",
-      "source": "STAR 7.9"
+      "evidence": "production"
     },
     {
       "project": "straker",
@@ -1207,8 +1101,7 @@
       "chose": "Added bulk endpoints, so it makes one call per language pair.",
       "over": "Keeping the loop that made two calls per vendor.",
       "because": "The loop ran past the gateway's 30 second limit, and every retry sent the same vendors another offer.",
-      "evidence": "merged",
-      "source": "straker-cv-reference S5"
+      "evidence": "merged"
     },
     {
       "project": "straker",
@@ -1216,8 +1109,7 @@
       "chose": "Added a PostgreSQL rule that allows only one visible deliverable per file and language (a partial unique index, built without blocking live traffic).",
       "over": "Catching the duplicate error in application code.",
       "because": "Only the database sees both saves at once, so it's the one place that can block the second.",
-      "evidence": "merged",
-      "source": "straker-cv-reference S23"
+      "evidence": "merged"
     },
     {
       "project": "landednz",
@@ -1225,17 +1117,15 @@
       "chose": "One TypeScript repository for both, sharing the same types.",
       "over": "Separate repositories for the web app and the API.",
       "because": "Both sides use the same type definitions, so the API and the app can't quietly drift apart.",
-      "evidence": "production",
-      "source": "projects.md#landednz"
+      "evidence": "production"
     },
     {
       "project": "dega",
       "question": "30+ services needed the same access checks at the API gateway. Where should the policy check run?",
       "chose": "Inside the gateway, using Cedar.",
       "over": "OPA running as a separate service.",
-      "because": "The check runs in the same process on the JVM, and Cedar's rules behave in a precisely defined way. We didn't have to run another service or learn another policy language.",
-      "evidence": "production",
-      "source": "Stories 02a"
+      "because": "The check runs in the same process on the JVM, and Cedar policies have a formally defined meaning. We didn't have to run another service or learn another policy language.",
+      "evidence": "production"
     },
     {
       "project": "dega",
@@ -1243,8 +1133,7 @@
       "chose": "Used Spring Cloud Bus with Spring Cloud Config.",
       "over": "Our own Kafka topic for config updates.",
       "because": "It was already part of our Spring stack, so we didn't have to run a second messaging setup.",
-      "evidence": "production",
-      "source": "Stories 02a"
+      "evidence": "production"
     },
     {
       "project": "grubtech",
@@ -1252,8 +1141,7 @@
       "chose": "Queued the changes at the service so they apply one at a time, in order.",
       "over": "Letting the last write win.",
       "because": "Otherwise one update silently overwrites the other, and the diner sees the wrong status.",
-      "evidence": "production",
-      "source": "career-bank GrubTech"
+      "evidence": "production"
     },
     {
       "project": "hawk",
@@ -1261,8 +1149,7 @@
       "chose": "AI agents, with a rules engine underneath that checks their work.",
       "over": "A fixed workflow graph.",
       "because": "A fixed graph couldn't handle one-off questions or rules that kept changing. Every action that changes another system, like a booking, still needs a person to approve it.",
-      "evidence": "production",
-      "source": "projects.md#hawk"
+      "evidence": "production"
     },
     {
       "project": "hawk",
@@ -1270,8 +1157,7 @@
       "chose": "Two modes side by side: ready-made templates and free-form questions.",
       "over": "One free-form chat for everyone.",
       "because": "Hedge professionals wanted predictable templates and traders wanted free-form questions. Offering both let each group start when they were ready.",
-      "evidence": "production",
-      "source": "projects.md#hawk"
+      "evidence": "production"
     },
     {
       "project": "hawk",
@@ -1279,8 +1165,7 @@
       "chose": "Put an MCP-style adapter in front of each system.",
       "over": "Wiring the agents straight to each system.",
       "because": "The agents and the old systems can then change without breaking each other.",
-      "evidence": "production",
-      "source": "projects.md#hawk"
+      "evidence": "production"
     },
     {
       "project": "directfn",
@@ -1288,8 +1173,7 @@
       "chose": "Ran each algorithm as its own Akka actor.",
       "over": "Shared state protected by locks.",
       "because": "Each order had its own state and lifecycle. If one failed, it restarted on its own without taking the others down.",
-      "evidence": "production",
-      "source": "Stories 02a"
+      "evidence": "production"
     },
     {
       "project": "research",
@@ -1297,8 +1181,7 @@
       "chose": "Built on the raw SDK first.",
       "over": "Starting with a framework.",
       "because": "Frameworks hide complexity on purpose. I wanted to know what they hide before something breaks.",
-      "evidence": "offline",
-      "source": "projects.md#independent-ai-gaia"
+      "evidence": "offline"
     }
   ],
   "answers": [

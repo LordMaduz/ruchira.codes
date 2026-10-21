@@ -71,13 +71,11 @@
   "education": [
     {
       "institution": "University of Westminster, United Kingdom",
-      "studyType": "MSc Software Engineering, research in blockchain",
-      "endDate": "June 2025"
+      "studyType": "MSc Software Engineering, research in blockchain"
     },
     {
       "institution": "University of Peradeniya, Sri Lanka",
-      "studyType": "BSc Statistics and Operational Research",
-      "endDate": "March 2019"
+      "studyType": "BSc Statistics and Operational Research"
     }
   ],
   "certificates": [

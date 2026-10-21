@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { expect, test } from "vitest";
 import { KB, decisionsFor, proofFor, storyById } from "./kb";
 import { PROJECTS } from "./projects";
@@ -8,9 +9,15 @@ test("every metric on the site is a public fact", () => {
   expect(shown.filter((v) => !backed.has(v))).toEqual([]);
 });
 
-test("public KB carries no visibility, ownWords or logistics", () => {
+test("public KB carries no visibility, ownWords, logistics or private source notes", () => {
   const s = JSON.stringify(KB);
-  ["\"visibility\"", "\"ownWords\"", "\"logistics\""].forEach((k) => expect(s).not.toContain(k));
+  ["\"visibility\"", "\"ownWords\"", "\"logistics\"", "\"source\""].forEach((k) => expect(s).not.toContain(k));
+});
+
+test("public outputs never show the private career start year", () => {
+  // 2019 was shared as private context; a graduation date would give it away
+  [JSON.stringify(KB), readFileSync("public/llms.txt", "utf8"), readFileSync("public/resume.json", "utf8")]
+    .forEach((s) => expect(s).not.toContain("2019"));
 });
 
 test("every answer and proof link resolves", () => {

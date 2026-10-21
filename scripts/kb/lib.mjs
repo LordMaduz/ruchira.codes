@@ -32,8 +32,9 @@ export function validate(kb, projectIds) {
 }
 
 export function toPublic(kb) {
-  const strip = ({ visibility, ownWords, ...rest }) => rest;
-  const pub = { identity: kb.identity };
+  const strip = ({ visibility, ownWords, source, ...rest }) => rest;
+  // graduation dates stay private: they give away the career start year
+  const pub = { identity: { ...kb.identity, education: kb.identity.education?.map(({ when, ...e }) => e) } };
   for (const sec of SECTIONS) pub[sec] = kb[sec].filter((e) => e.visibility === "public").map(strip);
   return pub;
 }
@@ -52,7 +53,7 @@ export function renderLlms(pub) {
     "## Roles", "",
     ...i.roles.map((r) => `- ${r.title}, ${r.org} (${r.when}): ${r.summary}`), "",
   ];
-  if (i.education?.length) out.push("## Education", "", ...i.education.map((e) => `- ${e.degree}, ${e.school} (${e.when})`), "");
+  if (i.education?.length) out.push("## Education", "", ...i.education.map((e) => `- ${e.degree}, ${e.school}${e.when ? ` (${e.when})` : ""}`), "");
   out.push("## Selected facts", "", ...pub.facts.map((f) => `- ${f.text}`), "");
   out.push("## Stories", "", ...pub.stories.flatMap((s) => [`### ${s.title}`, "", s.publicText, ""]));
   out.push("## Decisions", "", ...pub.decisions.map((d) => `- ${d.question}\n  - What I did: ${d.chose}\n  - Instead of: ${d.over}\n  - Why: ${d.because}`), "");

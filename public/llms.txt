@@ -15,8 +15,8 @@ Portfolio: https://lordmaduz.github.io/ruchira.codes/
 
 ## Education
 
-- MSc Software Engineering, research in blockchain, University of Westminster, United Kingdom (June 2025)
-- BSc Statistics and Operational Research, University of Peradeniya, Sri Lanka (March 2019)
+- MSc Software Engineering, research in blockchain, University of Westminster, United Kingdom
+- BSc Statistics and Operational Research, University of Peradeniya, Sri Lanka
 
 ## Selected facts
 
@@ -276,7 +276,7 @@ Before moving into AI work full time, I spent about five months building the sam
 - 30+ services needed the same access checks at the API gateway. Where should the policy check run?
   - What I did: Inside the gateway, using Cedar.
   - Instead of: OPA running as a separate service.
-  - Why: The check runs in the same process on the JVM, and Cedar's rules behave in a precisely defined way. We didn't have to run another service or learn another policy language.
+  - Why: The check runs in the same process on the JVM, and Cedar policies have a formally defined meaning. We didn't have to run another service or learn another policy language.
 - Changing config on our 40+ service instances meant restarting them. How do we push changes live?
   - What I did: Used Spring Cloud Bus with Spring Cloud Config.
   - Instead of: Our own Kafka topic for config updates.
