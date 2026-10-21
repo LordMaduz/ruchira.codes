@@ -67,7 +67,7 @@ Runs locally (`pnpm kb:export`). CI never sees `Me/`, so the outputs are committ
 
 ## 6. Out of scope (each gets its own short spec later)
 
-Generated PDF, per-company pages (`/for/<company>`), the video intro, the MCP endpoint, an LLM-backed Ask box, the LandedNZ redesign, and the GitHub profile README fix ("Mobile and web app" in its LandedNZ diagram).
+Generated PDF, per-company pages (`/for/<company>`), the video intro, the MCP endpoint, an LLM-backed Ask box and the LandedNZ redesign. The GitHub profile README fix moved into this plan (user, 2026-10-21).
 
 ## 7. Build order
 
