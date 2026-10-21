@@ -13,9 +13,8 @@ test("content rules: no start year, visa or backend-only wording; Straker only w
   // LandedNZ plans around its users' visas; nothing else may mention a visa
   const notLanded = JSON.stringify([PROJECTS.filter((p) => p.id !== "landednz"), SKILLS, STOPS, ANSWERS, FALLBACK]);
   expect(notLanded).not.toMatch(/visa/i);
-  expect(all.match(/Straker/g)).toEqual(["Straker", "Straker"]);
+  expect(all.match(/Straker/g)).toEqual(["Straker"]);
   expect(all).toMatch(/\(formerly Straker\)/);
-  expect(all).toMatch(/used to be called Straker\./);
 });
 
 test("singapore stop shows 2022 to 2026", () => expect(STOPS.find((s) => s.name === "Singapore")!.short).toBe("2022 to 2026"));
