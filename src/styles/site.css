@@ -258,3 +258,5 @@ nav.site-nav { position: fixed; top: 16px; left: 16px; right: 16px; z-index: 50 
 /* Tailwind's preflight resets these browser defaults that the mockup relies on */
 .dr-box h2, .dr-box h3, .journey-info h3, .sent h3 { font-weight: 700 }
 .dr-box ul.did { list-style: disc }
+/* keeps About's height steady until the globe chunk loads */
+.journey-ph { min-height: calc(min(340px, 78vw) + 14.5rem) }

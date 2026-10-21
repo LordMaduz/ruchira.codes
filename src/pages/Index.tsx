@@ -24,7 +24,7 @@ export default function Index() {
         <HomeSection setActiveSection={setActiveSection} />
 
         {/* About Section - Natural height */}
-        <AboutSection setActiveSection={setActiveSection} />
+        <AboutSection />
 
         {/* Skills Section */}
         <SkillsSection onOpenProject={openProject} />
