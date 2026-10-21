@@ -306,6 +306,19 @@ Before moving into AI work full time, I spent about five months building the sam
   - Instead of: Starting with a framework.
   - Why: Frameworks hide complexity on purpose. I wanted to know what they hide before something breaks.
 
+## How I work with AI
+
+- I work in a fixed loop: a written spec signed off section by section, a plan checked against that spec, a git worktree per ticket, test-driven build, then review by several agents and by models from other vendors. Each correction becomes a written rule for the next session.
+- For my own development and code review I use Claude Code plus a second AI coding harness behind the company's LLM gateway: 11 models from 5 vendors. I pick the model per task on cost, quality and speed.
+- Cross-model review caught two critical bugs at Arbitr before merge: a background sweep that could skip work indefinitely, and a key collision when two events arrived in the same second.
+- I use fresh agents with no prior context to audit specs and plans. I choose sequential or parallel agents per task, because fanning out is sometimes slower and costs more.
+- I keep 33 workflow rules, each written after a mistake it now prevents.
+- Token-compression tooling cut my token use by about 26% over 2,209 commands, and light work goes to cheaper models.
+- I try new agent workflows on real tickets before recommending them. I ran a full epic on an alternative framework, wrote up the pros and cons, and that write-up informed the team's decision to stay with the current one.
+- I use MCP integrations for the ticket tracker, ELK log search, and Playwright screenshots and layout checks.
+- At Arbitr I adopted, extended and operationalised the team's AI tooling, and wrote a brand skill and guard tests that check later contributors' changes.
+- I did about 35 AI-assisted peer reviews and helped 2 QA colleagues set up AI tooling.
+
 ## Proof
 
 - [LandedNZ (live)](https://landednz.vercel.app)
