@@ -1,7 +1,7 @@
 # Portfolio redesign: design spec
 
 Date: 2026-10-21
-Status: waiting for user review
+Status: approved 2026-10-21
 
 ## Goal
 
@@ -17,7 +17,7 @@ The site keeps the look of the current live site. The new parts are a globe Abou
 
 The approved mockup is the reference for layout, copy, motion and mobile behaviour. If this spec and the mockup disagree, the mockup wins, unless this spec says the change is on purpose.
 
-- Mockup page: https://claude.ai/artifact/CM7z5JBMJcKVSxqAbhVzTa (version 4)
+- Mockup page: https://claude.ai/artifact/CM7z5JBMJcKVSxqAbhVzTa (version 5)
 - Mockup source, kept in the session scratchpad:
   - `orig/body.html`: markup
   - `orig/head.html`: CSS tokens and styles
