@@ -61,13 +61,16 @@ export default function ContactSection() {
           <a className="btn solid" href="https://cal.com/ruchira-rajapaksha" target="_blank" rel="noopener noreferrer">Open my calendar</a>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          {/* the thank-you panel covers the fields, so take them out of the tab order */}
+          <div className="fields" inert={!!sent}>
           <div className="row2">
             <div><label htmlFor="c-name">Name</label><input {...field("name")} autoComplete="name" placeholder="Jane Smith" />{err("name")}</div>
             <div><label htmlFor="c-email">Email</label><input {...field("email")} type="email" autoComplete="email" spellCheck={false} placeholder="jane@company.co.nz" />{err("email")}</div>
           </div>
           <div><label htmlFor="c-message">Message</label><textarea {...field("message")} rows={4} placeholder="Tell me about the role or the project" />{err("message")}</div>
-          {failed && <p className="err" role="alert">That didn't send. Try again, or email me from LinkedIn.</p>}
+          {failed && <p className="err" role="alert">That didn't send. Try again, or message me on LinkedIn.</p>}
           <button className="btn solid send" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending…" : "Send message"}</button>
+          </div>
           {sent && (
             <div className="sent" tabIndex={-1} role="status" ref={sentRef}>
               <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="m8 12.5 2.8 2.8L16.5 9" /></svg>

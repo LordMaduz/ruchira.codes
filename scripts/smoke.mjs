@@ -56,8 +56,19 @@ try {
     await p.fill("#c-name", "Jane Smith"); await p.fill("#c-email", "jane@company.co.nz"); await p.fill("#c-message", "Hello there");
     await p.click(".contact .send");
     await p.locator("[role=alert]").waitFor();
-    assert.equal(await p.locator("[role=alert]").textContent(), "That didn't send. Try again, or email me from LinkedIn.");
+    assert.equal(await p.locator("[role=alert]").textContent(), "That didn't send. Try again, or message me on LinkedIn.");
     assert.deepEqual([await p.inputValue("#c-name"), await p.inputValue("#c-email"), await p.inputValue("#c-message")], ["Jane Smith", "jane@company.co.nz", "Hello there"]);
+    await p.context().close();
+  }
+
+  // 3b. after a successful send the hidden fields can't be tabbed into
+  {
+    const p = await page({ viewport: { width: 375, height: 812 } });
+    await p.route("https://api.web3forms.com/**", (r) => r.fulfill({ status: 200, contentType: "application/json", body: '{"success":true}' }));
+    await p.fill("#c-name", "Jane Smith"); await p.fill("#c-email", "jane@company.co.nz"); await p.fill("#c-message", "Hello there");
+    await p.click(".contact .send");
+    await p.locator(".sent").waitFor();
+    assert.equal(await p.locator("#c-name").evaluate((el) => !!el.closest("[inert]")), true, "fields stay reachable behind the thank-you panel");
     await p.context().close();
   }
 
