@@ -53,6 +53,7 @@ export function renderLlms(pub) {
   ];
   if (i.education?.length) out.push("## Education", "", ...i.education.map((e) => `- ${e.degree}, ${e.school} (${e.when})`), "");
   out.push("## Selected facts", "", ...pub.facts.map((f) => `- ${f.text}`), "");
+  out.push("## Stories", "", ...pub.stories.flatMap((s) => [`### ${s.title}`, "", s.publicText, ""]));
   out.push("## Decisions", "", ...pub.decisions.map((d) => `- ${d.chose} over ${d.over.toLowerCase()}, because ${d.because}`), "");
   out.push("## Proof", "", ...pub.proof.map((p) => `- [${p.label}](${p.href})`), "");
   out.push("## Links", "", ...Object.entries(i.links).map(([k, v]) => `- ${k}: ${v}`), "");

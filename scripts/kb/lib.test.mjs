@@ -86,6 +86,7 @@ test("renderLlms starts with the name and lists every public proof link", () => 
   const txt = renderLlms(pub);
   expect(txt.startsWith("# Test Person")).toBe(true);
   pub.proof.forEach((p) => expect(txt).toContain(p.href));
+  expect(txt).toContain("### T\n\nP");
   expect(txt).not.toContain("hidden.example.com");
 });
 
