@@ -30,6 +30,13 @@ const fixture = () => ({
     { visibility: "public", label: "Repo", href: "https://github.com/x/repo", kind: "repo" },
     { visibility: "private", label: "Hidden", href: "https://hidden.example.com", kind: "repo" },
   ],
+  aiPractice: [
+    { id: "ai1", visibility: "public", topic: "loop", text: "Public loop", evidence: "own-statement", source: "s" },
+    { id: "ai2", visibility: "private", topic: "loop", text: "Private loop", evidence: "own-statement", source: "s" },
+  ],
+  direction: [
+    { id: "d1", visibility: "public", kind: "mine", text: "Where I go", evidence: "own-statement", source: "s" },
+  ],
 });
 
 test("toPublic drops private entries, ownWords and logistics", () => {
@@ -112,4 +119,45 @@ test("renderJsonLd is a Person with sameAs profile links, not the booking link",
   const j = renderJsonLd(toPublic(kb));
   expect(j["@type"]).toBe("Person");
   expect(j.sameAs).toEqual(["https://github.com/x"]);
+});
+
+test("validate passes a kb without aiPractice or direction", () => {
+  const kb = fixture();
+  delete kb.aiPractice;
+  delete kb.direction;
+  expect(validate(kb, ["p1"])).toEqual([]);
+  expect(() => toPublic(kb)).not.toThrow();
+});
+
+test("validate checks aiPractice and direction entries", () => {
+  const kb = fixture();
+  delete kb.aiPractice[0].evidence;
+  kb.direction[0].kind = "other";
+  kb.direction[0].when = "soon";
+  const problems = validate(kb, ["p1"]);
+  expect(problems).toContain("aiPractice[0] (id ai1): missing evidence");
+  expect(problems.join("\n")).toMatch(/direction\[0\].*kind/);
+  expect(problems.join("\n")).toMatch(/direction\[0\].*when/);
+});
+
+test("validate rejects an unknown aiPractice topic", () => {
+  const kb = fixture();
+  kb.aiPractice[0].topic = "misc";
+  expect(validate(kb, ["p1"]).join("\n")).toMatch(/aiPractice\[0\].*topic/);
+});
+
+test("toPublic keeps public aiPractice and drops direction entirely", () => {
+  const pub = toPublic(fixture());
+  expect(pub.aiPractice.map((e) => e.id)).toEqual(["ai1"]);
+  expect("source" in pub.aiPractice[0]).toBe(false);
+  expect("visibility" in pub.aiPractice[0]).toBe(false);
+  expect("direction" in pub).toBe(false);
+});
+
+test("renderLlms adds How I work with AI from public aiPractice", () => {
+  const txt = renderLlms(toPublic(fixture()));
+  expect(txt).toContain("## How I work with AI");
+  expect(txt).toContain("Public loop");
+  expect(txt).not.toContain("Private loop");
+  expect(txt).not.toContain("Where I go");
 });

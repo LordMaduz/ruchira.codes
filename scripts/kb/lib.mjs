@@ -2,8 +2,10 @@
 
 const VISIBILITY = ["public", "on-request", "private"];
 const EVIDENCE = ["production", "merged", "pre-prod", "offline", "own-statement"];
-const SECTIONS = ["facts", "stories", "decisions", "answers", "proof"];
-const NEEDS_EVIDENCE = ["facts", "stories", "decisions"];
+const SECTIONS = ["facts", "stories", "decisions", "answers", "proof", "aiPractice", "direction"];
+const NEEDS_EVIDENCE = ["facts", "stories", "decisions", "aiPractice", "direction"];
+const TOPICS = ["loop", "models", "review", "memory", "cost", "tools", "enablement"];
+const KINDS = ["company", "mine", "exploring"];
 
 const label = (sec, i, e) => `${sec}[${i}]${e.id ? ` (id ${e.id})` : ""}`;
 
@@ -11,7 +13,7 @@ export function validate(kb, projectIds) {
   const problems = [];
   const storyIds = new Set(kb.stories.map((s) => s.id));
   for (const sec of SECTIONS) {
-    kb[sec].forEach((e, i) => {
+    (kb[sec] ?? []).forEach((e, i) => {
       const at = label(sec, i, e);
       if (!VISIBILITY.includes(e.visibility)) problems.push(`${at}: bad visibility "${e.visibility}"`);
       if (NEEDS_EVIDENCE.includes(sec)) {
@@ -20,6 +22,9 @@ export function validate(kb, projectIds) {
         if (!e.source) problems.push(`${at}: missing source`);
       }
       if (sec === "decisions" && !e.question) problems.push(`${at}: missing question`);
+      if (sec === "aiPractice" && !TOPICS.includes(e.topic)) problems.push(`${at}: bad topic "${e.topic}"`);
+      if (sec === "direction" && !KINDS.includes(e.kind)) problems.push(`${at}: bad kind "${e.kind}"`);
+      if (sec === "direction" && e.when !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(e.when)) problems.push(`${at}: bad when "${e.when}"`);
       const hrefs = [e.href, ...(e.links ?? []).map((l) => l.href)].filter(Boolean);
       hrefs.forEach((h) => { if (!h.startsWith("https://")) problems.push(`${at}: link must be https: ${h}`); });
       (e.links ?? []).forEach((l) => {
@@ -35,7 +40,8 @@ export function toPublic(kb) {
   const strip = ({ visibility, ownWords, source, ...rest }) => rest;
   // graduation dates stay private: they give away the career start year
   const pub = { identity: { ...kb.identity, education: kb.identity.education?.map(({ when, ...e }) => e) } };
-  for (const sec of SECTIONS) pub[sec] = kb[sec].filter((e) => e.visibility === "public").map(strip);
+  // direction is never public, whatever its visibility
+  for (const sec of SECTIONS.filter((s) => s !== "direction")) pub[sec] = (kb[sec] ?? []).filter((e) => e.visibility === "public").map(strip);
   return pub;
 }
 
@@ -57,6 +63,7 @@ export function renderLlms(pub) {
   out.push("## Selected facts", "", ...pub.facts.map((f) => `- ${f.text}`), "");
   out.push("## Stories", "", ...pub.stories.flatMap((s) => [`### ${s.title}`, "", s.publicText, ""]));
   out.push("## Decisions", "", ...pub.decisions.map((d) => `- ${d.question}\n  - What I did: ${d.chose}\n  - Instead of: ${d.over}\n  - Why: ${d.because}`), "");
+  if (pub.aiPractice?.length) out.push("## How I work with AI", "", ...pub.aiPractice.map((e) => `- ${e.text}`), "");
   out.push("## Proof", "", ...pub.proof.map((p) => `- [${p.label}](${p.href})`), "");
   out.push("## Links", "", ...Object.entries(i.links).map(([k, v]) => `- ${k}: ${v}`), "");
   return out.join("\n");

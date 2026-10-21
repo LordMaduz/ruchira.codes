@@ -29,4 +29,4 @@ if (leaks.length) {
 }
 
 for (const [file, text] of Object.entries(outputs)) writeFileSync(file, text);
-console.log(`Exported ${pub.facts.length} facts, ${pub.stories.length} stories, ${pub.decisions.length} decisions, ${pub.answers.length} answers, ${pub.proof.length} proof links.`);
+console.log(`Exported ${pub.facts.length} facts, ${pub.stories.length} stories, ${pub.decisions.length} decisions, ${pub.answers.length} answers, ${pub.proof.length} proof links, ${pub.aiPractice.length} AI practice entries.`);
