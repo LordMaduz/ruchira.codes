@@ -1506,7 +1506,6 @@
     {
       "id": "where",
       "keys": [
-        "where",
         "based",
         "location",
         "auckland",
@@ -1515,7 +1514,8 @@
         "remote",
         "work rights",
         "sponsor",
-        "relocat"
+        "relocat",
+        "where are you"
       ],
       "text": "I'm in Auckland and looking for onsite or hybrid roles here. I have open work rights in New Zealand, so no sponsorship is needed.",
       "links": [
@@ -1547,13 +1547,14 @@
       "keys": [
         "github",
         "repo",
-        "code",
         "writing",
         "medium",
         "blog",
         "certif",
         "aws",
-        "proof"
+        "proof",
+        "source code",
+        "portfolio of code"
       ],
       "text": "My code examples are on GitHub, including the LandedNZ backend. I've written about 80 posts on Medium and 6 tutorials for Baeldung, and I'm AWS certified as a Solutions Architect.",
       "links": [
@@ -1694,7 +1695,8 @@
         "workflow",
         "how do you use ai",
         "ai assisted",
-        "vibe"
+        "vibe",
+        "claude"
       ],
       "text": "I use Claude Code as a system with rules. It researches first, then writes a plan that a validator agent checks against architecture rules I wrote, then builds with tests enforced by hooks and a reviewer agent after each piece. I don't ship code I can't explain line by line, whoever wrote it.",
       "links": []

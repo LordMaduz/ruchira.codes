@@ -4,8 +4,10 @@ import { preview } from "vite";
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
 
-const server = await preview({ preview: { port: 4173, strictPort: true }, logLevel: "silent" });
-const URL = "http://localhost:4173/ruchira.codes/";
+// SMOKE_PORT lets this run while another preview server holds 4173
+const port = Number(process.env.SMOKE_PORT ?? 4173);
+const server = await preview({ preview: { port, strictPort: true }, logLevel: "silent" });
+const URL = `http://localhost:${port}/ruchira.codes/`;
 const shots = process.env.SHOTS_DIR;
 const browser = await chromium.launch();
 const dark = () => localStorage.setItem("theme-storage", '{"state":{"theme":"dark"},"version":0}');
@@ -87,6 +89,10 @@ try {
     assert.equal(await p.locator(".convo").getAttribute("aria-live"), null, "typing area is a live region");
     await p.waitForFunction(() => document.querySelector("[data-ask-live]")?.textContent?.startsWith("I'm an AI Product Engineer"), null, { timeout: 8000 })
       .catch(() => assert.fail("finished answer was not announced"));
+    // the answer's proof link opens that project's drawer
+    await p.locator(".ask-links button", { hasText: "The Arbitr story" }).click();
+    await p.locator(".dr-box", { hasText: "Guardrails for AI agents" }).waitFor({ timeout: 3000 })
+      .catch(() => assert.fail("ask box link did not open the Arbitr drawer"));
     await p.context().close();
   }
 

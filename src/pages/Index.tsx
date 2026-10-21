@@ -21,7 +21,7 @@ export default function Index() {
       {/* All Sections Rendered - Smooth Scroll */}
       <main>
         {/* Home Section - KEEP min-h-screen */}
-        <HomeSection setActiveSection={setActiveSection} />
+        <HomeSection setActiveSection={setActiveSection} onOpenProject={openProject} />
 
         {/* About Section - Natural height */}
         <AboutSection />

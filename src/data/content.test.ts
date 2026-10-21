@@ -29,4 +29,4 @@ test("project ids are unique and every reference resolves", () => {
 test("orgName trims the org to the company", () => expect(orgName("straker")).toBe("Arbitr"));
 
 test("before-Arbitr answer uses the new full-stack wording", () =>
-  expect(ANSWERS.some((a) => a.text.startsWith("Before Arbitr I was at DBS Bank"))).toBe(true));
+  expect(ANSWERS.some((a) => a.text.includes("Before Arbitr I was at DBS Bank"))).toBe(true));

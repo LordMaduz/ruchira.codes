@@ -5,9 +5,10 @@ import AskBox from "./AskBox";
 
 interface HomeSectionProps {
   setActiveSection: (section: string) => void;
+  onOpenProject?: (id: string, el: HTMLElement) => void;
 }
 
-export default function HomeSection({ setActiveSection }: HomeSectionProps) {
+export default function HomeSection({ setActiveSection, onOpenProject }: HomeSectionProps) {
   const theme = useThemeStore((state) => state.theme);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -52,7 +53,7 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
           <a className="btn solid" href="https://cal.com/ruchira-rajapaksha" target="_blank" rel="noopener noreferrer">Book a 20-minute chat</a>
           <a className="btn soft" href="#work" onClick={(e) => { e.preventDefault(); scrollToSection('work'); }}>See my work</a>
         </div>
-        <AskBox />
+        <AskBox onOpenProject={onOpenProject} />
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ export type Project = {
 };
 export type Skill = { t: string; s: string; tools: string[]; proof: [projectId: string, text: string][] };
 export type Stop = { at: [number, number]; name: string; short: string; side?: "below" | "left"; cmd: string; title: string; story: string };
-export type Answer = { keys: string[]; text: string };
+export type Answer = KbAnswer;
 
 export type Evidence = "production" | "merged" | "pre-prod" | "offline" | "own-statement";
 export type KbLink = { label: string; project?: string; story?: string; href?: string };
