@@ -6,9 +6,12 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ProjectDrawer from "@/components/ProjectDrawer";
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
+  const [open, setOpen] = useState<{ id: string; el: HTMLElement } | null>(null);
+  const openProject = (id: string, el: HTMLElement) => setOpen({ id, el });
 
   return (
     <div className="min-h-screen">
@@ -27,7 +30,7 @@ export default function Index() {
         <SkillsSection />
 
         {/* Projects Section */}
-        <ProjectsSection />
+        <ProjectsSection onOpenProject={openProject} />
 
         {/* Contact Section */}
         <ContactSection />
@@ -35,6 +38,8 @@ export default function Index() {
         {/* Footer */}
         <Footer />
       </main>
+
+      <ProjectDrawer id={open?.id ?? null} opener={open?.el ?? null} onClose={() => setOpen(null)} />
     </div>
   );
 }

@@ -254,3 +254,7 @@ nav.site-nav { position: fixed; top: 16px; left: 16px; right: 16px; z-index: 50 
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important } html { scroll-behavior: auto } }
 
+
+/* Tailwind's preflight resets these browser defaults that the mockup relies on */
+.dr-box h2, .dr-box h3, .journey-info h3, .sent h3 { font-weight: 700 }
+.dr-box ul.did { list-style: disc }
