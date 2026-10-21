@@ -31,7 +31,10 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
           <img
             src={theme === 'dark' ? imageBlack : imageWhite}
             alt="Ruchira Rajapaksha"
+            width={208}
+            height={208}
             loading="eager"
+            fetchPriority="high"
           />
         </div>
         <h1>Hey, I'm Ruchira.<span>AI Product Engineer</span></h1>

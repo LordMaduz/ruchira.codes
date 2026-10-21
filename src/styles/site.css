@@ -262,3 +262,9 @@ nav.site-nav { position: fixed; top: 16px; left: 16px; right: 16px; z-index: 50 
 .journey-ph { min-height: calc(min(340px, 78vw) + 14.5rem) }
 /* the status line wraps on the narrowest phones; drop the dot so it doesn't dangle */
 @media (max-width: 370px) { .status .sep { display: none } }
+
+/* review fixes: 44px close target, drawer scroll stays inside, dots get a 24px hit area */
+.dr-box { overscroll-behavior: contain }
+.dr-box .close { width: 44px; height: 44px; top: 14px; right: 14px }
+.dots button { position: relative }
+.dots button::after { content: ""; position: absolute; inset: -8px -4px }
