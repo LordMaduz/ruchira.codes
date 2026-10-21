@@ -71,6 +71,10 @@ try {
     const first = await chips.nth(0).textContent();
     await chips.nth(0).click(); await chips.nth(1).click();
     assert.equal(await p.locator(".convo .q").textContent(), first, "second question interrupted the first");
+    // screen readers hear the finished answer once, not every typed fragment
+    assert.equal(await p.locator(".convo").getAttribute("aria-live"), null, "typing area is a live region");
+    await p.waitForFunction(() => document.querySelector("[data-ask-live]")?.textContent?.startsWith("I'm an AI Product Engineer"), null, { timeout: 8000 })
+      .catch(() => assert.fail("finished answer was not announced"));
     await p.context().close();
   }
 
