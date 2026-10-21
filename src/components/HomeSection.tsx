@@ -1,5 +1,5 @@
-import imageBlack from "../assets/Ruchira_Black.png";
-import imageWhite from "../assets/Ruchira_White.png";
+import imageBlack from "../assets/Ruchira_Black.webp";
+import imageWhite from "../assets/Ruchira_White.webp";
 import { useThemeStore } from "../store/themeStore";
 import AskBox from "./AskBox";
 

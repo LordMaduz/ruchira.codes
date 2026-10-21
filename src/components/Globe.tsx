@@ -21,7 +21,7 @@ function StoryPanel({ i, reduce }: { i: number; reduce: boolean }) {
     return () => clearInterval(t);
   }, [st.cmd, reduce]);
   return (
-    <div key={i} className="journey-info swap" aria-live="polite">
+    <div key={i} className="journey-info swap" aria-hidden="true">
       <span className="chap">Chapter {i + 1} of {STOPS.length}</span>
       <code className="cmd"><span className="cmd-t">{typed}</span></code>
       <h3>{st.title}</h3>
@@ -46,7 +46,7 @@ export default function Globe() {
     const legs = [0, 1].map((i) => ({ a: STOPS[i].at, b: STOPS[i + 1].at, gi: geoInterpolate(STOPS[i].at, STOPS[i + 1].at), done: 0 }));
     const GL = { center: OVERVIEW.slice() as LngLat, plane: STOPS[0].at as LngLat, planeAhead: null as LngLat | null, lift: 1, current: 0, landed: [true, false, false], size: 0, R: 0 };
     let c: Record<string, string> = {};
-    let userPicked = false, flying = false, flight = 0, alive = true;
+    let userPicked = false, flying = false, flight = 0, alive = true, started = false;
 
     const readColors = () => {
       const cs = getComputedStyle(document.documentElement);
@@ -121,9 +121,14 @@ export default function Globe() {
 
     const ease = (k: number) => (k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
     const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    // every tween belongs to the current flight; starting a new flight (or a pin turn) stops the old ones
     const tween = (ms: number, fn: (e: number) => void) => new Promise<void>((done) => {
-      const t0 = performance.now();
-      const step = (t: number) => { const k = Math.min(1, (t - t0) / ms); fn(ease(k)); if (k < 1 && alive) requestAnimationFrame(step); else done(); };
+      const id = flight, t0 = performance.now();
+      const step = (t: number) => {
+        if (!alive || id !== flight) return done();
+        const k = Math.min(1, (t - t0) / ms); fn(ease(k));
+        if (k < 1) requestAnimationFrame(step); else done();
+      };
       requestAnimationFrame(step);
     });
     const turnTo = (target: LngLat, ms: number) => {
@@ -149,17 +154,23 @@ export default function Globe() {
         land(i + 1);
       }
       await wait(1200); if (!live()) return;
-      await turnTo(OVERVIEW, 1600);
+      await turnTo(OVERVIEW, 1600); if (!live()) return;
       flying = false;
     };
     const finalState = () => {
+      flight++; flying = false;
       legs.forEach((l) => (l.done = 1));
       GL.landed = [true, true, true]; GL.plane = STOPS[2].at; GL.planeAhead = null; GL.lift = 1; GL.center = OVERVIEW.slice() as LngLat;
       land(2);
     };
     api.current = {
-      fly: () => (reduce ? finalState() : fly()),
-      pick: (i) => { userPicked = true; showStop(i); if (!flying) turnTo(STOPS[i].at, 900); },
+      fly: () => { started = true; return reduce ? finalState() : fly(); },
+      pick: (i) => {
+        userPicked = true; showStop(i);
+        if (flying) return;
+        flight++; // a new turn replaces any turn still running
+        if (reduce) { GL.center = STOPS[i].at; draw(performance.now()); } else turnTo(STOPS[i].at, 900);
+      },
     };
 
     // drag to spin when the plane is not flying
@@ -175,7 +186,7 @@ export default function Globe() {
     canvas.addEventListener("pointerup", endDrag); canvas.addEventListener("pointercancel", endDrag);
 
     // draw only while the globe is on screen
-    let raf = 0, on = false, started = false;
+    let raf = 0, on = false;
     const loop = (t: number) => { draw(t); raf = on ? requestAnimationFrame(loop) : 0; };
     readColors(); sizeGlobe(); land(0);
     if (reduce) finalState();
@@ -213,6 +224,7 @@ export default function Globe() {
         </div>
       </div>
       <StoryPanel key={shown} i={shown} reduce={reduce} />
+      <p className="sr-only" aria-live="polite">{`Chapter ${shown + 1}, ${STOPS[shown].name}: ${STOPS[shown].title}. ${STOPS[shown].story}`}</p>
       <button className="btn soft" type="button" id="fly" onClick={() => api.current?.fly()}>Fly it again</button>
     </div>
   );

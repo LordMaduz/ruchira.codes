@@ -26,6 +26,7 @@ try {
     for (const id of ["about", "skills", "work", "contact"]) await p.evaluate((i) => document.getElementById(i).scrollIntoView(), id);
     await p.waitForTimeout(400);
     assert.ok(await noHScroll(p), `page scrolls sideways at ${w}px ${theme}`);
+    assert.equal(await p.locator('meta[name="theme-color"]').getAttribute("content"), theme === "dark" ? "#09090b" : "#ffffff", "browser bar colour");
     if (shots) await p.screenshot({ path: `${shots}/page-${w}-${theme}.png`, fullPage: true });
     await p.locator("#work .slot.active").click();
     await p.locator(".dr-box").waitFor();
@@ -98,6 +99,12 @@ try {
     await p.evaluate(() => document.getElementById("work").scrollIntoView());
     await p.locator("#work .slot.active").click();
     assert.equal(await p.locator(".pstats dd").first().textContent(), "0.80");
+    await p.keyboard.press("Escape");
+    // globe: a pin click shows that stop at once, and screen readers get the story
+    await p.evaluate(() => document.getElementById("about").scrollIntoView());
+    await p.locator(".pin", { hasText: "Singapore" }).click();
+    assert.equal(await p.locator(".pin", { hasText: "Singapore" }).getAttribute("aria-pressed"), "true");
+    assert.match(await p.locator(".journey p.sr-only").textContent(), /^Chapter 2, Singapore: /);
     await p.context().close();
   }
   console.log("smoke: all checks passed");
