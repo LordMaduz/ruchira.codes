@@ -147,3 +147,55 @@ export function renderKbMd(kb) {
   out.push("## Proof", "", ...kb.proof.map((p) => tagged(p, `[${p.label}](${p.href}) (${p.kind})`)), "");
   return out.join("\n");
 }
+
+export const BRIEF_MAX_LINES = 200;
+const oneLine = (t) => t.replace(/\s+/g, " ").trim();
+const tag = (vis, text) => `- [${vis}] ${oneLine(text)}`;
+
+// The short private brief Claude Code auto-loads as CLAUDE.local.md. ownWords never goes in.
+export function renderBrief(kb, date) {
+  const i = kb.identity;
+  const dir = kb.direction ?? [];
+  const exploring = dir.filter((e) => e.kind === "exploring").sort((a, b) => (b.when ?? "").localeCompare(a.when ?? ""));
+  const rule = (t) => tag("private", t);
+  const out = [
+    "# Ruchira's career context", "",
+    `Generated from Me/kb/kb.json on ${date} by \`pnpm kb:export\`. Edit the KB, not this file.`, "",
+    "## Who", "",
+    tag("public", `${i.name}, ${i.title} at ${i.employer}, ${i.city}. ${i.years}. ${i.workRights}.`),
+    ...i.roles.map((r) => tag("public", `${r.title}, ${r.org} (${r.when}): ${r.summary}`)), "",
+    "## AI practice", "",
+  ];
+  for (const [topic, list] of Object.entries(groupBy(kb.aiPractice ?? [], (e) => e.topic)))
+    out.push(`### ${topic}`, ...list.map((e) => tag(e.visibility, e.text)), "");
+  out.push("## Direction", "");
+  for (const [kind, list] of [["company", dir.filter((e) => e.kind === "company")], ["mine", dir.filter((e) => e.kind === "mine")], ["exploring", exploring]])
+    if (list.length) out.push(`### ${kind}`, ...list.map((e) => tag(e.visibility, `${e.when ? `${e.when}: ` : ""}${e.text}`)), "");
+  out.push(
+    "## Job search", "",
+    ...Object.entries(kb.logistics ?? {}).map(([k, e]) => tag(e.visibility, `${k}: ${e.text}`)), "",
+    "## Rules", "",
+    rule("Tags: [public] may be used in copy as written; [on-request] is shared only after first contact; [private] never leaves this machine."),
+    rule('Copy says "7 years", frames the work as full stack (never "backend engineer"), and names the employer "Arbitr (formerly Straker)".'),
+    rule("No client names and no private years or dates (career start year, Singapore move dates, graduation date) in public copy."),
+    rule("Run the humanizer skill on every piece of copy before it ships."),
+    rule("Never stage Me/, Straker/ or CLAUDE.local.md. Stage explicit paths only."),
+    rule("Claim and attribution rules live in Straker/Analysis/straker-cv-reference.md."), "",
+    "## Where things live", "",
+    rule("Me/kb/kb.md, the full KB, read on demand: Identity, Job search, Facts, Stories, Decisions, AI practice, Direction, Ask box answers, Proof."),
+    rule("Straker/Analysis/breakdown.md: evidence for Arbitr work and AI practice."),
+    rule("Straker/Analysis/straker-cv-reference.md: evidence and claim rules."),
+    rule("Me/Resume/: resumes. The resume-tailor skill keeps its application tracker in OUTPUT/index.md."), "",
+    "## Keep this current", "",
+    rule("When the user shares something new (a tool tried, a change in direction, an achievement), add it to Me/kb/kb.json with a date, visibility, evidence and source, then re-run pnpm kb:export."), "",
+  );
+  return out.join("\n");
+}
+
+export function checkBrief(text, isIgnored) {
+  const problems = [];
+  const lines = text.replace(/\n$/, "").split("\n").length;
+  if (lines > BRIEF_MAX_LINES) problems.push(`CLAUDE.local.md is ${lines} lines, over the ${BRIEF_MAX_LINES} limit`);
+  if (!isIgnored) problems.push("CLAUDE.local.md is not gitignored");
+  return problems;
+}

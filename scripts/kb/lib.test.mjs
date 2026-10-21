@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { validate, toPublic, findDenied, renderLlms, renderResume, renderJsonLd, injectJsonLd, renderKbMd } from "./lib.mjs";
+import { validate, toPublic, findDenied, renderLlms, renderResume, renderJsonLd, injectJsonLd, renderKbMd, renderBrief, checkBrief } from "./lib.mjs";
 
 const fixture = () => ({
   identity: {
@@ -176,3 +176,43 @@ test("renderKbMd tags each entry with its visibility", () => {
 });
 
 test("renderKbMd includes ownWords for review", () => expect(renderKbMd(fixture())).toContain("raw words"));
+
+test("renderBrief tags every content line", () => {
+  const items = renderBrief(fixture(), "2026-10-21").split("\n").filter((l) => l.startsWith("- "));
+  expect(items.length).toBeGreaterThan(0);
+  items.forEach((l) => expect(l).toMatch(/^- \[(public|on-request|private)\] /));
+});
+
+test("renderBrief omits ownWords", () => expect(renderBrief(fixture(), "2026-10-21")).not.toContain("raw words"));
+
+test("renderBrief keeps multi-line text on one line", () => {
+  const kb = fixture();
+  kb.aiPractice[0].text = "a\nb";
+  expect(renderBrief(kb, "2026-10-21").split("\n").some((l) => l.includes("a b"))).toBe(true);
+});
+
+test("renderBrief opens with the generated header", () => {
+  const brief = renderBrief(fixture(), "2026-10-21");
+  expect(brief.split("\n")[0]).toBe("# Ruchira's career context");
+  expect(brief).toContain("Generated from Me/kb/kb.json on 2026-10-21");
+});
+
+test("renderBrief holds the standing rule", () => {
+  const brief = renderBrief(fixture(), "2026-10-21");
+  expect(brief).toContain("add it to Me/kb/kb.json");
+  expect(brief).toContain("pnpm kb:export");
+});
+
+test("checkBrief allows 200 lines and rejects 201", () => {
+  const lines = (n) => Array(n).fill("x").join("\n");
+  expect(checkBrief(lines(200), true)).toEqual([]);
+  const problems = checkBrief(lines(201), true);
+  expect(problems).toHaveLength(1);
+  expect(problems[0]).toMatch(/201 lines/);
+});
+
+test("checkBrief rejects a brief that is not gitignored", () => {
+  const problems = checkBrief("x", false);
+  expect(problems).toHaveLength(1);
+  expect(problems[0]).toMatch(/CLAUDE.local.md is not gitignored/);
+});

@@ -1,7 +1,8 @@
-// Builds the public knowledge base files from the private master in Me/kb/. Run locally: `pnpm kb:export`.
-// Writes nothing unless validation and the denylist check both pass.
+// Builds the public knowledge base files and the private review copy and brief from the master in Me/kb/. Run locally: `pnpm kb:export`.
+// Writes nothing unless validation, the denylist check and the brief check all pass.
 import { readFileSync, writeFileSync } from "node:fs";
-import { validate, toPublic, findDenied, renderLlms, renderResume, renderJsonLd, injectJsonLd, renderKbMd } from "./lib.mjs";
+import { spawnSync } from "node:child_process";
+import { validate, toPublic, findDenied, renderLlms, renderResume, renderJsonLd, injectJsonLd, renderKbMd, renderBrief, checkBrief } from "./lib.mjs";
 
 const kb = JSON.parse(readFileSync("Me/kb/kb.json", "utf8"));
 const denylist = readFileSync("Me/kb/denylist.txt", "utf8").split("\n");
@@ -22,13 +23,21 @@ const outputs = {
   "index.html": injectJsonLd(readFileSync("index.html", "utf8"), renderJsonLd(pub)),
 };
 
+// the denylist covers public files only, so check them before the private ones join
 const leaks = Object.entries(outputs).flatMap(([file, text]) => findDenied(text, denylist).map((t) => `${file}: "${t}"`));
 if (leaks.length) {
   console.error(`Private terms found, nothing written:\n- ${leaks.join("\n- ")}`);
   process.exit(1);
 }
 
-// private outputs are built after the denylist check, which covers public files only
+const brief = renderBrief(kb, new Date().toISOString().slice(0, 10));
+const briefProblems = checkBrief(brief, spawnSync("git", ["check-ignore", "-q", "CLAUDE.local.md"]).status === 0);
+if (briefProblems.length) {
+  console.error(`Brief check failed, nothing written:\n- ${briefProblems.join("\n- ")}`);
+  process.exit(1);
+}
+
 outputs["Me/kb/kb.md"] = renderKbMd(kb);
+outputs["CLAUDE.local.md"] = brief;
 for (const [file, text] of Object.entries(outputs)) writeFileSync(file, text);
-console.log(`Exported ${pub.facts.length} facts, ${pub.stories.length} stories, ${pub.decisions.length} decisions, ${pub.answers.length} answers, ${pub.proof.length} proof links, ${pub.aiPractice.length} AI practice entries.`);
+console.log(`Exported ${pub.facts.length} facts, ${pub.stories.length} stories, ${pub.decisions.length} decisions, ${pub.answers.length} answers, ${pub.proof.length} proof links, ${pub.aiPractice.length} AI practice entries. Brief: ${brief.replace(/\n$/, "").split("\n").length} lines.`);
