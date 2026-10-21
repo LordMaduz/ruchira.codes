@@ -19,6 +19,6 @@ export const SKILLS: Skill[] = [
     tools: ["PostgreSQL", "Redis Streams", "Python"],
     proof: [["straker", "A 12-language client job got stuck. I traced it through the logs and the database and had a fix merged in about a day. The 9,084 credits the client had paid for were not charged again."]] },
   { t: "Building the whole thing", s: "I like owning a product from the first screen to the last API call.",
-    tools: ["Next.js", "Fastify", "PostgreSQL", "React Native", "Vue"],
-    proof: [["landednz", "I built the web app, the backend, the AI pipeline and the mobile app myself."]] }
+    tools: ["Next.js", "Fastify", "PostgreSQL", "Vue"],
+    proof: [["landednz", "I built the web app, the backend and the AI pipeline myself."]] }
 ];

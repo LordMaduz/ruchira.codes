@@ -47,12 +47,12 @@ export const PROJECTS: Project[] = [
       { v: "5", l: "things shape your plan: visa, city, family, job and arrival date" },
       { v: "<1s", l: "before the chat's answer starts streaming" }
     ],
-    stack: ["Next.js", "Fastify", "PostgreSQL", "pgvector", "Claude API", "SSE", "React Native"],
+    stack: ["Next.js", "Fastify", "PostgreSQL", "pgvector", "Claude API", "SSE"],
     problem: "If you miss your IRD number in the first week, you pay emergency tax on every pay. Signing a lease before checking school zones can cost thousands. New arrivals often learn the right order of things too late.",
     did: [
       "Split the product into two parts. A rules engine builds your plan from your visa, city, family, job and arrival date, with no AI involved.",
       "Put an AI chat on top that answers questions about your plan, using a RAG pipeline with pgvector search and the Claude API, streamed as it writes.",
-      "Built the web app, the backend, the AI pipeline and a mobile app myself."
+      "Built the web app, the backend and the AI pipeline myself."
     ],
     result: "If the chat is slow or down, your plan is still there and still correct, because the AI never sits on the critical path."
   },
