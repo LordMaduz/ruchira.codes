@@ -27,7 +27,7 @@ The approved mockup is the reference for layout, copy, motion and mobile behavio
 
 ## Content rules
 
-These rules apply to every string on the site and to the ask-box knowledge file.
+These rules apply to every string on the site.
 
 - Take facts only from `Straker/Analysis/straker-cv-reference.md` or the existing site.
 - Name only "Arbitr" (once as "Arbitr (formerly Straker)"). No client names, ticket IDs or teammates.
@@ -78,21 +78,9 @@ The front end works as in the mockup:
 - the answer types itself out; with reduced motion it appears all at once
 - the note: "Answers come from my CV and project notes only..."
 
-The back end is a Cloudflare Worker in `worker/` in this repo:
+This build ships the box with the mockup's scripted `ANSWERS` only (keyword match, with the fallback line). The real AI back end comes later as its own piece of work: Ruchira and Claude will first write a proper knowledge file about Ruchira from everything gathered so far plus what Ruchira adds, then design the back end around it (the earlier idea was a Cloudflare Worker with a cheap model and a daily limit).
 
-- `POST /ask` with `{ q }`, where `q` is at most 300 characters. The Worker returns `{ answer }`.
-- It calls the Claude API with `claude-haiku-5-5`.
-- The system prompt holds:
-  - `worker/knowledge.md`, a short file written from the approved site copy only (never the raw Straker files)
-  - instructions to answer in the first person, in two to four sentences
-  - instructions to say "I don't have that in my notes" and point to the chat booking when the answer isn't in the file
-- Daily limit: a counter in Workers KV keyed by date, 200 questions a day across all visitors, plus 10 per IP per day. Over the limit, the Worker returns 429.
-- CORS: only the site's own origin may call it.
-- The API key is a Worker secret. It never goes in the Vite bundle.
-
-If the Worker fails, returns 429 or takes longer than 8 seconds, the box falls back to the mockup's scripted `ANSWERS` keyword match. A visitor always gets an answer.
-
-Config: `VITE_ASK_URL`. When it's unset, the box uses only the scripted answers, so local dev works with no Worker.
+To make that later swap easy, `AskBox.tsx` gets its answers from one function, `getAnswer(q): Promise<string>`, in `src/lib/ask.ts`. Today it wraps `answerFor`. Later it calls the back end and falls back to `answerFor` on error.
 
 ### About (`AboutSection.tsx`, new `Globe.tsx`)
 
@@ -191,7 +179,6 @@ Check against the phone screenshots in the mockup folder (`m-*.png` and `mf-*.pn
 2. Small unit tests, run with Vitest, which this adds as a dev dependency:
    - the scripted `answerFor` keyword match and its fallback
    - the contact form validation
-   - the Worker's limit logic, in `worker/` with Miniflare or plain unit tests on the counter function
 3. Playwright screenshots at 1440px and 375px, in light and dark, compared against the mockup.
 4. `web-design-guidelines` review, covering accessibility, focus and reduced motion.
 5. `seo-audit`, covering the title, meta description, Open Graph tags and a `Person` JSON-LD block.
@@ -201,13 +188,13 @@ Check against the phone screenshots in the mockup folder (`m-*.png` and `mf-*.pn
 ## Out of scope
 
 - LinkedIn, resume and case-study pages, which are separate pieces of work.
+- The ask box's AI back end and its knowledge file (planned later, see Ask me anything).
 - A blog, testimonials and a photo gallery.
 - Moving off GitHub Pages.
 
-## Content Ruchira may still supply
+## Content decisions (from Ruchira, 2026-10-21)
 
-The build uses the mockup copy as it stands. The following can be swapped in later without design changes:
-
-- the career start year, which drives the "Six years of backend work" line
-- whether the AWS certification is current, which decides whether the AWS badges link stays
-- a real photo to replace `Black.jpg` and `White.jpg`
+- Career started in 2019. The ask answer "Six years of backend work..." becomes "I've done backend work since 2019, mostly Java and Spring Boot. Before Arbitr I was at DBS Bank in Singapore, on a tax engine that runs across more than 15 countries."
+- Lived in Singapore from September 2022 to June 2026. The globe's Singapore stop reads "2022 to 2026" (the mockup says "2022 to 2025"). Project dates stay as the mockup has them.
+- The AWS certification is valid, so the AWS badges link stays.
+- Keep the current anime-style photos (`src/assets/Ruchira_Black.png` and `Ruchira_White.png`). No photo change.
