@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
@@ -29,11 +29,14 @@ type Props = { id: string | null; opener: HTMLElement | null; onClose: () => voi
 // Project story in a panel from the right. Radix Dialog traps focus; we hand focus back to the button that opened it.
 export default function ProjectDrawer({ id, opener, onClose }: Props) {
   const p = PROJECTS.find((x) => x.id === id);
+  // closing clears `opener` before Radix asks where focus should go, so remember the last one
+  const lastOpener = useRef(opener);
+  if (opener) lastOpener.current = opener;
   return (
     <Dialog.Root open={!!p} onOpenChange={(o) => !o && onClose()}>
       <Dialog.Portal>
         <Dialog.Overlay className="drawer">
-          <Dialog.Content className="dr-box" aria-describedby={undefined} onCloseAutoFocus={(e) => { e.preventDefault(); opener?.focus(); }}>
+          <Dialog.Content className="dr-box" aria-describedby={undefined} onCloseAutoFocus={(e) => { e.preventDefault(); lastOpener.current?.focus(); }}>
             <Dialog.Close className="ic close" aria-label="Close"><X aria-hidden="true" /></Dialog.Close>
             {p && (
               <div className="dr-body">
