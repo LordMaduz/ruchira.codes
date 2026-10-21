@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Home, Mail, Linkedin, Github, Menu, X, FileDown, Cpu, Award } from "lucide-react";
+import { Home, Mail, Linkedin, Github, Menu, X, FileDown, Cpu, Award, type LucideIcon } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useThemeStore } from "../store/themeStore";
 
@@ -9,7 +9,7 @@ interface NavigationProps {
 }
 
 interface SocialLink {
-  icon: any;
+  icon: LucideIcon;
   href: string;
   label: string;
   isInternal?: boolean;
