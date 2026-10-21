@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { validate, toPublic, findDenied, renderLlms, renderResume, renderJsonLd, injectJsonLd } from "./lib.mjs";
+import { validate, toPublic, findDenied, renderLlms, renderResume, renderJsonLd, injectJsonLd, renderKbMd } from "./lib.mjs";
 
 const fixture = () => ({
   identity: {
@@ -161,3 +161,18 @@ test("renderLlms adds How I work with AI from public aiPractice", () => {
   expect(txt).not.toContain("Private loop");
   expect(txt).not.toContain("Where I go");
 });
+
+test("renderKbMd has every section heading in order", () => {
+  const md = renderKbMd(fixture());
+  const at = ["Identity", "Job search", "Facts", "Stories", "Decisions", "AI practice", "Direction", "Ask box answers", "Proof"]
+    .map((h) => md.indexOf(`\n## ${h}\n`));
+  at.forEach((n, i) => expect(n).toBeGreaterThan(i ? at[i - 1] : -1));
+});
+
+test("renderKbMd tags each entry with its visibility", () => {
+  const lines = renderKbMd(fixture()).split("\n");
+  expect(lines.find((l) => l.includes("Private fact"))).toMatch(/^- \[private\] /);
+  expect(lines.find((l) => l.includes("Public fact"))).toMatch(/^- \[public\] /);
+});
+
+test("renderKbMd includes ownWords for review", () => expect(renderKbMd(fixture())).toContain("raw words"));

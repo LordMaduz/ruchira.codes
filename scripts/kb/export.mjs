@@ -1,7 +1,7 @@
 // Builds the public knowledge base files from the private master in Me/kb/. Run locally: `pnpm kb:export`.
 // Writes nothing unless validation and the denylist check both pass.
 import { readFileSync, writeFileSync } from "node:fs";
-import { validate, toPublic, findDenied, renderLlms, renderResume, renderJsonLd, injectJsonLd } from "./lib.mjs";
+import { validate, toPublic, findDenied, renderLlms, renderResume, renderJsonLd, injectJsonLd, renderKbMd } from "./lib.mjs";
 
 const kb = JSON.parse(readFileSync("Me/kb/kb.json", "utf8"));
 const denylist = readFileSync("Me/kb/denylist.txt", "utf8").split("\n");
@@ -28,5 +28,7 @@ if (leaks.length) {
   process.exit(1);
 }
 
+// private outputs are built after the denylist check, which covers public files only
+outputs["Me/kb/kb.md"] = renderKbMd(kb);
 for (const [file, text] of Object.entries(outputs)) writeFileSync(file, text);
 console.log(`Exported ${pub.facts.length} facts, ${pub.stories.length} stories, ${pub.decisions.length} decisions, ${pub.answers.length} answers, ${pub.proof.length} proof links, ${pub.aiPractice.length} AI practice entries.`);
