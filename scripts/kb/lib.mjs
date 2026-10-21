@@ -19,6 +19,7 @@ export function validate(kb, projectIds) {
         else if (!EVIDENCE.includes(e.evidence)) problems.push(`${at}: bad evidence "${e.evidence}"`);
         if (!e.source) problems.push(`${at}: missing source`);
       }
+      if (sec === "decisions" && !e.question) problems.push(`${at}: missing question`);
       const hrefs = [e.href, ...(e.links ?? []).map((l) => l.href)].filter(Boolean);
       hrefs.forEach((h) => { if (!h.startsWith("https://")) problems.push(`${at}: link must be https: ${h}`); });
       (e.links ?? []).forEach((l) => {
@@ -54,7 +55,7 @@ export function renderLlms(pub) {
   if (i.education?.length) out.push("## Education", "", ...i.education.map((e) => `- ${e.degree}, ${e.school} (${e.when})`), "");
   out.push("## Selected facts", "", ...pub.facts.map((f) => `- ${f.text}`), "");
   out.push("## Stories", "", ...pub.stories.flatMap((s) => [`### ${s.title}`, "", s.publicText, ""]));
-  out.push("## Decisions", "", ...pub.decisions.map((d) => `- ${d.chose} over ${d.over.toLowerCase()}, because ${d.because}`), "");
+  out.push("## Decisions", "", ...pub.decisions.map((d) => `- ${d.question}\n  - What I did: ${d.chose}\n  - Instead of: ${d.over}\n  - Why: ${d.because}`), "");
   out.push("## Proof", "", ...pub.proof.map((p) => `- [${p.label}](${p.href})`), "");
   out.push("## Links", "", ...Object.entries(i.links).map(([k, v]) => `- ${k}: ${v}`), "");
   return out.join("\n");

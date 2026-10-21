@@ -31,7 +31,12 @@ try {
     assert.equal(await p.locator('meta[name="theme-color"]').getAttribute("content"), theme === "dark" ? "#09090b" : "#ffffff", "browser bar colour");
     if (shots) await p.screenshot({ path: `${shots}/page-${w}-${theme}.png`, fullPage: true });
     await p.locator("#work .slot.active").click();
-    await p.locator(".dr-box").waitFor();
+    await p.locator(".dr-box", { hasText: "Guardrails for AI agents" }).waitFor();
+    // the straker drawer's decision log: heading shows and the last row is reachable without sideways scroll
+    const dec = p.locator(".dr-box h3", { hasText: "Decisions I made" });
+    await dec.scrollIntoViewIfNeeded();
+    assert.ok(await dec.isVisible(), `Decisions heading missing at ${w}px ${theme}`);
+    assert.ok(await p.locator(".dr-box").evaluate((el) => el.scrollWidth <= el.clientWidth), `decision log scrolls sideways inside the drawer at ${w}px ${theme}`);
     assert.ok(await noHScroll(p), `drawer makes the page scroll sideways at ${w}px ${theme}`);
     if (shots) await p.screenshot({ path: `${shots}/drawer-${w}-${theme}.png` });
     await p.context().close();

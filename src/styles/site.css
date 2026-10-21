@@ -152,6 +152,25 @@ nav.site-nav { position: fixed; top: 16px; left: 16px; right: 16px; z-index: 50 
 .dr-box p, .dr-box li { color: var(--r-muted) }
 .dr-box .psum { margin: 0 0 20px }
 .dr-box ul.did { padding-left: 18px; margin: 0; display: flex; flex-direction: column; gap: 10px }
+/* decision log: the problem as a question, then labelled what / instead of / why */
+.dr-box .dec-intro { margin: 0 0 4px; font-size: 14px }
+.dr-box .dec { list-style: none; margin: 0; padding: 0 }
+.dr-box .dec > li { padding: 16px 0; border-bottom: 1px solid var(--r-line2) }
+.dr-box .dec > li:last-child { border-bottom: 0; padding-bottom: 4px }
+.dr-box .dec-q { margin: 0 0 8px; color: var(--r-fg); font-weight: 600; text-wrap: pretty }
+.dr-box .dec dl { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 4px 12px; margin: 0; font-size: 14.5px }
+.dr-box .dec dt, .dr-box .dec-label { color: var(--r-soft); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em }
+.dr-box .dec dt { padding-top: 2px }
+.dr-box .dec dd { margin: 0; color: var(--r-muted); min-width: 0 }
+.dr-box .dec dd.dec-did { color: var(--r-accent-ink); font-weight: 600 }
+.dr-box .dec-label { margin: 14px 0 6px }
+.dr-box .dec-proof { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0 }
+.dr-box .dec-proof a { display: inline-block; text-decoration: none; font-size: 12.5px; color: var(--r-fg); border: 1px solid var(--r-line); background: var(--r-chip); padding: 5px 12px; border-radius: 999px; overflow-wrap: anywhere }
+.dr-box .dec-proof a:hover { border-color: var(--r-blue); color: var(--r-blue) }
+@media (max-width: 480px) {
+  .dr-box .dec dl { grid-template-columns: minmax(0, 1fr); gap: 0 }
+  .dr-box .dec dt { padding-top: 6px }
+}
 .pmeta { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: var(--r-muted) }
 .pmeta span:first-child { color: var(--r-blue); font-weight: 600 }
 .diagram { border-radius: 14px; border: 1px solid var(--r-line); background: var(--r-bg); padding: 10px; overflow-x: auto }

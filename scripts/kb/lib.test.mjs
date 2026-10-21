@@ -18,8 +18,8 @@ const fixture = () => ({
     { id: "s2", visibility: "on-request", project: "p1", title: "T2", questions: [], publicText: "", ownWords: "", evidence: "production", source: "s" },
   ],
   decisions: [
-    { project: "p1", visibility: "public", chose: "A", over: "B", because: "C", evidence: "production", source: "s" },
-    { project: "p1", visibility: "private", chose: "X", over: "Y", because: "Z", evidence: "production", source: "s" },
+    { project: "p1", visibility: "public", question: "Q?", chose: "A", over: "B", because: "C", evidence: "production", source: "s" },
+    { project: "p1", visibility: "private", question: "Q2?", chose: "X", over: "Y", because: "Z", evidence: "production", source: "s" },
   ],
   answers: [
     { id: "a1", visibility: "public", keys: ["one"], text: "First", links: [{ label: "P", project: "p1" }] },
@@ -88,6 +88,13 @@ test("renderLlms starts with the name and lists every public proof link", () => 
   pub.proof.forEach((p) => expect(txt).toContain(p.href));
   expect(txt).toContain("### T\n\nP");
   expect(txt).not.toContain("hidden.example.com");
+  expect(txt).toContain("- Q?\n  - What I did: A\n  - Instead of: B\n  - Why: C");
+});
+
+test("validate reports a decision without a question", () => {
+  const kb = fixture();
+  delete kb.decisions[0].question;
+  expect(validate(kb, ["p1"])).toContain("decisions[0]: missing question");
 });
 
 test("renderResume follows JSON Resume with no contact details", () => {

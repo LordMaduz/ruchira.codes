@@ -213,29 +213,98 @@ Before moving into AI work full time, I spent about five months building the sam
 
 ## Decisions
 
-- Filter the vendor-selection agent's results in the workflow service over changing the agent itself, because the agent's contract stayed the same for every other product, and if nothing qualified the job went to a person.
-- Work out which terms were applied from the repaired text over trusting the model's report of what it changed, because the client compliance record shouldn't depend on what a model says about itself.
-- Send the client glossary with each job over looking terms up for every segment, because the lookup took about 7.3 seconds per 500 segments against a 5 second timeout and had been killing whole batches.
-- A plain rules engine for the plan over letting the ai write the plan, because a wrong step in a move costs people real money, so the AI only answers questions about a plan it can't change.
-- pgvector inside PostgreSQL over a separate vector database, because one database means one backup and one thing to run, and the data is small.
-- Rule templates in MVEL that tax teams edit over rules in code with a fast deploy pipeline, because rules kept changing, and benchmarks showed the runtime cost was fine for our volume.
-- A version number on every rule template over editing rules in place, because an audit asks what the rules were on a given date, and a pinned version answers that exactly.
-- A worksheet-style editor over a form builder, because two afternoons watching the tax team showed they think in cells and formulas.
-- Streaming files through over loading each file into memory, because getObjectAsBytes has a hidden 25MB cap, and real trade files are bigger.
-- The reactive AWS SDK v2 with WebFlux over keeping blocking file calls, because Java 17 forced the move to v2 anyway, and the blocking path is what slowed down when markets got busy.
-- Write-behind caching with Redis over writing every order straight to mongodb, because at lunch peaks the database fell behind, so orders are confirmed from the cache and saved shortly after.
-- Dashboards built on what diners see over only engine-internal metrics, because the people woken at night were us, and the diner's screen is where problems show first.
-- One bulk call per language pair over two calls per vendor in a loop, because the loop ran into a 30 second gateway limit and retries created duplicate offers.
-- A partial unique index built concurrently over catching integrity errors in code, because the database is the only place that can stop two inserts racing.
-- One TypeScript monorepo over separate repos for front end and api, because on my own, shared types between server and client mean no API drift.
-- Cedar inside the gateway over opa as a separate service, because we wanted the check in-process on the JVM with formal semantics, without running another service and learning its language.
-- Spring Cloud Bus for config updates over a kafka topic of our own, because it was already in our Spring stack, so we didn't run a second messaging layer.
-- Queue concurrent order changes at the service boundary over letting the last write win, because two updates seconds apart would silently overwrite each other, and the diner sees the wrong status.
-- Agents with a rules engine underneath over a fixed workflow graph, because rules kept changing and people asked one-off questions, and every action with side effects still passes a human approval.
-- Template mode and agent mode side by side over one free-form chat, because hedge professionals wanted predictable templates while others wanted free-form questions, so adoption could grow by group.
-- MCP-style adapters in front of each legacy system over wiring agents straight to them, because agents and old systems can then change without re-plumbing each other.
-- Akka actors for each trading algorithm over shared state with locks, because each order had its own state and lifecycle, and supervision let one fail and restart without taking others down.
-- Building on the raw SDK first over starting with a framework, because frameworks hide complexity on purpose, and I wanted to know what they hide before something breaks.
+- Before a new AI translation product took its first client jobs, how do we make sure its AI agent only picks approved vendors?
+  - What I did: Filtered the agent's top 15 picks in our workflow service, keeping only approved vendors.
+  - Instead of: Changing the agent itself.
+  - Why: Other products use the same agent and rely on how it works today. If none of the 15 qualified, the job went to a person to assign.
+- Clients register terms that must appear exactly in their translations. After the AI repairs a translation, how do we record which of those terms it used?
+  - What I did: Checked the repaired text itself to see which terms are there.
+  - Instead of: Taking the model's own report of what it changed.
+  - Why: That record is the client's proof that their terms were followed. It shouldn't depend on a model describing its own work.
+- The repair agent needs each client's glossary of required terms. How does it get them?
+  - What I did: Sent the client's glossary along with each job.
+  - Instead of: Calling the terminology service to look up terms for every segment (one sentence of the document).
+  - Why: That call took about 7.3 seconds per 500 segments against a 5 second timeout, and it had already killed whole batches.
+- LandedNZ gives people moving to New Zealand a step-by-step plan for settling in: bank account, IRD number, tenancy and so on. What should build that plan?
+  - What I did: A rules engine that orders the steps for the person's situation.
+  - Instead of: Letting the AI write the plan.
+  - Why: A wrong step costs people real time and money. The AI answers questions about the plan but can't change it, so the plan still works when the AI is down.
+- The AI assistant searches LandedNZ's own content before it answers. Where should that search data live?
+  - What I did: In the main PostgreSQL database, using the pgvector extension.
+  - Instead of: A separate database just for AI search.
+  - Why: The data is small. One database means one backup and one thing to run.
+- The GloBE tax rules covered 15+ countries and kept changing. Every change meant a code change, a release and a retest. How do we keep up?
+  - What I did: Moved the rules into templates (written in MVEL) that the tax team edits themselves.
+  - Instead of: Keeping the rules in code and speeding up releases.
+  - Why: The rules changed too often for a release cycle, and benchmarks showed the templates ran fast enough for our volume.
+- Auditors ask what the tax rules were on a given date. How do we answer exactly?
+  - What I did: Gave every rule template a version number and kept the old versions.
+  - Instead of: Editing rules in place.
+  - Why: We can rerun any calculation against the exact version of the rules that applied on that date.
+- Tax professionals, not engineers, write the rules. What should the rule editor look like?
+  - What I did: A worksheet-style editor with named cells and formulas.
+  - Instead of: A form builder, which was my first idea.
+  - Why: I spent two afternoons watching the tax team work. They think in cells and formulas, and a form would have fought them at every step.
+- After an SDK upgrade, the file service started running out of memory in production on large files. How should it read files from S3?
+  - What I did: Streamed each file through in pieces.
+  - Instead of: Loading each whole file into memory.
+  - Why: The method we first used, getObjectAsBytes, has a hidden 25MB cap, and real trade files are bigger.
+- Moving to Java 17 meant moving to version 2 of the AWS SDK. How should the file service call S3?
+  - What I did: Used the reactive version of the SDK with WebFlux.
+  - Instead of: Keeping blocking calls.
+  - Why: We had to move to v2 anyway, and the blocking calls were the part that slowed down when markets got busy.
+- At lunch peaks, MongoDB couldn't keep up with incoming orders. How do we keep orders fast?
+  - What I did: Confirmed orders from a Redis cache and wrote them to MongoDB shortly after (write-behind caching).
+  - Instead of: Writing every order straight to MongoDB.
+  - Why: The database was the bottleneck at peak times. The cache takes the burst, and the writes catch up a moment later.
+- I was on call for the order service myself. What should its dashboards track?
+  - What I did: What diners see, such as how long a kitchen update takes to reach the diner's screen.
+  - Instead of: Only the service's internal metrics.
+  - Why: The diner's screen is where problems show first, and I wanted to find the cause from one dashboard when paged at 3am.
+- Clicking "Send offer" timed out on large jobs, and retries sent vendors duplicate offers. How do we fix it?
+  - What I did: Added bulk endpoints, so it makes one call per language pair.
+  - Instead of: Keeping the loop that made two calls per vendor.
+  - Why: The loop ran past the gateway's 30 second limit, and every retry sent the same vendors another offer.
+- Clients sometimes got the same translated file delivered twice, when two processes saved it at the same moment. How do we stop that?
+  - What I did: Added a PostgreSQL rule that allows only one visible deliverable per file and language (a partial unique index, built without blocking live traffic).
+  - Instead of: Catching the duplicate error in application code.
+  - Why: Only the database sees both saves at once, so it's the one place that can block the second.
+- I build LandedNZ alone, with a web app and an API. How should the code be organised?
+  - What I did: One TypeScript repository for both, sharing the same types.
+  - Instead of: Separate repositories for the web app and the API.
+  - Why: Both sides use the same type definitions, so the API and the app can't quietly drift apart.
+- 30+ services needed the same access checks at the API gateway. Where should the policy check run?
+  - What I did: Inside the gateway, using Cedar.
+  - Instead of: OPA running as a separate service.
+  - Why: The check runs in the same process on the JVM, and Cedar's rules behave in a precisely defined way. We didn't have to run another service or learn another policy language.
+- Changing config on our 40+ service instances meant restarting them. How do we push changes live?
+  - What I did: Used Spring Cloud Bus with Spring Cloud Config.
+  - Instead of: Our own Kafka topic for config updates.
+  - Why: It was already part of our Spring stack, so we didn't have to run a second messaging setup.
+- An order can get two updates seconds apart from different apps. How do we stop one wiping out the other?
+  - What I did: Queued the changes at the service so they apply one at a time, in order.
+  - Instead of: Letting the last write win.
+  - Why: Otherwise one update silently overwrites the other, and the diner sees the wrong status.
+- The hedge accounting assistant had to follow changing rules and answer one-off questions. How should it be built?
+  - What I did: AI agents, with a rules engine underneath that checks their work.
+  - Instead of: A fixed workflow graph.
+  - Why: A fixed graph couldn't handle one-off questions or rules that kept changing. Every action that changes another system, like a booking, still needs a person to approve it.
+- Some users wanted predictable steps, others wanted to ask anything. How should they work with the assistant?
+  - What I did: Two modes side by side: ready-made templates and free-form questions.
+  - Instead of: One free-form chat for everyone.
+  - Why: Hedge professionals wanted predictable templates and traders wanted free-form questions. Offering both let each group start when they were ready.
+- The agents had to work with several old bank systems. How should they connect?
+  - What I did: Put an MCP-style adapter in front of each system.
+  - Instead of: Wiring the agents straight to each system.
+  - Why: The agents and the old systems can then change without breaking each other.
+- Funds split large orders over time with trading algorithms like TWAP and VWAP. How do we run many of them at once safely?
+  - What I did: Ran each algorithm as its own Akka actor.
+  - Instead of: Shared state protected by locks.
+  - Why: Each order had its own state and lifecycle. If one failed, it restarted on its own without taking the others down.
+- When I started building AI agents, where should I begin?
+  - What I did: Built on the raw SDK first.
+  - Instead of: Starting with a framework.
+  - Why: Frameworks hide complexity on purpose. I wanted to know what they hide before something breaks.
 
 ## Proof
 
