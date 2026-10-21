@@ -1,5 +1,6 @@
 # Logs
 logs
+Straker/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -30,3 +31,6 @@ dist-ssr
 .env.development.local
 .env.test.local
 .env.production.local
+
+# superpowers execution scratch
+.superpowers/

@@ -4,11 +4,7 @@ import HomeSection from "@/components/HomeSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import ResumeSection from "@/components/ResumeSection";
-import CertificationsSection from "@/components/CertificationsSection";
-import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
-import RecommendationSection from "@/components/RecommendationSection";
 import Footer from "@/components/Footer";
 
 export default function Index() {
