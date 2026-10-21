@@ -111,8 +111,8 @@ nav.site-nav { position: fixed; top: 16px; left: 16px; right: 16px; z-index: 50 
 .meta { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px }
 .meta span { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--r-muted) }
 .meta svg { width: 16px; height: 16px; color: var(--r-blue); flex: 0 0 auto }
-.impact { display: flex; gap: 8px; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--r-line); font-size: 12px; line-height: 1.65; color: var(--r-muted) }
-.impact svg { width: 16px; height: 16px; color: var(--r-blue); flex: 0 0 auto; margin-top: 2px }
+.card-sum { display: flex; gap: 8px; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--r-line); font-size: 12px; line-height: 1.65; color: var(--r-muted) }
+.card-sum svg { width: 16px; height: 16px; color: var(--r-blue); flex: 0 0 auto; margin-top: 2px }
 .open-hint { display: block; text-align: center; padding-top: 8px; font-size: 12px; color: var(--r-blue); letter-spacing: .05em; text-transform: uppercase; background: none; border: 0; width: 100%; cursor: pointer }
 .card.project { cursor: pointer }
 

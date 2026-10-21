@@ -20,7 +20,7 @@ export default function ProjectsSection({ onOpenProject }: Props) {
                 <span><Calendar aria-hidden="true" />{p.when}</span>
                 <span><Users aria-hidden="true" />{p.role}</span>
               </div>
-              <div className="impact"><TrendingUp aria-hidden="true" /><p style={{ margin: 0 }}>{p.summary}</p></div>
+              <div className="card-sum"><TrendingUp aria-hidden="true" /><p style={{ margin: 0 }}>{p.summary}</p></div>
               <button className="open-hint" type="button">Click to view details</button>
             </article>
           )}

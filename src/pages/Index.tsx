@@ -27,7 +27,7 @@ export default function Index() {
         <AboutSection setActiveSection={setActiveSection} />
 
         {/* Skills Section */}
-        <SkillsSection />
+        <SkillsSection onOpenProject={openProject} />
 
         {/* Projects Section */}
         <ProjectsSection onOpenProject={openProject} />
