@@ -185,7 +185,7 @@ export function renderBrief(kb, date) {
     rule("Me/kb/kb.md, the full KB, read on demand: Identity, Job search, Facts, Stories, Decisions, AI practice, Direction, Ask box answers, Proof."),
     rule("Straker/Analysis/breakdown.md: evidence for Arbitr work and AI practice."),
     rule("Straker/Analysis/straker-cv-reference.md: evidence and claim rules."),
-    rule("Me/Resume/: resumes. The resume-tailor skill keeps its application tracker in OUTPUT/index.md."), "",
+    rule("Me/Resume/: resumes. The resume-tailor skill writes resumes and its application tracker under Me/OUTPUT/."), "",
     "## Keep this current", "",
     rule("When the user shares something new (a tool tried, a change in direction, an achievement), add it to Me/kb/kb.json with a date, visibility, evidence and source, then re-run pnpm kb:export."), "",
   );
