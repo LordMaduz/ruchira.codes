@@ -11,7 +11,7 @@ export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="min-h-screen">
       {/* Fixed Navigation */}
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
 
