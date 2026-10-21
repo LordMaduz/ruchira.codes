@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Home, Mail, Linkedin, Github, Menu, X, FileDown, Cpu, Award } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useThemeStore } from "../store/themeStore";
@@ -18,6 +18,14 @@ interface SocialLink {
 export default function Navigation({ activeSection, setActiveSection }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme } = useThemeStore();
+  const menuBtn = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setIsMenuOpen(false); menuBtn.current?.focus(); } };
+    addEventListener("keydown", onKey);
+    return () => removeEventListener("keydown", onKey);
+  }, [isMenuOpen]);
 
   // Smooth scroll to section
   const scrollToSection = (sectionId: string) => {
@@ -54,8 +62,8 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
   const socialLinks: SocialLink[] = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/ruchirarajapaksha/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/LordMaduz", label: "GitHub" },
-    { icon: Cpu, href: "https://huggingface.co/maduzrajapaksha", label: "Hugging Face – AI Projects" },
-    { icon: Award, href: "https://www.credly.com/users/ruchira-madhushan-rajapaksha/badges#credly", label: "AWS Certifications" },
+    { icon: Cpu, href: "https://huggingface.co/maduzrajapaksha", label: "Hugging Face" },
+    { icon: Award, href: "https://www.credly.com/users/ruchira-madhushan-rajapaksha/badges#credly", label: "AWS certifications" },
     { icon: Mail, href: "#contact", label: "Email", isInternal: true }
   ];
 
@@ -133,8 +141,8 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             <button
               onClick={downloadResume}
               className="hidden sm:flex items-center gap-1.5 p-1.5 sm:p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
-              aria-label="Download Resume"
-              title="Download Resume"
+              aria-label="Download resume"
+              title="Download resume"
             >
               <FileDown className="w-4 h-4" />
             </button>
@@ -148,9 +156,12 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
 
             {/* Mobile Menu Button */}
             <button
+              ref={menuBtn}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-1.5 sm:p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
-              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
+              aria-controls="mmenu"
+              className="md:hidden p-3.5 sm:p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
@@ -160,7 +171,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute left-3 right-3 sm:left-4 sm:right-4 top-full mt-2 backdrop-blur-md border rounded-3xl shadow-2xl border-gray-200 dark:border-white/10" style={{
+        <div id="mmenu" className="md:hidden absolute left-3 right-3 sm:left-4 sm:right-4 top-full mt-2 backdrop-blur-md border rounded-3xl shadow-2xl border-gray-200 dark:border-white/10" style={{
           background: theme === 'dark'
             ? 'linear-gradient(to bottom, rgba(39, 39, 42, 0.95), rgba(24, 24, 27, 0.95))'
             : 'rgba(255, 255, 255, 0.95)'
@@ -168,17 +179,16 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
           <div className="px-5 py-5 sm:px-6 sm:py-6 space-y-5 sm:space-y-6">
             {/* Social Links */}
             <div>
-              <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-3 font-medium">Connect</p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 mb-3 font-medium">Connect</p>
               <div className="flex items-center gap-2 flex-wrap">
                 {socialLinks.map((social) =>
                   social.isInternal ? (
                     <button
                       key={social.label}
                       onClick={() => scrollToSection('contact')}
-                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
-                      aria-label={social.label}
+                      className="inline-flex min-h-11 items-center px-3 text-[13px] border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
                     >
-                      <social.icon className="w-4 h-4" />
+                      {social.label}
                     </button>
                   ) : (
                     <a
@@ -186,10 +196,10 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
-                      aria-label={social.label}
+                      className="inline-flex min-h-11 items-center px-3 text-[13px] border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800"
+                      onClick={() => setIsMenuOpen(false)}
                     >
-                      <social.icon className="w-4 h-4" />
+                      {social.label}
                     </a>
                   )
                 )}
@@ -203,7 +213,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 text-white text-sm font-semibold rounded-full hover:from-green-600 hover:to-emerald-600 dark:hover:from-green-700 dark:hover:to-emerald-700 transition-all duration-200 shadow-lg"
             >
-              More Ways to Connect
+              More ways to connect
             </a>
 
             {/* Resume Download - Mobile */}
@@ -212,7 +222,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
               className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-300 dark:border-gray-700 text-black dark:text-white text-sm font-semibold rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
             >
               <FileDown className="w-4 h-4" />
-              <span>Download Resume</span>
+              <span>Download resume</span>
             </button>
 
             {/* CTA */}
