@@ -194,7 +194,7 @@ Check against the phone screenshots in the mockup folder (`m-*.png` and `mf-*.pn
 
 ## Content decisions (from Ruchira, 2026-10-21)
 
-- Career started in 2019. The ask answer "Six years of backend work..." becomes "I've done backend work since 2019, mostly Java and Spring Boot. Before Arbitr I was at DBS Bank in Singapore, on a tax engine that runs across more than 15 countries."
+- The ask answer "Six years of backend work..." becomes: "Before Arbitr I was at DBS Bank in Singapore, working on a tax engine that runs across more than 15 countries, and before that at GrubTech in Sri Lanka. I work across the whole stack, from services to web apps. On LandedNZ I built the mobile app and the AI pipeline as well." The site never shows a career start year, and copy must not describe Ruchira as backend only.
 - Lived in Singapore from September 2022 to June 2026. The globe's Singapore stop reads "2022 to 2026" (the mockup says "2022 to 2025"). Project dates stay as the mockup has them.
 - The AWS certification is valid, so the AWS badges link stays.
 - Keep the current anime-style photos (`src/assets/Ruchira_Black.png` and `Ruchira_White.png`). No photo change.
