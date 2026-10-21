@@ -67,7 +67,7 @@ The resume link keeps using `VITE_RESUME_DRIVE_FILE_ID`.
 - Buttons: "Book a 20-minute chat" (cal.com) and "See my work" (scrolls to Work).
 - The ask box, described below.
 
-### Ask me anything (new: `AskBox.tsx`, `worker/`)
+### Ask me anything (new: `AskBox.tsx`, `src/lib/ask.ts`)
 
 The front end works as in the mockup:
 
