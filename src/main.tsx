@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import './styles/site.css';
 import { initializeTheme } from './store/themeStore';
 
 // Initialize theme before rendering to prevent flash

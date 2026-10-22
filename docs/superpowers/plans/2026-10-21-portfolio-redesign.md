@@ -38,7 +38,7 @@ The site keeps its current look.
 **Copy**
 
 - Every string comes from the mockup data, as changed by the spec's "Content decisions" section. Don't write new copy. When something is missing, use the mockup's wording.
-- "Straker" appears only twice: in "Arbitr (formerly Straker)" (the first project's `org`) and in the ask answer "The company used to be called Straker." Past employers that the mockup already names (DBS Bank, GrubTech) stay.
+- "Straker" appears only once, in "Arbitr (formerly Straker)" (the first project's `org`). Past employers that the mockup already names (DBS Bank, GrubTech) stay.
 - No em dash (—) or en dash (–) in any user-visible string.
 - No career start year, no visa wording, and nothing that calls Ruchira backend only.
 - The Singapore globe stop reads "2022 to 2026".

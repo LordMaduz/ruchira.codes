@@ -1,0 +1,1916 @@
+{
+  "identity": {
+    "name": "Ruchira Rajapaksha",
+    "title": "AI Product Engineer",
+    "employer": "Arbitr",
+    "city": "Auckland",
+    "country": "NZ",
+    "workRights": "Open work rights in New Zealand, no sponsorship needed",
+    "years": "7 years",
+    "url": "https://lordmaduz.github.io/ruchira.codes/",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/ruchirarajapaksha/",
+      "github": "https://github.com/LordMaduz",
+      "huggingface": "https://huggingface.co/maduzrajapaksha",
+      "medium": "https://medium.com/@maduz.ruchira",
+      "baeldung": "https://www.baeldung.com/author/ruchiramadhushanrajapaksha",
+      "booking": "https://cal.com/ruchira-rajapaksha"
+    },
+    "certificates": [
+      {
+        "name": "AWS Certified Solutions Architect, Associate",
+        "issuer": "Amazon Web Services",
+        "href": "https://www.credly.com/badges/4c0cce51-2177-4c55-8781-e31bec65ff8c/public_url"
+      },
+      {
+        "name": "Agentic AI",
+        "issuer": "Hugging Face",
+        "href": "https://huggingface.co/datasets/agents-course/final-certificates/resolve/main/certificates/maduzrajapaksha/2026-01-19.png"
+      }
+    ],
+    "roles": [
+      {
+        "org": "Arbitr (formerly Straker), Auckland",
+        "title": "AI Product Engineer",
+        "when": "June 2026 to now",
+        "summary": "Orchestration, guardrails and human review around the AI agents on an AI-first translation platform, across Python services and Vue web apps."
+      },
+      {
+        "org": "LandedNZ",
+        "title": "Built it alone",
+        "when": "February 2026 to now",
+        "summary": "A web app that plans a move to New Zealand. A rules engine builds the plan and an AI chat answers questions about it."
+      },
+      {
+        "org": "DBS Bank, Singapore",
+        "title": "Technical Lead, Senior Software Engineer",
+        "when": "June 2024 to June 2026",
+        "summary": "Led design on a global minimum tax engine and on HAWK, a multi-agent hedge accounting workbench, plus high-volume Kafka services."
+      },
+      {
+        "org": "DBS Bank, Singapore",
+        "title": "Senior Application Developer",
+        "when": "September 2022 to April 2024",
+        "summary": "Reactive trade file processing, an attribute-based access control engine at the API gateway, and live config across 40+ service instances."
+      },
+      {
+        "org": "GrubTech, Sri Lanka",
+        "title": "Senior Software Engineer",
+        "when": "April 2022 to September 2022",
+        "summary": "Order management for 500K+ food orders a day, with write-behind caching and tracing."
+      },
+      {
+        "org": "DirectFN, Sri Lanka",
+        "title": "Software Engineer",
+        "when": "Until April 2022",
+        "summary": "Trading platforms on Akka actors, including algorithmic order execution and anti-money-laundering pattern detection."
+      }
+    ],
+    "education": [
+      {
+        "degree": "MSc Software Engineering, research in blockchain",
+        "school": "University of Westminster, United Kingdom"
+      },
+      {
+        "degree": "BSc Statistics and Operational Research",
+        "school": "University of Peradeniya, Sri Lanka"
+      }
+    ],
+    "skills": [
+      {
+        "group": "AI engineering",
+        "items": [
+          "Multi-agent systems",
+          "Agent guardrails",
+          "Human-in-the-loop design",
+          "RAG",
+          "Vector search",
+          "Prompt design and versioning",
+          "Structured output",
+          "Faithfulness evaluation",
+          "MCP tool integration"
+        ]
+      },
+      {
+        "group": "AI frameworks",
+        "items": [
+          "Claude API and Anthropic SDK",
+          "PydanticAI",
+          "LangGraph",
+          "LlamaIndex",
+          "smolagents",
+          "LangChain",
+          "Dify",
+          "LiteLLM",
+          "Hugging Face"
+        ]
+      },
+      {
+        "group": "Languages",
+        "items": [
+          "Java",
+          "Python",
+          "TypeScript"
+        ]
+      },
+      {
+        "group": "Services",
+        "items": [
+          "Spring Boot",
+          "Spring Cloud",
+          "Project Reactor",
+          "WebFlux",
+          "FastAPI",
+          "Fastify",
+          "Akka",
+          "Apache Camel"
+        ]
+      },
+      {
+        "group": "Web",
+        "items": [
+          "Vue",
+          "Nuxt",
+          "React",
+          "Next.js"
+        ]
+      },
+      {
+        "group": "Data and messaging",
+        "items": [
+          "PostgreSQL",
+          "pgvector",
+          "MongoDB",
+          "Redis",
+          "Redis Streams",
+          "Elasticsearch",
+          "Kafka",
+          "SQLAlchemy",
+          "Alembic"
+        ]
+      },
+      {
+        "group": "Cloud and delivery",
+        "items": [
+          "AWS",
+          "Kubernetes",
+          "OpenShift",
+          "Docker",
+          "Jenkins",
+          "Terraform"
+        ]
+      },
+      {
+        "group": "Observability and security",
+        "items": [
+          "OpenTelemetry",
+          "Prometheus",
+          "Grafana",
+          "ELK",
+          "Langfuse",
+          "Cedar ABAC",
+          "OAuth 2.0"
+        ]
+      }
+    ]
+  },
+  "facts": [
+    {
+      "id": "arbitr-qe-cap",
+      "project": "straker",
+      "metrics": [
+        "0.80"
+      ],
+      "text": "Capped a quality score at 0.80 for one enterprise client, so doubtful machine translation goes to a human reviewer. Deploy verified in production.",
+      "evidence": "production"
+    },
+    {
+      "id": "arbitr-credits",
+      "project": "straker",
+      "metrics": [
+        "9,084"
+      ],
+      "text": "Built the recovery path for a stuck 12-language client job within about a day, so 9,084 credits the client had already paid for were not charged again. A senior engineer ran the recovery.",
+      "evidence": "production"
+    },
+    {
+      "id": "arbitr-xss",
+      "project": "straker",
+      "metrics": [
+        "5"
+      ],
+      "text": "Closed a stored XSS flaw across 5 services in my second week, on a stack I'd just started learning.",
+      "evidence": "merged"
+    },
+    {
+      "id": "arbitr-reviews",
+      "project": "straker",
+      "metrics": [
+        "35"
+      ],
+      "text": "Reviewed about 35 of my teammates' pull requests.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "landed-tasks",
+      "project": "landednz",
+      "metrics": [
+        "21"
+      ],
+      "text": "The plan covers 21 tasks across your first 90 days.",
+      "evidence": "production"
+    },
+    {
+      "id": "landed-inputs",
+      "project": "landednz",
+      "metrics": [
+        "5"
+      ],
+      "text": "5 things shape the plan: visa, city, family, job and arrival date.",
+      "evidence": "production"
+    },
+    {
+      "id": "landed-stream",
+      "project": "landednz",
+      "metrics": [
+        "<1s"
+      ],
+      "text": "The chat's answer starts streaming in under a second.",
+      "evidence": "production"
+    },
+    {
+      "id": "globe-time",
+      "project": "globe",
+      "metrics": [
+        "2 hrs",
+        "5 days"
+      ],
+      "text": "Processing went from 5 days to 2 hours per country.",
+      "evidence": "production"
+    },
+    {
+      "id": "globe-deploy",
+      "project": "globe",
+      "metrics": [
+        "80%"
+      ],
+      "text": "Deployment cycles for tax rule changes dropped by 80% once rules moved out of code into the engine.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "globe-countries",
+      "project": "globe",
+      "metrics": [
+        "15+"
+      ],
+      "text": "One engine covers 15+ countries.",
+      "evidence": "production"
+    },
+    {
+      "id": "globe-it",
+      "project": "globe",
+      "metrics": [
+        "60%"
+      ],
+      "text": "IT involvement in rule changes dropped by 60%.",
+      "evidence": "production"
+    },
+    {
+      "id": "globe-early",
+      "project": "globe",
+      "metrics": [
+        "3 months"
+      ],
+      "text": "Ready 3 months before the FY2025 deadline.",
+      "evidence": "production"
+    },
+    {
+      "id": "globe-team",
+      "project": "globe",
+      "metrics": [
+        "8"
+      ],
+      "text": "Led an 8-person technical team on the tax engine, working with stakeholders in more than 15 countries.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "dega-files",
+      "project": "dega",
+      "metrics": [
+        "50K+"
+      ],
+      "text": "Handles 50K+ trade files a month.",
+      "evidence": "production"
+    },
+    {
+      "id": "dega-speed",
+      "project": "dega",
+      "metrics": [
+        "60%",
+        "1,000+"
+      ],
+      "text": "Uploads and downloads got 60% faster for more than 1,000 daily users.",
+      "evidence": "production"
+    },
+    {
+      "id": "dega-cost",
+      "project": "dega",
+      "metrics": [
+        "20%"
+      ],
+      "text": "Infrastructure cost dropped by 20%.",
+      "evidence": "production"
+    },
+    {
+      "id": "grub-orders",
+      "project": "grubtech",
+      "metrics": [
+        "500K+"
+      ],
+      "text": "The platform took 500K+ orders a day.",
+      "evidence": "production"
+    },
+    {
+      "id": "grub-db",
+      "project": "grubtech",
+      "metrics": [
+        "40%"
+      ],
+      "text": "Database write load fell by 40%.",
+      "evidence": "production"
+    },
+    {
+      "id": "grub-confirm",
+      "project": "grubtech",
+      "metrics": [
+        "35%"
+      ],
+      "text": "Order confirmations got 35% faster.",
+      "evidence": "production"
+    },
+    {
+      "id": "grub-mttd",
+      "project": "grubtech",
+      "metrics": [
+        "45",
+        "9"
+      ],
+      "text": "Time to spot an incident went from 45 minutes to 9 after I added tracing.",
+      "evidence": "production"
+    },
+    {
+      "id": "hawk-accuracy",
+      "metrics": [
+        "60%",
+        "99.5%"
+      ],
+      "text": "HAWK's accuracy went from about 60% to 99.5% in production, with business rules checking every step the agents take.",
+      "evidence": "production",
+      "topic": "hawk"
+    },
+    {
+      "id": "hawk-cost",
+      "metrics": [
+        "60%"
+      ],
+      "text": "HAWK cut operational cost by about 60% in production.",
+      "evidence": "production",
+      "topic": "hawk"
+    },
+    {
+      "id": "hawk-scope",
+      "metrics": [
+        "S$100B"
+      ],
+      "text": "HAWK covers the bank's structural FX hedges, more than S$100B.",
+      "evidence": "production",
+      "topic": "hawk"
+    },
+    {
+      "id": "dbs-throughput",
+      "metrics": [
+        "1M+",
+        "12K"
+      ],
+      "text": "Services at DBS handled 1M+ transactions a day at 12K requests a second.",
+      "evidence": "production",
+      "topic": "dbs"
+    },
+    {
+      "id": "dbs-cedar",
+      "metrics": [
+        "30+",
+        "95%"
+      ],
+      "text": "An access control engine built on Cedar at the API gateway covered 30+ services and cut unauthorised access attempts by 95%.",
+      "evidence": "production",
+      "topic": "dega"
+    },
+    {
+      "id": "dbs-config",
+      "metrics": [
+        "40+"
+      ],
+      "text": "Live config with Spring Cloud Config and Spring Cloud Bus across 40+ service instances ended config-related outages.",
+      "evidence": "production",
+      "topic": "dega"
+    },
+    {
+      "id": "dbs-config-uptime",
+      "metrics": [
+        "99%",
+        "40+"
+      ],
+      "text": "Microservices uptime held at 99% across 40+ services once live config ended config-related outages.",
+      "evidence": "own-statement",
+      "topic": "dega"
+    },
+    {
+      "id": "dbs-team",
+      "metrics": [
+        "6",
+        "4"
+      ],
+      "text": "Team of 6 at DBS. I made the design calls, split and reviewed work, and coached 4 engineers.",
+      "evidence": "own-statement",
+      "topic": "dbs"
+    },
+    {
+      "id": "teams-other",
+      "text": "Team sizes: GrubTech 3, DirectFN 5, Arbitr NZ engineering 4.",
+      "evidence": "own-statement",
+      "topic": "dbs"
+    },
+    {
+      "id": "gaia",
+      "metrics": [
+        "85%"
+      ],
+      "text": "Built a multi-agent system for the GAIA benchmark that got 85% on 20 medium-level tasks.",
+      "evidence": "offline",
+      "topic": "research"
+    },
+    {
+      "id": "writing",
+      "metrics": [
+        "80",
+        "6"
+      ],
+      "text": "About 80 posts on Medium and 6 tutorials on Baeldung.",
+      "evidence": "own-statement",
+      "topic": "writing"
+    },
+    {
+      "id": "directfn-throughput",
+      "metrics": [
+        "45%",
+        "30%"
+      ],
+      "text": "Trading apps on Akka got 45% more throughput and 30% lower latency.",
+      "evidence": "production",
+      "topic": "directfn"
+    },
+    {
+      "id": "edu-msc",
+      "topic": "education",
+      "text": "MSc in Software Engineering from the University of Westminster, with research in blockchain.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "edu-bsc",
+      "topic": "education",
+      "text": "BSc in Statistics and Operational Research from the University of Peradeniya.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "arbitr-ramp",
+      "topic": "arbitr",
+      "project": "straker",
+      "text": "Learned Python, FastAPI, SQLAlchemy, Alembic and Vue 3 with Nuxt on the job at Arbitr, and had security fixes merged for release in the second week.",
+      "evidence": "merged"
+    },
+    {
+      "id": "arbitr-volume",
+      "topic": "arbitr",
+      "project": "straker",
+      "metrics": [
+        "350",
+        "1,500"
+      ],
+      "text": "About 350 merged pull requests across pre-production and production branches, and about 1,500 unique commits, in roughly four and a half months.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "arbitr-tests",
+      "topic": "arbitr",
+      "project": "straker",
+      "metrics": [
+        "80k"
+      ],
+      "text": "About 80k lines of tests at Arbitr.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "arbitr-specs",
+      "topic": "how-i-work",
+      "project": "straker",
+      "metrics": [
+        "271"
+      ],
+      "text": "Wrote 271 design specs and implementation plans at Arbitr before building.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "dbs-kafka",
+      "topic": "dbs",
+      "metrics": [
+        "48",
+        "4"
+      ],
+      "text": "Reactive Kafka pipelines on Project Reactor cut data processing from 48 hours to about 4.",
+      "evidence": "production"
+    },
+    {
+      "id": "dbs-redis",
+      "topic": "dbs",
+      "metrics": [
+        "40%"
+      ],
+      "text": "Redis caching with careful invalidation made queries 40% faster across services.",
+      "evidence": "production"
+    },
+    {
+      "id": "dbs-latency",
+      "topic": "dbs",
+      "metrics": [
+        "20ms",
+        "99.9%"
+      ],
+      "text": "Those services ran at 20ms latency with 99.9% uptime.",
+      "evidence": "production"
+    },
+    {
+      "id": "dbs-quality",
+      "topic": "dbs",
+      "metrics": [
+        "30%",
+        "15+"
+      ],
+      "text": "Shared standards across 15+ services cut codebase issues by 30%.",
+      "evidence": "production"
+    },
+    {
+      "id": "dbs-promotion",
+      "topic": "dbs",
+      "text": "Promoted from Senior Application Developer to technical lead in mid-2024, after the file processing and access control work landed.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "hawk-modes",
+      "topic": "hawk",
+      "text": "HAWK has two modes: role-gated prompt templates for everyday work, and a free-form agent mode for unusual questions.",
+      "evidence": "production"
+    },
+    {
+      "id": "hawk-audit",
+      "topic": "hawk",
+      "text": "Every HAWK agent action carries an audit trail, and anything that books a deal or posts to the ledger waits for a person to approve it.",
+      "evidence": "production"
+    },
+    {
+      "id": "grub-sdk",
+      "topic": "grubtech",
+      "project": "grubtech",
+      "text": "Built an order SDK in Android and Flutter versions, so any front end could fetch nearby orders and get live order updates.",
+      "evidence": "production"
+    },
+    {
+      "id": "grub-mttr",
+      "topic": "grubtech",
+      "project": "grubtech",
+      "metrics": [
+        "75%"
+      ],
+      "text": "Incident fix time fell by 75% after tracing went in.",
+      "evidence": "production"
+    },
+    {
+      "id": "directfn-memory",
+      "topic": "directfn",
+      "metrics": [
+        "60%"
+      ],
+      "text": "Fixed performance bottlenecks that cut memory use by 60% on the trading platform.",
+      "evidence": "production"
+    },
+    {
+      "id": "landed-eng",
+      "topic": "landednz",
+      "project": "landednz",
+      "text": "LandedNZ has a typed error hierarchy, a versioned prompt registry, and thin adapters around the Claude API and storage, all in one TypeScript monorepo.",
+      "evidence": "production"
+    },
+    {
+      "id": "medium-sdk",
+      "topic": "writing",
+      "text": "Wrote up the AWS SDK v2 getObjectAsBytes memory problem on Medium so other teams migrating would avoid it.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "rule-explain",
+      "topic": "how-i-work",
+      "text": "I don't ship code I can't explain line by line, whether a person or an AI wrote it.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "rule-fallback",
+      "topic": "how-i-work",
+      "text": "I don't put AI on a critical path without a plain, deterministic path underneath it.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "rule-prod",
+      "topic": "how-i-work",
+      "text": "Nothing goes to production without logs, metrics and a way to roll back.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "rule-tools",
+      "topic": "how-i-work",
+      "text": "I only bring in a framework or tool when the problem needs it.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "design-first",
+      "topic": "how-i-work",
+      "text": "I write the design first: the problem, the approach and how it can fail. Then build, then review for failure modes, rollback and the next reader.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "ai-workflow",
+      "topic": "how-i-work",
+      "text": "My Claude Code setup runs in phases: research, a plan checked by a validator agent against architecture rules I wrote, then build with tests enforced by hooks and a reviewer agent after each piece. A /learn step saves each correction so the next session starts smarter.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "opinion-ai",
+      "topic": "opinions",
+      "text": "Most teams still lean on prompt engineering and throw one generic agent at every kind of task. Then they either let the agent decide everything or keep a person watching every step. Both are old habits, and neither is efficient.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "opinion-overrated",
+      "topic": "opinions",
+      "text": "Overrated: autonomous agent pipelines with fragile orchestration, and microservices as the default. Underrated: deterministic logic under AI features, so reliability is designed in.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "opinion-hate",
+      "topic": "opinions",
+      "text": "What I push back on: clever abstractions nobody can read, AI-generated code dropped into a PR without thought, tech picked because it sounds good, and building for scale you won't hit.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "gaia-lessons",
+      "topic": "research",
+      "text": "After building the same agent across four frameworks: smolagents suits a manager handing work to specialists, LangGraph suits explicit state machines, LlamaIndex suits retrieval-heavy work, and the raw SDK is where you learn what the frameworks hide.",
+      "evidence": "offline"
+    },
+    {
+      "id": "settleagent",
+      "topic": "research",
+      "text": "Built SettleAgent on the raw Anthropic SDK with vector memory in ChromaDB, to see how agents work with no framework in the way.",
+      "evidence": "offline"
+    },
+    {
+      "id": "hf-cert",
+      "topic": "certifications",
+      "text": "Hugging Face Agentic AI certificate, January 2026. AWS Certified Solutions Architect, Associate, valid to January 2028.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "directfn-reliability",
+      "topic": "directfn",
+      "text": "Trading platform reliability and user experience improved by 80% after fixing critical performance bottlenecks.",
+      "evidence": "own-statement",
+      "metrics": [
+        "80%"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": "globe-lead",
+      "project": "globe",
+      "title": "Leading the tax engine",
+      "questions": [
+        "Tell me about a complex project you led."
+      ],
+      "evidence": "production",
+      "publicText": "Tax rules were hard-coded, so every regulation change meant code, a release and a retest. The people who understand the rules are tax professionals, so I built an engine where they write the rules themselves, versioned so an audit can replay any quarter. When the regulator changed its rules twice mid-build, the engine took both with no redeploy."
+    },
+    {
+      "id": "influence",
+      "project": "globe",
+      "title": "Getting three teams on the same page",
+      "questions": [
+        "How do you build alignment without authority?"
+      ],
+      "evidence": "production",
+      "publicText": "Three teams, 15+ services, and each had its own way of logging, testing and handling errors. None of them reported to me. I started open weekly sessions on real problems in our code, moved my own service first so there was a working example, then sat with each team lead for an afternoon. Issues across the platform dropped 30% over two quarters, and the sessions kept going after I moved on."
+    },
+    {
+      "id": "mentoring",
+      "project": "globe",
+      "title": "Bringing two new engineers up to speed",
+      "questions": [
+        "How do you grow engineers around you?"
+      ],
+      "evidence": "own-statement",
+      "publicText": "Two engineers joined within a few weeks of each other, one from Java and one from Node. I paired with each on a real first feature, end to end. For the Node engineer I used what they already knew about event loops as the bridge into reactive Java. Both shipped on their own within the first month, and the Node engineer's write-up became our onboarding guide."
+    },
+    {
+      "id": "disagreement",
+      "project": "globe",
+      "title": "Rules in code or rules the tax team owns",
+      "questions": [
+        "Tell me about a disagreement with a senior engineer."
+      ],
+      "evidence": "own-statement",
+      "publicText": "A senior engineer wanted to keep tax rules in code with a fast deploy pipeline. I wrote a one-page comparison against three real changes already coming from the regulator. He raised the runtime cost, which was fair, so I came back with benchmarks. He came round, and later pushed the same pattern on other projects himself."
+    },
+    {
+      "id": "oom-story",
+      "project": "dega",
+      "title": "The 25MB surprise",
+      "questions": [
+        "Tell me about a mistake you made.",
+        "Tell me about a time something went wrong."
+      ],
+      "evidence": "production",
+      "publicText": "During the AWS SDK v2 migration I picked getObjectAsBytes because it looked like the clean replacement. Tests passed, then production ran out of memory. The method has a hidden 25MB cap, and our real files were bigger. We rolled back in about ten minutes with no data lost. I moved to streaming, added a test file sized like production, and wrote it up on Medium so other teams wouldn't hit the same wall."
+    },
+    {
+      "id": "deadline",
+      "project": "globe",
+      "title": "When the regulator changed the structure",
+      "questions": [
+        "Tell me about delivering under pressure."
+      ],
+      "evidence": "production",
+      "publicText": "About three weeks before a milestone, the regulator changed the structure of the rules, which meant engineering work on our side. I ran it in two streams: we reworked the structure and the editor while the tax team checked which of their rules had to change. We froze anything non-essential and ran old and new formats side by side. We still finished 3 months before the FY2025 deadline, with a clean audit trail."
+    },
+    {
+      "id": "reverse",
+      "project": "dega",
+      "title": "A service split I undid",
+      "questions": [
+        "What decision would you make differently?"
+      ],
+      "evidence": "own-statement",
+      "publicText": "At DBS I split notifications and audit into two services because I thought they'd scale separately. Two months in it was clearly wrong: duplicated code, two pipelines on the same events, network calls where a function call used to be. I merged them back in about two weeks. My rule now: if you're not sure, keep it together and split when there's a concrete reason."
+    },
+    {
+      "id": "hawk-reject",
+      "project": "hawk",
+      "title": "Loud failures over silent ones",
+      "questions": [
+        "How do you decide without full information?"
+      ],
+      "evidence": "production",
+      "publicText": "On HAWK the agent was grounded by a rules library that wasn't finished, and we had a ship date. The question was what happens when no rule matches. I pushed for a hard reject that says why, instead of letting the agent guess on something with financial outcomes. The compliance lead backed it straight away. The 'rule not found' count became the rules team's priority list."
+    },
+    {
+      "id": "run-it",
+      "project": "grubtech",
+      "title": "Building something I'd be woken up for",
+      "questions": [
+        "How have you run services you built?"
+      ],
+      "evidence": "production",
+      "publicText": "At GrubTech the same few engineers built the order service and took the on-call pages. So I added distributed tracing from day one, built dashboards around what diners actually see, and wrote runbooks while the design was fresh. Time to spot an incident went from 45 minutes to 9, and fixes got 75% faster."
+    },
+    {
+      "id": "shadowing",
+      "project": "globe",
+      "title": "Two afternoons watching the tax team",
+      "questions": [
+        "Tell me about working with non-engineers."
+      ],
+      "evidence": "production",
+      "publicText": "The brief said 'Excel-like UI' and I wanted a form builder. I spent two afternoons watching the tax team work instead. They lived in worksheets: jumping between cells, tracing formulas back. So we built a sheet with named cells and formulas that compiled to rules underneath, and the tax team ran the design reviews. Alignment on a rule change went from 6 weeks to 2."
+    },
+    {
+      "id": "arbitr-recovery",
+      "project": "straker",
+      "title": "A stuck job and money already paid",
+      "questions": [
+        "Tell me about a production incident."
+      ],
+      "evidence": "production",
+      "publicText": "A paid 12-language job got stuck halfway through machine translation. I traced it through the logs and a read-only view of the production database: a timeout, then a pod restart that killed the request with nothing to pick the work back up. The obvious fix would have charged the client again, so I built a recovery that only re-ran the pending work. A senior engineer ran it, and the 9,084 credits the client had paid weren't charged twice."
+    },
+    {
+      "id": "arbitr-guardrail",
+      "project": "straker",
+      "title": "A guardrail that didn't touch the agent",
+      "questions": [
+        "How do you put guardrails on AI agents?"
+      ],
+      "evidence": "production",
+      "publicText": "A new product's first clients needed only approved vendors picked by the AI vendor-selection agent. Instead of changing the agent, the workflow service filters its top 15 picks and sends the job to a person if none qualify. A project manager can override it, with the reason logged. It went live for the product's first client jobs."
+    },
+    {
+      "id": "arbitr-terms",
+      "project": "straker",
+      "title": "An agent that fixes client terms",
+      "questions": [
+        "Have you designed an LLM agent?"
+      ],
+      "evidence": "own-statement",
+      "publicText": "Clients register exact terms, and machine translation didn't always use them. I designed an LLM repair agent that runs after the other agents, puts the exact term in and fixes the grammar around it. It's deterministic, it never trusts the model's own report of what it changed, and quality scoring waits until its repairs land."
+    },
+    {
+      "id": "arbitr-payrates",
+      "project": "straker",
+      "title": "Vendors paid $0 an hour",
+      "questions": [
+        "Tell me about a production incident.",
+        "How do you find a root cause?"
+      ],
+      "evidence": "merged",
+      "publicText": "Automated purchase orders for a new product were going out at $0 an hour. Working from production data, I found a recent filter had hidden about 93% of vendor rates from pricing. I worked with the person who wrote the filter to keep what they meant it to do, built a fix that reprices live $0 orders, and prepared corrections for 8 affected orders worth $1,594.67."
+    },
+    {
+      "id": "xss-story",
+      "project": "straker",
+      "title": "A security fix in week two",
+      "questions": [
+        "How fast do you ramp up?",
+        "Tell me about security work."
+      ],
+      "evidence": "merged",
+      "publicText": "In my second week, on a stack I'd just started learning, I closed a stored XSS flaw. I wrote down why encoding on output wouldn't work for us, then moved 138 request schemas across 5 services onto a shared sanitising base model with an explicit opt-out. Review feedback turned into a wider audit of 171 classes, fixed in phases."
+    },
+    {
+      "id": "arbitr-offers",
+      "project": "straker",
+      "title": "Duplicate offers from a timeout",
+      "questions": [
+        "Tell me about a performance problem."
+      ],
+      "evidence": "merged",
+      "publicText": "Sending offers to vendors timed out, and retries created duplicates the operations team had to clean up by hand. The logs showed a loop making 2 calls per vendor behind a 30 second gateway limit. I added a bulk endpoint so it's one call per language pair, checked the logs again after deploy, and moved the remaining slow parts to background work."
+    },
+    {
+      "id": "arbitr-review-stuck",
+      "project": "straker",
+      "title": "A project stuck in review for 17.5 hours",
+      "questions": [
+        "Tell me about working with product on a fix."
+      ],
+      "evidence": "merged",
+      "publicText": "An enterprise client's project sat in review for 17.5 hours. I built a timeline from logs, the database and audit records: completion waited on 6 of 13 vendor orders being confirmed. With a senior engineer I got a product decision to separate client-facing completion from that, then fixed it and 3 cancel paths that also left projects stuck."
+    },
+    {
+      "id": "arbitr-dashboard",
+      "project": "straker",
+      "title": "Filtering that hid jobs",
+      "questions": [
+        "Tell me about a database optimisation."
+      ],
+      "evidence": "merged",
+      "publicText": "The project dashboard filtered on a loaded page of 50 rows, so matching jobs on later pages never showed. I moved filtering, sorting and counts into one SQL query and skipped a schema change. When a reviewer worried about speed, I benchmarked it on real PostgreSQL: about 4.4x faster at 20k jobs."
+    },
+    {
+      "id": "arbitr-backfill",
+      "project": "straker",
+      "title": "A 3-million-row clean-up",
+      "questions": [
+        "Have you done data migrations at scale?"
+      ],
+      "evidence": "pre-prod",
+      "publicText": "To remove duplicate glossary terms I added a normalised column, a batched backfill, a constraint and a search filter, across two repos. In pre-production it backfilled 3,007,543 rows in a little over 2 hours with no errors. When an early constraint crash-looped a container there, I traced it in the logs and reverted."
+    },
+    {
+      "id": "arbitr-reminders",
+      "project": "straker",
+      "title": "Chasing vendors who never confirmed",
+      "questions": [
+        "Tell me about background jobs you've built."
+      ],
+      "evidence": "merged",
+      "publicText": "Vendors who accepted an offer but never confirmed the order were never chased, and I found about 347 stale batches. I designed a sweep that reminds at 20% of the window, sends a final notice at 30%, then raises it for a person. A cross-model AI review caught a bug where the limit ran before the due filter, which could starve the sweep."
+    },
+    {
+      "id": "arbitr-complaints",
+      "project": "straker",
+      "title": "Client complaints, end to end",
+      "questions": [
+        "Have you built a feature end to end?"
+      ],
+      "evidence": "merged",
+      "publicText": "Client complaints lived outside the system with no audit trail. I built the workflow across 4 services: tables, a state machine, an event log that can't be edited, and pushes to the operations console and vendor defect tracking that don't block the main save. After UX feedback the picker became a modal."
+    },
+    {
+      "id": "arbitr-provenance",
+      "project": "straker",
+      "title": "Explaining automated vendor choices",
+      "questions": [
+        "How do you make AI decisions auditable?"
+      ],
+      "evidence": "merged",
+      "publicText": "To support EU AI Act transparency, I added an insert-only record of how each vendor was chosen, covering all 4 ways a vendor gets picked, plus a 'selection details' view. In review we made sure it keeps no personal data and clears stale agent evidence when it falls back."
+    },
+    {
+      "id": "arbitr-benchmark",
+      "project": "straker",
+      "title": "Testing a translation option before adopting it",
+      "questions": [
+        "How do you evaluate AI?"
+      ],
+      "evidence": "offline",
+      "publicText": "I built an offline, repeatable benchmark for an adaptive machine translation option: 16 language pairs, 100 segments each, scored by the in-house quality model. It found a small but statistically significant drop for English into other languages, before anyone decided to adopt it."
+    },
+    {
+      "id": "arbitr-orchestration",
+      "project": "straker",
+      "title": "Which steps run automated and which go to people",
+      "questions": [
+        "What does human-in-the-loop look like in practice?"
+      ],
+      "evidence": "merged",
+      "publicText": "The platform only knew whether a whole job was meant to be automated, so after a step moved on it couldn't tell which stages should still be automatic. I tested two designs. One failed a test because it would undo a manager's switch to manual; the other had a hidden bug a proof test found, which I fixed with a guard. I also built the exception console the agents raise work into, and an early warning before offers expire."
+    },
+    {
+      "id": "arbitr-dupes",
+      "project": "straker",
+      "title": "A bug that came back",
+      "questions": [
+        "Tell me about a tricky bug."
+      ],
+      "evidence": "merged",
+      "publicText": "PDF uploads were creating duplicate deliverables, a bug that had been fixed before. The git history showed how a later rework brought it back, and there were 2 causes: conversion changed the file id, and two insert paths could race. I fixed the first with a source-file column and the second with a partial unique index built concurrently, using ON CONFLICT DO NOTHING against that exact index."
+    },
+    {
+      "id": "arbitr-team",
+      "project": "straker",
+      "title": "Helping the team move faster",
+      "questions": [
+        "How do you help your team?"
+      ],
+      "evidence": "own-statement",
+      "publicText": "I reviewed about 35 of my teammates' pull requests and caught a tenant-isolation issue and a broken migration chain before they reached shared environments. I kept pre-production deployable with 10+ migration fixes, wrote runbooks for the operations team, and helped 2 QA colleagues start using AI tools."
+    },
+    {
+      "id": "cedar-story",
+      "project": "dega",
+      "title": "Access control at the gateway",
+      "questions": [
+        "Tell me about security work.",
+        "Why Cedar?"
+      ],
+      "evidence": "production",
+      "publicText": "We had 30+ services in a zero-trust setup and no consistent way to check attributes at the gateway. I built a standalone policy engine on Cedar, inside the gateway process. Unauthorised access attempts dropped 95%, and it became the pattern for new services."
+    },
+    {
+      "id": "config-story",
+      "project": "dega",
+      "title": "Config changes without restarts",
+      "questions": [
+        "How do you make deploys safer?"
+      ],
+      "evidence": "production",
+      "publicText": "Any config change across our 40+ service instances meant a restart, and restarts at a bank aren't free. I set up Spring Cloud Config Server with Spring Cloud Bus so changes reach every instance live. Config-related outages stopped."
+    },
+    {
+      "id": "hawk-design",
+      "project": "hawk",
+      "title": "Agents with rules underneath",
+      "questions": [
+        "Walk me through an agentic system you designed.",
+        "How do you stop hallucinations?"
+      ],
+      "evidence": "production",
+      "publicText": "HAWK started as a broad brief: bring the hedge accounting lifecycle, spread across teams and manual steps, into one platform using AI. I chose agents over a fixed workflow because the rules kept changing and people asked one-off questions. A proxy agent screens requests, an orchestrator splits the work, and specialist agents handle allocation, booking and posting. The business rules live in a knowledge base the model can't override, and a person approves anything with real side effects."
+    },
+    {
+      "id": "athena",
+      "project": "directfn",
+      "title": "Algorithmic trading on Akka",
+      "questions": [
+        "Tell me about your earlier work."
+      ],
+      "evidence": "production",
+      "publicText": "At DirectFN the main project was Athena, an order management system that lets insurance and hedge funds split large orders over time with algorithms like TWAP and VWAP so they don't move the market. Each algorithm ran as its own Akka actor with its own state and supervision. Tuning mailboxes, dispatchers and serialisation gave 45% more throughput and 30% lower latency."
+    },
+    {
+      "id": "aml",
+      "project": "directfn",
+      "title": "Spotting suspicious trades",
+      "questions": [
+        "Tell me about your earlier work."
+      ],
+      "evidence": "production",
+      "publicText": "I also worked on an anti-money-laundering engine that looks for suspicious trading patterns across several sliding time windows at once, without keeping every transaction in memory. It ran on typed Akka actors and Akka HTTP."
+    },
+    {
+      "id": "gaia-story",
+      "project": "research",
+      "title": "One benchmark, four frameworks",
+      "questions": [
+        "How do you keep up with AI?",
+        "How do you pick a framework?"
+      ],
+      "evidence": "offline",
+      "publicText": "Before moving into AI work full time, I spent about five months building the same kind of agent system in smolagents, LangGraph, LlamaIndex and the raw Anthropic SDK, against the GAIA benchmark. The smolagents version, a manager with research and audio/video specialists, got 85% on 20 medium tasks. I wanted my own view of which framework fits which problem."
+    }
+  ],
+  "decisions": [
+    {
+      "project": "straker",
+      "question": "Before a new AI translation product took its first client jobs, how do we make sure its AI agent only picks approved vendors?",
+      "chose": "Filtered the agent's top 15 picks in our workflow service, keeping only approved vendors.",
+      "over": "Changing the agent itself.",
+      "because": "Other products use the same agent and rely on how it works today. If none of the 15 qualified, the job went to a person to assign.",
+      "evidence": "production"
+    },
+    {
+      "project": "straker",
+      "question": "Clients register terms that must appear exactly in their translations. After the AI repairs a translation, how do we record which of those terms it used?",
+      "chose": "Checked the repaired text itself to see which terms are there.",
+      "over": "Taking the model's own report of what it changed.",
+      "because": "That record is the client's proof that their terms were followed. It shouldn't depend on a model describing its own work.",
+      "evidence": "own-statement"
+    },
+    {
+      "project": "straker",
+      "question": "The repair agent needs each client's glossary of required terms. How does it get them?",
+      "chose": "Sent the client's glossary along with each job.",
+      "over": "Calling the terminology service to look up terms for every segment (one sentence of the document).",
+      "because": "That call took about 7.3 seconds per 500 segments against a 5 second timeout, and it had already killed whole batches.",
+      "evidence": "own-statement"
+    },
+    {
+      "project": "landednz",
+      "question": "LandedNZ gives people moving to New Zealand a step-by-step plan for settling in: bank account, IRD number, tenancy and so on. What should build that plan?",
+      "chose": "A rules engine that orders the steps for the person's situation.",
+      "over": "Letting the AI write the plan.",
+      "because": "A wrong step costs people real time and money. The AI answers questions about the plan but can't change it, so the plan still works when the AI is down.",
+      "evidence": "production"
+    },
+    {
+      "project": "landednz",
+      "question": "The AI assistant searches LandedNZ's own content before it answers. Where should that search data live?",
+      "chose": "In the main PostgreSQL database, using the pgvector extension.",
+      "over": "A separate database just for AI search.",
+      "because": "The data is small. One database means one backup and one thing to run.",
+      "evidence": "production"
+    },
+    {
+      "project": "globe",
+      "question": "The GloBE tax rules covered 15+ countries and kept changing. Every change meant a code change, a release and a retest. How do we keep up?",
+      "chose": "Moved the rules into templates (written in MVEL) that the tax team edits themselves.",
+      "over": "Keeping the rules in code and speeding up releases.",
+      "because": "The rules changed too often for a release cycle, and benchmarks showed the templates ran fast enough for our volume.",
+      "evidence": "production"
+    },
+    {
+      "project": "globe",
+      "question": "Auditors ask what the tax rules were on a given date. How do we answer exactly?",
+      "chose": "Gave every rule template a version number and kept the old versions.",
+      "over": "Editing rules in place.",
+      "because": "We can rerun any calculation against the exact version of the rules that applied on that date.",
+      "evidence": "production"
+    },
+    {
+      "project": "globe",
+      "question": "Tax professionals, not engineers, write the rules. What should the rule editor look like?",
+      "chose": "A worksheet-style editor with named cells and formulas.",
+      "over": "A form builder, which was my first idea.",
+      "because": "I spent two afternoons watching the tax team work. They think in cells and formulas, and a form would have fought them at every step.",
+      "evidence": "production"
+    },
+    {
+      "project": "dega",
+      "question": "After an SDK upgrade, the file service started running out of memory in production on large files. How should it read files from S3?",
+      "chose": "Streamed each file through in pieces.",
+      "over": "Loading each whole file into memory.",
+      "because": "The method we first used, getObjectAsBytes, has a hidden 25MB cap, and real trade files are bigger.",
+      "evidence": "production"
+    },
+    {
+      "project": "dega",
+      "question": "Moving to Java 17 meant moving to version 2 of the AWS SDK. How should the file service call S3?",
+      "chose": "Used the reactive version of the SDK with WebFlux.",
+      "over": "Keeping blocking calls.",
+      "because": "We had to move to v2 anyway, and the blocking calls were the part that slowed down when markets got busy.",
+      "evidence": "production"
+    },
+    {
+      "project": "grubtech",
+      "question": "At lunch peaks, MongoDB couldn't keep up with incoming orders. How do we keep orders fast?",
+      "chose": "Confirmed orders from a Redis cache and wrote them to MongoDB shortly after (write-behind caching).",
+      "over": "Writing every order straight to MongoDB.",
+      "because": "The database was the bottleneck at peak times. The cache takes the burst, and the writes catch up a moment later.",
+      "evidence": "production"
+    },
+    {
+      "project": "grubtech",
+      "question": "I was on call for the order service myself. What should its dashboards track?",
+      "chose": "What diners see, such as how long a kitchen update takes to reach the diner's screen.",
+      "over": "Only the service's internal metrics.",
+      "because": "The diner's screen is where problems show first, and I wanted to find the cause from one dashboard when paged at 3am.",
+      "evidence": "production"
+    },
+    {
+      "project": "straker",
+      "question": "Clicking \"Send offer\" timed out on large jobs, and retries sent vendors duplicate offers. How do we fix it?",
+      "chose": "Added bulk endpoints, so it makes one call per language pair.",
+      "over": "Keeping the loop that made two calls per vendor.",
+      "because": "The loop ran past the gateway's 30 second limit, and every retry sent the same vendors another offer.",
+      "evidence": "merged"
+    },
+    {
+      "project": "straker",
+      "question": "Clients sometimes got the same translated file delivered twice, when two processes saved it at the same moment. How do we stop that?",
+      "chose": "Added a PostgreSQL rule that allows only one visible deliverable per file and language (a partial unique index, built without blocking live traffic).",
+      "over": "Catching the duplicate error in application code.",
+      "because": "Only the database sees both saves at once, so it's the one place that can block the second.",
+      "evidence": "merged"
+    },
+    {
+      "project": "landednz",
+      "question": "I build LandedNZ alone, with a web app and an API. How should the code be organised?",
+      "chose": "One TypeScript repository for both, sharing the same types.",
+      "over": "Separate repositories for the web app and the API.",
+      "because": "Both sides use the same type definitions, so the API and the app can't quietly drift apart.",
+      "evidence": "production"
+    },
+    {
+      "project": "dega",
+      "question": "30+ services needed the same access checks at the API gateway. Where should the policy check run?",
+      "chose": "Inside the gateway, using Cedar.",
+      "over": "OPA running as a separate service.",
+      "because": "The check runs in the same process on the JVM, and Cedar policies have a formally defined meaning. We didn't have to run another service or learn another policy language.",
+      "evidence": "production"
+    },
+    {
+      "project": "dega",
+      "question": "Changing config on our 40+ service instances meant restarting them. How do we push changes live?",
+      "chose": "Used Spring Cloud Bus with Spring Cloud Config.",
+      "over": "Our own Kafka topic for config updates.",
+      "because": "It was already part of our Spring stack, so we didn't have to run a second messaging setup.",
+      "evidence": "production"
+    },
+    {
+      "project": "grubtech",
+      "question": "An order can get two updates seconds apart from different apps. How do we stop one wiping out the other?",
+      "chose": "Queued the changes at the service so they apply one at a time, in order.",
+      "over": "Letting the last write win.",
+      "because": "Otherwise one update silently overwrites the other, and the diner sees the wrong status.",
+      "evidence": "production"
+    },
+    {
+      "project": "hawk",
+      "question": "The hedge accounting assistant had to follow changing rules and answer one-off questions. How should it be built?",
+      "chose": "AI agents, with a rules engine underneath that checks their work.",
+      "over": "A fixed workflow graph.",
+      "because": "A fixed graph couldn't handle one-off questions or rules that kept changing. Every action that changes another system, like a booking, still needs a person to approve it.",
+      "evidence": "production"
+    },
+    {
+      "project": "hawk",
+      "question": "Some users wanted predictable steps, others wanted to ask anything. How should they work with the assistant?",
+      "chose": "Two modes side by side: ready-made templates and free-form questions.",
+      "over": "One free-form chat for everyone.",
+      "because": "Hedge professionals wanted predictable templates and traders wanted free-form questions. Offering both let each group start when they were ready.",
+      "evidence": "production"
+    },
+    {
+      "project": "hawk",
+      "question": "The agents had to work with several old bank systems. How should they connect?",
+      "chose": "Put an MCP-style adapter in front of each system.",
+      "over": "Wiring the agents straight to each system.",
+      "because": "The agents and the old systems can then change without breaking each other.",
+      "evidence": "production"
+    },
+    {
+      "project": "directfn",
+      "question": "Funds split large orders over time with trading algorithms like TWAP and VWAP. How do we run many of them at once safely?",
+      "chose": "Ran each algorithm as its own Akka actor.",
+      "over": "Shared state protected by locks.",
+      "because": "Each order had its own state and lifecycle. If one failed, it restarted on its own without taking the others down.",
+      "evidence": "production"
+    },
+    {
+      "project": "research",
+      "question": "When I started building AI agents, where should I begin?",
+      "chose": "Built on the raw SDK first.",
+      "over": "Starting with a framework.",
+      "because": "Frameworks hide complexity on purpose. I wanted to know what they hide before something breaks.",
+      "evidence": "offline"
+    }
+  ],
+  "answers": [
+    {
+      "id": "now",
+      "keys": [
+        "work on",
+        "working",
+        "arbitr",
+        "job",
+        "now",
+        "do you do",
+        "current"
+      ],
+      "text": "I'm an AI Product Engineer at Arbitr in Auckland. Arbitr is an AI-first translation platform where clients upload content, AI agents and machine translation do the first pass, and people review it where needed. I work across its services and web apps, mostly on what the AI can do on its own and the path to a person when it shouldn't.",
+      "links": [
+        {
+          "label": "The Arbitr story",
+          "project": "straker"
+        }
+      ]
+    },
+    {
+      "id": "before",
+      "keys": [
+        "before",
+        "dbs",
+        "bank",
+        "experience",
+        "years",
+        "singapore",
+        "background",
+        "career"
+      ],
+      "text": "I've been doing this for 7 years. Before Arbitr I was at DBS Bank in Singapore, where I led design on a tax engine that runs across more than 15 countries and on HAWK, a multi-agent hedge accounting workbench. Before that, GrubTech and DirectFN in Sri Lanka. I work across the whole stack, from services to web apps.",
+      "links": [
+        {
+          "label": "The tax engine",
+          "project": "globe"
+        },
+        {
+          "label": "Trade files at DBS",
+          "project": "dega"
+        }
+      ]
+    },
+    {
+      "id": "stack",
+      "keys": [
+        "language",
+        "python",
+        "java",
+        "stack",
+        "tech",
+        "vue",
+        "skills",
+        "tools",
+        "typescript"
+      ],
+      "text": "Java for most of my career. At Arbitr I picked up Python with FastAPI and Vue with Nuxt on the job. On LandedNZ I use TypeScript, Next.js and Fastify, with the Claude API and pgvector for search.",
+      "links": [
+        {
+          "label": "LandedNZ",
+          "project": "landednz"
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "keys": [
+        "reach",
+        "contact",
+        "email",
+        "hire",
+        "book",
+        "chat",
+        "talk",
+        "call"
+      ],
+      "text": "The quickest way is the Book a 20-minute chat button on this page. You can also find me on LinkedIn.",
+      "links": [
+        {
+          "label": "Book a chat",
+          "href": "https://cal.com/ruchira-rajapaksha"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/ruchirarajapaksha/"
+        }
+      ]
+    },
+    {
+      "id": "kid",
+      "keys": [
+        "game",
+        "kid",
+        "hobby",
+        "fun",
+        "play"
+      ],
+      "text": "As a kid in Sri Lanka I wanted to make video games. I still want to know how things get made, and that's most of why I write software. These days I'm usually on the PlayStation when I'm off the clock.",
+      "links": []
+    },
+    {
+      "id": "ai",
+      "keys": [
+        "ai",
+        "agent",
+        "llm",
+        "guardrail",
+        "machine learning",
+        "genai"
+      ],
+      "text": "I've put AI into production in three places. At Arbitr I work on the guardrails and human review around the platform's agents. At DBS I led design on HAWK, where agents handle hedge accounting and business rules check every step. On LandedNZ an AI chat answers questions about a plan that a rules engine builds. In all three, rules or a person check the AI before anything can cost someone money.",
+      "links": [
+        {
+          "label": "Guardrails at Arbitr",
+          "project": "straker"
+        },
+        {
+          "label": "LandedNZ",
+          "project": "landednz"
+        }
+      ]
+    },
+    {
+      "id": "hawk",
+      "keys": [
+        "hawk",
+        "hedge",
+        "agentic",
+        "multi-agent"
+      ],
+      "text": "HAWK is a multi-agent workbench for structural FX hedge accounting at DBS, covering more than S$100B. A proxy agent screens requests, an orchestrator splits the work, and specialist agents handle allocation, booking and posting. Business rules sit underneath and a person approves anything with real side effects. Accuracy went from about 60% to 99.5% in production.",
+      "links": []
+    },
+    {
+      "id": "landednz",
+      "keys": [
+        "landednz",
+        "landed",
+        "side project",
+        "own product",
+        "built alone"
+      ],
+      "text": "LandedNZ is a web app I built alone for people moving to New Zealand. A rules engine builds your plan for the first 90 days, and an AI chat answers questions about it. If the chat is down, the plan is still there and still right.",
+      "links": [
+        {
+          "label": "The LandedNZ story",
+          "project": "landednz"
+        },
+        {
+          "label": "Try it",
+          "href": "https://landednz.vercel.app"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "keys": [
+        "mistake",
+        "fail",
+        "went wrong",
+        "error",
+        "regret"
+      ],
+      "text": "During an AWS SDK migration at DBS I used a method that looked like a clean swap. It had a hidden 25MB cap, our real files were bigger, and production ran out of memory. We rolled back in ten minutes with no data lost. I switched to streaming, added a production-sized test file, and wrote it up on Medium so other teams wouldn't hit it.",
+      "links": [
+        {
+          "label": "The trade file project",
+          "project": "dega"
+        }
+      ]
+    },
+    {
+      "id": "disagree",
+      "keys": [
+        "disagree",
+        "conflict",
+        "push back",
+        "pushback",
+        "argue"
+      ],
+      "text": "On the tax engine a senior engineer wanted rules kept in code. I wrote a one-page comparison against three real regulatory changes, then answered his concern about runtime cost with benchmarks. He came round, and later backed the pattern on other projects.",
+      "links": [
+        {
+          "label": "The tax engine",
+          "project": "globe"
+        }
+      ]
+    },
+    {
+      "id": "lead",
+      "keys": [
+        "lead",
+        "mentor",
+        "coach",
+        "manage",
+        "team size",
+        "people"
+      ],
+      "text": "At DBS I was the technical lead on a team of 6. I made the design calls, split and reviewed the work, and coached 4 engineers. I also got three teams to agree on shared standards through open weekly sessions, and issues across the platform dropped 30%.",
+      "links": [
+        {
+          "label": "The tax engine",
+          "project": "globe"
+        }
+      ]
+    },
+    {
+      "id": "decide",
+      "keys": [
+        "decision",
+        "trade-off",
+        "tradeoff",
+        "chose",
+        "choice",
+        "architecture"
+      ],
+      "text": "Each project on this page lists the main decisions I made, what I chose it over, and why. One I'm fond of from HAWK: when no business rule matched, the system said no and explained why, instead of letting the agent guess. That 'rule not found' count became the rules team's to-do list.",
+      "links": [
+        {
+          "label": "Decisions at Arbitr",
+          "project": "straker"
+        }
+      ]
+    },
+    {
+      "id": "where",
+      "keys": [
+        "based",
+        "location",
+        "auckland",
+        "onsite",
+        "hybrid",
+        "remote",
+        "work rights",
+        "sponsor",
+        "relocat",
+        "where are you"
+      ],
+      "text": "I'm in Auckland and looking for onsite or hybrid roles here. I have open work rights in New Zealand, so no sponsorship is needed.",
+      "links": [
+        {
+          "label": "Book a chat",
+          "href": "https://cal.com/ruchira-rajapaksha"
+        }
+      ]
+    },
+    {
+      "id": "nz",
+      "keys": [
+        "new zealand",
+        "nz",
+        "why move",
+        "moved",
+        "leave singapore"
+      ],
+      "text": "Singapore was great for my career, but my wife got into university in Auckland and we wanted more room to live: nature, a slower pace, and a tech community small enough that your work gets seen. Planning the move is also how LandedNZ started.",
+      "links": [
+        {
+          "label": "LandedNZ",
+          "project": "landednz"
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "keys": [
+        "github",
+        "repo",
+        "writing",
+        "medium",
+        "blog",
+        "certif",
+        "aws",
+        "proof",
+        "source code",
+        "portfolio of code"
+      ],
+      "text": "My code examples are on GitHub, including the LandedNZ backend. I've written about 80 posts on Medium and 6 tutorials for Baeldung, and I'm AWS certified as a Solutions Architect.",
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/LordMaduz"
+        },
+        {
+          "label": "Medium",
+          "href": "https://medium.com/@maduz.ruchira"
+        },
+        {
+          "label": "AWS badge",
+          "href": "https://www.credly.com/badges/4c0cce51-2177-4c55-8781-e31bec65ff8c/public_url"
+        }
+      ]
+    },
+    {
+      "id": "frontend",
+      "keys": [
+        "frontend",
+        "front end",
+        "full stack",
+        "fullstack",
+        "ui",
+        "react",
+        "next.js"
+      ],
+      "text": "Yes, I work on the front end too. Vue and Nuxt on Arbitr's three web apps, Next.js and React on LandedNZ, and earlier React at DirectFN and an order SDK in Flutter at GrubTech.",
+      "links": [
+        {
+          "label": "LandedNZ",
+          "project": "landednz"
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "keys": [
+        "looking for",
+        "ideal",
+        "next role",
+        "what kind",
+        "culture"
+      ],
+      "text": "A product team shipping AI to real users, small enough that I own real pieces of it. A startup or scale-up suits me best.",
+      "links": [
+        {
+          "label": "Book a chat",
+          "href": "https://cal.com/ruchira-rajapaksha"
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "keys": [
+        "education",
+        "degree",
+        "university",
+        "study",
+        "studied",
+        "masters",
+        "msc",
+        "qualification"
+      ],
+      "text": "I have an MSc in Software Engineering from the University of Westminster, with research in blockchain, and a BSc in Statistics and Operational Research from the University of Peradeniya. I'm also AWS certified as a Solutions Architect and hold the Hugging Face Agentic AI certificate.",
+      "links": [
+        {
+          "label": "AWS badge",
+          "href": "https://www.credly.com/badges/4c0cce51-2177-4c55-8781-e31bec65ff8c/public_url"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "keys": [
+        "security",
+        "secure",
+        "auth",
+        "access control",
+        "xss",
+        "vulnerab"
+      ],
+      "text": "At DBS I built an access control engine on Cedar at the API gateway for 30+ services, and unauthorised access attempts dropped 95%. At Arbitr I closed a stored XSS flaw across 5 services in my second week.",
+      "links": [
+        {
+          "label": "DBS work",
+          "project": "dega"
+        },
+        {
+          "label": "Arbitr work",
+          "project": "straker"
+        }
+      ]
+    },
+    {
+      "id": "kafka",
+      "keys": [
+        "kafka",
+        "event",
+        "streaming",
+        "message",
+        "queue",
+        "redis streams",
+        "async"
+      ],
+      "text": "A lot. At DBS I built reactive Kafka pipelines that cut processing from 48 hours to about 4, on services handling 1M+ transactions a day. At Arbitr the services talk over Redis Streams, and I've built consumers, sweepers and event-driven notifications there.",
+      "links": [
+        {
+          "label": "Arbitr work",
+          "project": "straker"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "keys": [
+        "test",
+        "quality",
+        "tdd",
+        "review",
+        "code review"
+      ],
+      "text": "I test where the risk is. At Arbitr that came to about 80k lines of tests, and I reviewed about 35 of my teammates' pull requests. My workflow enforces tests with hooks before anything gets committed.",
+      "links": [
+        {
+          "label": "Arbitr work",
+          "project": "straker"
+        }
+      ]
+    },
+    {
+      "id": "workflow",
+      "keys": [
+        "claude code",
+        "copilot",
+        "ai tools",
+        "workflow",
+        "how do you use ai",
+        "ai assisted",
+        "vibe",
+        "claude"
+      ],
+      "text": "I use Claude Code as a system with rules. It researches first, then writes a plan that a validator agent checks against architecture rules I wrote, then builds with tests enforced by hooks and a reviewer agent after each piece. I don't ship code I can't explain line by line, whoever wrote it.",
+      "links": []
+    },
+    {
+      "id": "observability",
+      "keys": [
+        "observab",
+        "monitor",
+        "tracing",
+        "logs",
+        "incident",
+        "on call",
+        "on-call",
+        "outage"
+      ],
+      "text": "At GrubTech I added distributed tracing to the order service from day one, and time to spot an incident went from 45 minutes to 9. At Arbitr I trace production problems through the logs and a read-only view of the database, like the stuck job where I protected 9,084 credits from being charged twice.",
+      "links": [
+        {
+          "label": "GrubTech",
+          "project": "grubtech"
+        },
+        {
+          "label": "Arbitr",
+          "project": "straker"
+        }
+      ]
+    },
+    {
+      "id": "opinions",
+      "keys": [
+        "opinion",
+        "believe",
+        "overrated",
+        "underrated",
+        "hate",
+        "philosophy",
+        "principle"
+      ],
+      "text": "I think AI-assisted development is undersold when you design the workflow around it. I'm wary of autonomous agent pipelines with no visible failure modes, and of microservices by default. And I never put AI on a critical path without plain logic underneath it.",
+      "links": []
+    },
+    {
+      "id": "research",
+      "keys": [
+        "gaia",
+        "benchmark",
+        "langgraph",
+        "llamaindex",
+        "smolagents",
+        "framework",
+        "langchain"
+      ],
+      "text": "I built the same kind of agent system in smolagents, LangGraph, LlamaIndex and the raw Anthropic SDK against the GAIA benchmark. The smolagents version got 85% on 20 medium tasks. My short version: smolagents for a manager with specialists, LangGraph for explicit state, LlamaIndex for retrieval, and the raw SDK to learn what the others hide.",
+      "links": [
+        {
+          "label": "Agent examples on GitHub",
+          "href": "https://github.com/LordMaduz/AI-Agentic"
+        }
+      ]
+    },
+    {
+      "id": "earlier",
+      "keys": [
+        "directfn",
+        "grubtech",
+        "sri lanka",
+        "trading",
+        "akka",
+        "first job"
+      ],
+      "text": "At DirectFN I built trading systems on Akka actors, including an algorithmic order system for insurance and hedge funds and an anti-money-laundering engine. At GrubTech I worked on order management for 500K+ food orders a day, with write-behind caching and tracing.",
+      "links": [
+        {
+          "label": "GrubTech",
+          "project": "grubtech"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "keys": [
+        "fastapi",
+        "pydantic",
+        "sqlalchemy",
+        "new stack",
+        "ramp",
+        "learn fast"
+      ],
+      "text": "I came to Arbitr as a Java engineer and learned Python, FastAPI, SQLAlchemy and Vue with Nuxt on the job. I had security fixes merged for release in my second week.",
+      "links": [
+        {
+          "label": "Arbitr work",
+          "project": "straker"
+        }
+      ]
+    }
+  ],
+  "proof": [
+    {
+      "label": "LandedNZ (live)",
+      "href": "https://landednz.vercel.app",
+      "kind": "site",
+      "project": "landednz"
+    },
+    {
+      "label": "LandedNZ backend",
+      "href": "https://github.com/LordMaduz/landednz-be",
+      "kind": "repo",
+      "project": "landednz"
+    },
+    {
+      "label": "LandedNZ web app",
+      "href": "https://github.com/LordMaduz/landednz",
+      "kind": "repo",
+      "project": "landednz"
+    },
+    {
+      "label": "How MVEL changed the way I think about coding",
+      "href": "https://levelup.gitconnected.com/how-mvel-changed-the-way-i-think-about-coding-5b0679a60a0b",
+      "kind": "post",
+      "project": "globe"
+    },
+    {
+      "label": "Reactor Kafka: handling backpressure",
+      "href": "https://levelup.gitconnected.com/i-studied-reactor-kafka-so-you-dont-have-to-here-s-what-i-learned-handling-backpressure-part-1-f7ffca82295a",
+      "kind": "post",
+      "project": "dega"
+    },
+    {
+      "label": "Observability in Spring Boot 3 with OpenTelemetry",
+      "href": "https://github.com/LordMaduz/Observability-In-Spring-Boot-3-With-OpenTelemetry",
+      "kind": "repo",
+      "project": "grubtech"
+    },
+    {
+      "label": "Agent examples with LangGraph and LlamaIndex",
+      "href": "https://github.com/LordMaduz/AI-Agentic",
+      "kind": "repo"
+    },
+    {
+      "label": "Dynamic config with Spring Cloud Config",
+      "href": "https://github.com/LordMaduz/Dynamic-Config-Management-With-Spring-Cloud-Config-Server",
+      "kind": "repo"
+    },
+    {
+      "label": "Reactive gRPC between Spring services",
+      "href": "https://github.com/LordMaduz/Realtime-Event-Processing-With-Reactive-gRPC",
+      "kind": "repo"
+    },
+    {
+      "label": "Reactive GraphQL with Spring",
+      "href": "https://github.com/LordMaduz/Reactive-Programming-with-GraphQL-and-Spring",
+      "kind": "repo"
+    },
+    {
+      "label": "Is modern concurrency aligned with the actor model?",
+      "href": "https://levelup.gitconnected.com/is-modern-concurrency-aligned-with-joe-armstrongs-actor-model-and-simplicity-principles-a6c67d47c092",
+      "kind": "post"
+    },
+    {
+      "label": "AWS Certified Solutions Architect",
+      "href": "https://www.credly.com/badges/4c0cce51-2177-4c55-8781-e31bec65ff8c/public_url",
+      "kind": "cert"
+    },
+    {
+      "label": "Hugging Face Agentic AI certificate",
+      "href": "https://huggingface.co/datasets/agents-course/final-certificates/resolve/main/certificates/maduzrajapaksha/2026-01-19.png",
+      "kind": "cert"
+    },
+    {
+      "label": "Baeldung tutorials",
+      "href": "https://www.baeldung.com/author/ruchiramadhushanrajapaksha",
+      "kind": "post"
+    },
+    {
+      "label": "Hibernate 6 advanced features",
+      "href": "https://github.com/LordMaduz/Hibernate-6-Advanced-Features",
+      "kind": "repo"
+    },
+    {
+      "label": "FX trade data transformation framework",
+      "href": "https://github.com/LordMaduz/Data-Transformation-Framework",
+      "kind": "repo"
+    },
+    {
+      "label": "What is Schema Registry and why your data needs it",
+      "href": "https://levelup.gitconnected.com/what-is-schema-registry-and-why-does-your-data-need-it-part-1-acd8f9e0303f",
+      "kind": "post"
+    },
+    {
+      "label": "How to be a better leader: step back so others can step up",
+      "href": "https://levelup.gitconnected.com/how-to-be-a-better-leader-step-back-so-others-can-step-up-1a398cd54e81",
+      "kind": "post"
+    }
+  ],
+  "aiPractice": [
+    {
+      "id": "ai-loop-pub",
+      "topic": "loop",
+      "text": "I work in a fixed loop: a written spec signed off section by section, a plan checked against that spec, a git worktree per ticket, test-driven build, then review by several agents and by models from other vendors. Each correction becomes a written rule for the next session.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "ai-models-pub",
+      "topic": "models",
+      "text": "For my own development and code review I use Claude Code plus a second AI coding harness behind the company's LLM gateway: 11 models from 5 vendors. I pick the model per task on cost, quality and speed.",
+      "evidence": "own-statement",
+      "metrics": [
+        "11",
+        "5"
+      ]
+    },
+    {
+      "id": "ai-review-pub",
+      "topic": "review",
+      "text": "Cross-model review caught two critical bugs at Arbitr before merge: a background sweep that could skip work indefinitely, and a key collision when two events arrived in the same second.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "ai-agents-pub",
+      "topic": "review",
+      "text": "I use fresh agents with no prior context to audit specs and plans. I choose sequential or parallel agents per task, because fanning out is sometimes slower and costs more.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "ai-memory-pub",
+      "topic": "memory",
+      "text": "I keep 33 workflow rules, each written after a mistake it now prevents.",
+      "evidence": "own-statement",
+      "metrics": [
+        "33"
+      ]
+    },
+    {
+      "id": "ai-cost-pub",
+      "topic": "cost",
+      "text": "Token-compression tooling cut my token use by about 26% over 2,209 commands, and light work goes to cheaper models.",
+      "evidence": "own-statement",
+      "metrics": [
+        "26%",
+        "2,209"
+      ]
+    },
+    {
+      "id": "ai-eval-pub",
+      "topic": "tools",
+      "text": "I try new agent workflows on real tickets before recommending them. I ran a full epic on an alternative framework, wrote up the pros and cons, and that write-up informed the team's decision to stay with the current one.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "ai-mcp-pub",
+      "topic": "tools",
+      "text": "I use MCP integrations for the ticket tracker, ELK log search, and Playwright screenshots and layout checks.",
+      "evidence": "own-statement"
+    },
+    {
+      "id": "ai-enable-pub",
+      "topic": "enablement",
+      "text": "At Arbitr I adopted, extended and operationalised the team's AI tooling, and wrote a brand skill and guard tests that check later contributors' changes.",
+      "evidence": "pre-prod"
+    },
+    {
+      "id": "ai-team-pub",
+      "topic": "enablement",
+      "text": "I did about 35 AI-assisted peer reviews and helped 2 QA colleagues set up AI tooling.",
+      "evidence": "own-statement",
+      "metrics": [
+        "35",
+        "2"
+      ]
+    },
+    {
+      "id": "ai-recruiters-pub",
+      "topic": "loop",
+      "text": "I moved from a Java stack to Python and Vue at Arbitr and made about 1,500 commits in four and a half months, using a spec-first, test-driven agent workflow with cross-model review on every change. That review caught two critical bugs before merge. I also evaluated two agent-workflow frameworks on live tickets, and my write-up informed the team's choice.",
+      "metrics": [
+        "1,500"
+      ],
+      "evidence": "own-statement"
+    }
+  ]
+}

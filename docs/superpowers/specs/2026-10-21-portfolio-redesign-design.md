@@ -146,7 +146,7 @@ Remove the hidden `impact` text in `ProjectsSection.tsx`.
 - A booking line with Auckland's local time, updated every 30 seconds, and an "Open my calendar" button.
 - The form: name, email and message, with inline errors as in the mockup. It posts to web3forms with `VITE_WEB3FORMS_ACCESS_KEY`, as it does today.
 - On success, show the mockup's thank-you panel ("Thanks, <first name>") and a "Send another" button.
-- On a network or API error, keep what the visitor typed and show: "That didn't send. Try again, or email me from LinkedIn."
+- On a network or API error, keep what the visitor typed and show: "That didn't send. Try again, or message me on LinkedIn."
 
 ### Footer
 

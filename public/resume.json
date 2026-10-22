@@ -1,0 +1,190 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Ruchira Rajapaksha",
+    "label": "AI Product Engineer",
+    "url": "https://lordmaduz.github.io/ruchira.codes/",
+    "summary": "AI Product Engineer at Arbitr. 7 years. Open work rights in New Zealand, no sponsorship needed.",
+    "location": {
+      "city": "Auckland",
+      "countryCode": "NZ"
+    },
+    "profiles": [
+      {
+        "network": "linkedin",
+        "url": "https://www.linkedin.com/in/ruchirarajapaksha/"
+      },
+      {
+        "network": "github",
+        "url": "https://github.com/LordMaduz"
+      },
+      {
+        "network": "huggingface",
+        "url": "https://huggingface.co/maduzrajapaksha"
+      },
+      {
+        "network": "medium",
+        "url": "https://medium.com/@maduz.ruchira"
+      },
+      {
+        "network": "baeldung",
+        "url": "https://www.baeldung.com/author/ruchiramadhushanrajapaksha"
+      },
+      {
+        "network": "booking",
+        "url": "https://cal.com/ruchira-rajapaksha"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Arbitr (formerly Straker), Auckland",
+      "position": "AI Product Engineer",
+      "summary": "Orchestration, guardrails and human review around the AI agents on an AI-first translation platform, across Python services and Vue web apps. (June 2026 to now)"
+    },
+    {
+      "name": "LandedNZ",
+      "position": "Built it alone",
+      "summary": "A web app that plans a move to New Zealand. A rules engine builds the plan and an AI chat answers questions about it. (February 2026 to now)"
+    },
+    {
+      "name": "DBS Bank, Singapore",
+      "position": "Technical Lead, Senior Software Engineer",
+      "summary": "Led design on a global minimum tax engine and on HAWK, a multi-agent hedge accounting workbench, plus high-volume Kafka services. (June 2024 to June 2026)"
+    },
+    {
+      "name": "DBS Bank, Singapore",
+      "position": "Senior Application Developer",
+      "summary": "Reactive trade file processing, an attribute-based access control engine at the API gateway, and live config across 40+ service instances. (September 2022 to April 2024)"
+    },
+    {
+      "name": "GrubTech, Sri Lanka",
+      "position": "Senior Software Engineer",
+      "summary": "Order management for 500K+ food orders a day, with write-behind caching and tracing. (April 2022 to September 2022)"
+    },
+    {
+      "name": "DirectFN, Sri Lanka",
+      "position": "Software Engineer",
+      "summary": "Trading platforms on Akka actors, including algorithmic order execution and anti-money-laundering pattern detection. (Until April 2022)"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Westminster, United Kingdom",
+      "studyType": "MSc Software Engineering, research in blockchain"
+    },
+    {
+      "institution": "University of Peradeniya, Sri Lanka",
+      "studyType": "BSc Statistics and Operational Research"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Certified Solutions Architect, Associate",
+      "issuer": "Amazon Web Services",
+      "url": "https://www.credly.com/badges/4c0cce51-2177-4c55-8781-e31bec65ff8c/public_url"
+    },
+    {
+      "name": "Agentic AI",
+      "issuer": "Hugging Face",
+      "url": "https://huggingface.co/datasets/agents-course/final-certificates/resolve/main/certificates/maduzrajapaksha/2026-01-19.png"
+    }
+  ],
+  "skills": [
+    {
+      "name": "AI engineering",
+      "keywords": [
+        "Multi-agent systems",
+        "Agent guardrails",
+        "Human-in-the-loop design",
+        "RAG",
+        "Vector search",
+        "Prompt design and versioning",
+        "Structured output",
+        "Faithfulness evaluation",
+        "MCP tool integration"
+      ]
+    },
+    {
+      "name": "AI frameworks",
+      "keywords": [
+        "Claude API and Anthropic SDK",
+        "PydanticAI",
+        "LangGraph",
+        "LlamaIndex",
+        "smolagents",
+        "LangChain",
+        "Dify",
+        "LiteLLM",
+        "Hugging Face"
+      ]
+    },
+    {
+      "name": "Languages",
+      "keywords": [
+        "Java",
+        "Python",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "Services",
+      "keywords": [
+        "Spring Boot",
+        "Spring Cloud",
+        "Project Reactor",
+        "WebFlux",
+        "FastAPI",
+        "Fastify",
+        "Akka",
+        "Apache Camel"
+      ]
+    },
+    {
+      "name": "Web",
+      "keywords": [
+        "Vue",
+        "Nuxt",
+        "React",
+        "Next.js"
+      ]
+    },
+    {
+      "name": "Data and messaging",
+      "keywords": [
+        "PostgreSQL",
+        "pgvector",
+        "MongoDB",
+        "Redis",
+        "Redis Streams",
+        "Elasticsearch",
+        "Kafka",
+        "SQLAlchemy",
+        "Alembic"
+      ]
+    },
+    {
+      "name": "Cloud and delivery",
+      "keywords": [
+        "AWS",
+        "Kubernetes",
+        "OpenShift",
+        "Docker",
+        "Jenkins",
+        "Terraform"
+      ]
+    },
+    {
+      "name": "Observability and security",
+      "keywords": [
+        "OpenTelemetry",
+        "Prometheus",
+        "Grafana",
+        "ELK",
+        "Langfuse",
+        "Cedar ABAC",
+        "OAuth 2.0"
+      ]
+    }
+  ]
+}

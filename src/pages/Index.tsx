@@ -4,34 +4,33 @@ import HomeSection from "@/components/HomeSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import ResumeSection from "@/components/ResumeSection";
-import CertificationsSection from "@/components/CertificationsSection";
-import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
-import RecommendationSection from "@/components/RecommendationSection";
 import Footer from "@/components/Footer";
+import ProjectDrawer from "@/components/ProjectDrawer";
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
+  const [open, setOpen] = useState<{ id: string; el: HTMLElement } | null>(null);
+  const openProject = (id: string, el: HTMLElement) => setOpen({ id, el });
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="min-h-screen">
       {/* Fixed Navigation */}
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
 
       {/* All Sections Rendered - Smooth Scroll */}
       <main>
         {/* Home Section - KEEP min-h-screen */}
-        <HomeSection setActiveSection={setActiveSection} />
+        <HomeSection setActiveSection={setActiveSection} onOpenProject={openProject} />
 
         {/* About Section - Natural height */}
-        <AboutSection setActiveSection={setActiveSection} />
+        <AboutSection />
 
         {/* Skills Section */}
-        <SkillsSection />
+        <SkillsSection onOpenProject={openProject} />
 
         {/* Projects Section */}
-        <ProjectsSection />
+        <ProjectsSection onOpenProject={openProject} />
 
         {/* Contact Section */}
         <ContactSection />
@@ -39,6 +38,8 @@ export default function Index() {
         {/* Footer */}
         <Footer />
       </main>
+
+      <ProjectDrawer id={open?.id ?? null} opener={open?.el ?? null} onClose={() => setOpen(null)} />
     </div>
   );
 }

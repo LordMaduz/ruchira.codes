@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head>
+<!-- Source of public/og.jpg. To re-render: put Ruchira_White.webp from src/assets next to this file, open at 1200x627 and screenshot. --><meta charset="utf-8"><title>Link preview</title>
+<style>
+  :root { --bg: #ffffff; --fg: #000000; --muted: #4b5563; --soft: #6b7280; --line: #d1d5db; --em: #059669; --em-bg: rgba(16,185,129,.12); --glow: rgba(16,185,129,.16) }
+  .dark { --bg: #09090b; --fg: #ffffff; --muted: #9ca3af; --soft: #9ca3af; --line: rgba(255,255,255,.14); --em: #34d399; --em-bg: rgba(52,211,153,.14); --glow: rgba(16,185,129,.22) }
+  * { box-sizing: border-box }
+  html, body { margin: 0 }
+  body { width: 1200px; height: 627px; overflow: hidden; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased }
+  .card { position: relative; width: 100%; height: 100%; padding: 72px 80px; display: grid; grid-template-columns: 1fr 340px; align-items: center; gap: 56px }
+  .card::before { content: ""; position: absolute; right: -120px; top: -140px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(closest-side, var(--glow), transparent) }
+  .on { display: inline-flex; align-items: center; gap: 12px; padding: 8px 18px; border-radius: 999px; background: var(--em-bg); color: var(--em); font-size: 24px; font-weight: 600 }
+  .on i { width: 12px; height: 12px; border-radius: 50%; background: currentColor }
+  h1 { margin: 28px 0 6px; font-size: 76px; line-height: 1.05; letter-spacing: -.03em }
+  h2 { margin: 0; font-size: 44px; font-weight: 700; color: var(--muted); letter-spacing: -.02em }
+  p { margin: 28px 0 0; font-size: 30px; line-height: 1.4; color: var(--muted); max-width: 640px }
+  .foot { position: absolute; left: 80px; right: 80px; bottom: 48px; display: flex; justify-content: space-between; font-size: 22px; color: var(--soft) }
+  .foot span { display: inline-flex; align-items: center; gap: 10px }
+  .photo { position: relative; width: 340px; height: 340px; border-radius: 50%; overflow: hidden; border: 6px solid var(--line); box-shadow: 0 30px 60px -20px rgba(0,0,0,.35) }
+  .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; transform: scale(1.05) }
+</style></head>
+<body>
+  <div class="card">
+    <div>
+      <span class="on"><i></i>Open to new roles</span>
+      <h1>Ruchira Rajapaksha</h1>
+      <h2>AI Product Engineer</h2>
+      <p>Guardrails and human review for AI agents.</p>
+    </div>
+    <div class="photo"><img id="ph" src="Ruchira_White.webp" alt=""></div>
+    <div class="foot">
+      <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.5 10.5c0 7.1-7.5 11.3-7.5 11.3s-7.5-4.2-7.5-11.3a7.5 7.5 0 1 1 15 0Z"/><circle cx="12" cy="10.5" r="2.5"/></svg>Auckland, New Zealand</span>
+      <span>lordmaduz.github.io/ruchira.codes</span>
+    </div>
+  </div>
+  <script>
+    if (location.hash === "#dark") { document.documentElement.className = "dark"; document.getElementById("ph").src = "Ruchira_Black.webp"; }
+  </script>
+</body></html>

@@ -44,6 +44,8 @@ function applyTheme(theme: Theme) {
   } else {
     root.classList.remove('dark');
   }
+  // phone browser bar matches the page background
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#09090b' : '#ffffff');
 }
 
 // Initialize theme on load
