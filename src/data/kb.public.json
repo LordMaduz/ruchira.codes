@@ -249,6 +249,15 @@
       "evidence": "production"
     },
     {
+      "id": "globe-deploy",
+      "project": "globe",
+      "metrics": [
+        "80%"
+      ],
+      "text": "Deployment cycles for tax rule changes dropped by 80% once rules moved out of code into the engine.",
+      "evidence": "own-statement"
+    },
+    {
       "id": "globe-countries",
       "project": "globe",
       "metrics": [
@@ -404,6 +413,16 @@
       ],
       "text": "Live config with Spring Cloud Config and Spring Cloud Bus across 40+ service instances ended config-related outages.",
       "evidence": "production",
+      "topic": "dega"
+    },
+    {
+      "id": "dbs-config-uptime",
+      "metrics": [
+        "99%",
+        "40+"
+      ],
+      "text": "Microservices uptime held at 99% across 40+ services once live config ended config-related outages.",
+      "evidence": "own-statement",
       "topic": "dega"
     },
     {
@@ -668,6 +687,15 @@
       "topic": "certifications",
       "text": "Hugging Face Agentic AI certificate, January 2026. AWS Certified Solutions Architect, Associate, valid to January 2028.",
       "evidence": "own-statement"
+    },
+    {
+      "id": "directfn-reliability",
+      "topic": "directfn",
+      "text": "Trading platform reliability and user experience improved by 80% after fixing critical performance bottlenecks.",
+      "evidence": "own-statement",
+      "metrics": [
+        "80%"
+      ]
     }
   ],
   "stories": [

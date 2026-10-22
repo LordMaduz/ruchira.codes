@@ -28,6 +28,7 @@ Portfolio: https://lordmaduz.github.io/ruchira.codes/
 - 5 things shape the plan: visa, city, family, job and arrival date.
 - The chat's answer starts streaming in under a second.
 - Processing went from 5 days to 2 hours per country.
+- Deployment cycles for tax rule changes dropped by 80% once rules moved out of code into the engine.
 - One engine covers 15+ countries.
 - IT involvement in rule changes dropped by 60%.
 - Ready 3 months before the FY2025 deadline.
@@ -45,6 +46,7 @@ Portfolio: https://lordmaduz.github.io/ruchira.codes/
 - Services at DBS handled 1M+ transactions a day at 12K requests a second.
 - An access control engine built on Cedar at the API gateway covered 30+ services and cut unauthorised access attempts by 95%.
 - Live config with Spring Cloud Config and Spring Cloud Bus across 40+ service instances ended config-related outages.
+- Microservices uptime held at 99% across 40+ services once live config ended config-related outages.
 - Team of 6 at DBS. I made the design calls, split and reviewed work, and coached 4 engineers.
 - Team sizes: GrubTech 3, DirectFN 5, Arbitr NZ engineering 4.
 - Built a multi-agent system for the GAIA benchmark that got 85% on 20 medium-level tasks.
@@ -80,6 +82,7 @@ Portfolio: https://lordmaduz.github.io/ruchira.codes/
 - After building the same agent across four frameworks: smolagents suits a manager handing work to specialists, LangGraph suits explicit state machines, LlamaIndex suits retrieval-heavy work, and the raw SDK is where you learn what the frameworks hide.
 - Built SettleAgent on the raw Anthropic SDK with vector memory in ChromaDB, to see how agents work with no framework in the way.
 - Hugging Face Agentic AI certificate, January 2026. AWS Certified Solutions Architect, Associate, valid to January 2028.
+- Trading platform reliability and user experience improved by 80% after fixing critical performance bottlenecks.
 
 ## Stories
 
