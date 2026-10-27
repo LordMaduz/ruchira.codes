@@ -7,8 +7,8 @@ Portfolio: https://lordmaduz.github.io/ruchira.codes/
 ## Roles
 
 - AI Product Engineer, Arbitr (formerly Straker), Auckland (June 2026 to now): Orchestration, guardrails and human review around the AI agents on an AI-first translation platform, across Python services and Vue web apps.
-- Built it alone, LandedNZ (February 2026 to now): A web app that plans a move to New Zealand. A rules engine builds the plan and an AI chat answers questions about it.
-- Technical Lead, Senior Software Engineer, DBS Bank, Singapore (June 2024 to June 2026): Led design on a global minimum tax engine and on HAWK, a multi-agent hedge accounting workbench, plus high-volume Kafka services.
+- Founder & Engineer, LandedNZ (February 2026 to now): A web app that plans a move to New Zealand. A rules engine builds the plan and an AI chat answers questions about it. Now rebuilding it so every claim links to an official source.
+- Senior Software Engineer, DBS Bank, Singapore (June 2024 to May 2026): Led design on a global minimum tax engine and on HAWK, a multi-agent hedge accounting workbench, plus high-volume Kafka services.
 - Senior Application Developer, DBS Bank, Singapore (September 2022 to April 2024): Reactive trade file processing, an attribute-based access control engine at the API gateway, and live config across 40+ service instances.
 - Senior Software Engineer, GrubTech, Sri Lanka (April 2022 to September 2022): Order management for 500K+ food orders a day, with write-behind caching and tracing.
 - Software Engineer, DirectFN, Sri Lanka (Until April 2022): Trading platforms on Akka actors, including algorithmic order execution and anti-money-laundering pattern detection.
@@ -21,8 +21,6 @@ Portfolio: https://lordmaduz.github.io/ruchira.codes/
 ## Selected facts
 
 - Capped a quality score at 0.80 for one enterprise client, so doubtful machine translation goes to a human reviewer. Deploy verified in production.
-- Built the recovery path for a stuck 12-language client job within about a day, so 9,084 credits the client had already paid for were not charged again. A senior engineer ran the recovery.
-- Closed a stored XSS flaw across 5 services in my second week, on a stack I'd just started learning.
 - Reviewed about 35 of my teammates' pull requests.
 - The plan covers 21 tasks across your first 90 days.
 - 5 things shape the plan: visa, city, family, job and arrival date.
@@ -54,7 +52,7 @@ Portfolio: https://lordmaduz.github.io/ruchira.codes/
 - Trading apps on Akka got 45% more throughput and 30% lower latency.
 - MSc in Software Engineering from the University of Westminster, with research in blockchain.
 - BSc in Statistics and Operational Research from the University of Peradeniya.
-- Learned Python, FastAPI, SQLAlchemy, Alembic and Vue 3 with Nuxt on the job at Arbitr, and had security fixes merged for release in the second week.
+- Learned Python, FastAPI, SQLAlchemy, Alembic and Vue 3 with Nuxt on the job at Arbitr.
 - About 350 merged pull requests across pre-production and production branches, and about 1,500 unique commits, in roughly four and a half months.
 - About 80k lines of tests at Arbitr.
 - Wrote 271 design specs and implementation plans at Arbitr before building.
@@ -62,7 +60,7 @@ Portfolio: https://lordmaduz.github.io/ruchira.codes/
 - Redis caching with careful invalidation made queries 40% faster across services.
 - Those services ran at 20ms latency with 99.9% uptime.
 - Shared standards across 15+ services cut codebase issues by 30%.
-- Promoted from Senior Application Developer to technical lead in mid-2024, after the file processing and access control work landed.
+- Rejoined DBS in June 2024 as a Senior Software Engineer and took the technical lead role on two products.
 - HAWK has two modes: role-gated prompt templates for everyday work, and a free-form agent mode for unusual questions.
 - Every HAWK agent action carries an audit trail, and anything that books a deal or posts to the ledger waits for a person to approve it.
 - Built an order SDK in Android and Flutter versions, so any front end could fetch nearby orders and get live order updates.
@@ -126,10 +124,6 @@ At GrubTech the same few engineers built the order service and took the on-call 
 
 The brief said 'Excel-like UI' and I wanted a form builder. I spent two afternoons watching the tax team work instead. They lived in worksheets: jumping between cells, tracing formulas back. So we built a sheet with named cells and formulas that compiled to rules underneath, and the tax team ran the design reviews. Alignment on a rule change went from 6 weeks to 2.
 
-### A stuck job and money already paid
-
-A paid 12-language job got stuck halfway through machine translation. I traced it through the logs and a read-only view of the production database: a timeout, then a pod restart that killed the request with nothing to pick the work back up. The obvious fix would have charged the client again, so I built a recovery that only re-ran the pending work. A senior engineer ran it, and the 9,084 credits the client had paid weren't charged twice.
-
 ### A guardrail that didn't touch the agent
 
 A new product's first clients needed only approved vendors picked by the AI vendor-selection agent. Instead of changing the agent, the workflow service filters its top 15 picks and sends the job to a person if none qualify. A project manager can override it, with the reason logged. It went live for the product's first client jobs.
@@ -137,22 +131,6 @@ A new product's first clients needed only approved vendors picked by the AI vend
 ### An agent that fixes client terms
 
 Clients register exact terms, and machine translation didn't always use them. I designed an LLM repair agent that runs after the other agents, puts the exact term in and fixes the grammar around it. It's deterministic, it never trusts the model's own report of what it changed, and quality scoring waits until its repairs land.
-
-### Vendors paid $0 an hour
-
-Automated purchase orders for a new product were going out at $0 an hour. Working from production data, I found a recent filter had hidden about 93% of vendor rates from pricing. I worked with the person who wrote the filter to keep what they meant it to do, built a fix that reprices live $0 orders, and prepared corrections for 8 affected orders worth $1,594.67.
-
-### A security fix in week two
-
-In my second week, on a stack I'd just started learning, I closed a stored XSS flaw. I wrote down why encoding on output wouldn't work for us, then moved 138 request schemas across 5 services onto a shared sanitising base model with an explicit opt-out. Review feedback turned into a wider audit of 171 classes, fixed in phases.
-
-### Duplicate offers from a timeout
-
-Sending offers to vendors timed out, and retries created duplicates the operations team had to clean up by hand. The logs showed a loop making 2 calls per vendor behind a 30 second gateway limit. I added a bulk endpoint so it's one call per language pair, checked the logs again after deploy, and moved the remaining slow parts to background work.
-
-### A project stuck in review for 17.5 hours
-
-An enterprise client's project sat in review for 17.5 hours. I built a timeline from logs, the database and audit records: completion waited on 6 of 13 vendor orders being confirmed. With a senior engineer I got a product decision to separate client-facing completion from that, then fixed it and 3 cancel paths that also left projects stuck.
 
 ### Filtering that hid jobs
 
@@ -181,14 +159,6 @@ I built an offline, repeatable benchmark for an adaptive machine translation opt
 ### Which steps run automated and which go to people
 
 The platform only knew whether a whole job was meant to be automated, so after a step moved on it couldn't tell which stages should still be automatic. I tested two designs. One failed a test because it would undo a manager's switch to manual; the other had a hidden bug a proof test found, which I fixed with a guard. I also built the exception console the agents raise work into, and an early warning before offers expire.
-
-### A bug that came back
-
-PDF uploads were creating duplicate deliverables, a bug that had been fixed before. The git history showed how a later rework brought it back, and there were 2 causes: conversion changed the file id, and two insert paths could race. I fixed the first with a source-file column and the second with a partial unique index built concurrently, using ON CONFLICT DO NOTHING against that exact index.
-
-### Helping the team move faster
-
-I reviewed about 35 of my teammates' pull requests and caught a tenant-isolation issue and a broken migration chain before they reached shared environments. I kept pre-production deployable with 10+ migration fixes, wrote runbooks for the operations team, and helped 2 QA colleagues start using AI tools.
 
 ### Access control at the gateway
 
@@ -264,14 +234,6 @@ Before moving into AI work full time, I spent about five months building the sam
   - What I did: What diners see, such as how long a kitchen update takes to reach the diner's screen.
   - Instead of: Only the service's internal metrics.
   - Why: The diner's screen is where problems show first, and I wanted to find the cause from one dashboard when paged at 3am.
-- Clicking "Send offer" timed out on large jobs, and retries sent vendors duplicate offers. How do we fix it?
-  - What I did: Added bulk endpoints, so it makes one call per language pair.
-  - Instead of: Keeping the loop that made two calls per vendor.
-  - Why: The loop ran past the gateway's 30 second limit, and every retry sent the same vendors another offer.
-- Clients sometimes got the same translated file delivered twice, when two processes saved it at the same moment. How do we stop that?
-  - What I did: Added a PostgreSQL rule that allows only one visible deliverable per file and language (a partial unique index, built without blocking live traffic).
-  - Instead of: Catching the duplicate error in application code.
-  - Why: Only the database sees both saves at once, so it's the one place that can block the second.
 - I build LandedNZ alone, with a web app and an API. How should the code be organised?
   - What I did: One TypeScript repository for both, sharing the same types.
   - Instead of: Separate repositories for the web app and the API.

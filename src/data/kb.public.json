@@ -37,14 +37,14 @@
       },
       {
         "org": "LandedNZ",
-        "title": "Built it alone",
+        "title": "Founder & Engineer",
         "when": "February 2026 to now",
-        "summary": "A web app that plans a move to New Zealand. A rules engine builds the plan and an AI chat answers questions about it."
+        "summary": "A web app that plans a move to New Zealand. A rules engine builds the plan and an AI chat answers questions about it. Now rebuilding it so every claim links to an official source."
       },
       {
         "org": "DBS Bank, Singapore",
-        "title": "Technical Lead, Senior Software Engineer",
-        "when": "June 2024 to June 2026",
+        "title": "Senior Software Engineer",
+        "when": "June 2024 to May 2026",
         "summary": "Led design on a global minimum tax engine and on HAWK, a multi-agent hedge accounting workbench, plus high-volume Kafka services."
       },
       {
@@ -183,24 +183,6 @@
       ],
       "text": "Capped a quality score at 0.80 for one enterprise client, so doubtful machine translation goes to a human reviewer. Deploy verified in production.",
       "evidence": "production"
-    },
-    {
-      "id": "arbitr-credits",
-      "project": "straker",
-      "metrics": [
-        "9,084"
-      ],
-      "text": "Built the recovery path for a stuck 12-language client job within about a day, so 9,084 credits the client had already paid for were not charged again. A senior engineer ran the recovery.",
-      "evidence": "production"
-    },
-    {
-      "id": "arbitr-xss",
-      "project": "straker",
-      "metrics": [
-        "5"
-      ],
-      "text": "Closed a stored XSS flaw across 5 services in my second week, on a stack I'd just started learning.",
-      "evidence": "merged"
     },
     {
       "id": "arbitr-reviews",
@@ -486,7 +468,7 @@
       "id": "arbitr-ramp",
       "topic": "arbitr",
       "project": "straker",
-      "text": "Learned Python, FastAPI, SQLAlchemy, Alembic and Vue 3 with Nuxt on the job at Arbitr, and had security fixes merged for release in the second week.",
+      "text": "Learned Python, FastAPI, SQLAlchemy, Alembic and Vue 3 with Nuxt on the job at Arbitr.",
       "evidence": "merged"
     },
     {
@@ -562,7 +544,7 @@
     {
       "id": "dbs-promotion",
       "topic": "dbs",
-      "text": "Promoted from Senior Application Developer to technical lead in mid-2024, after the file processing and access control work landed.",
+      "text": "Rejoined DBS in June 2024 as a Senior Software Engineer and took the technical lead role on two products.",
       "evidence": "own-statement"
     },
     {
@@ -801,16 +783,6 @@
       "publicText": "The brief said 'Excel-like UI' and I wanted a form builder. I spent two afternoons watching the tax team work instead. They lived in worksheets: jumping between cells, tracing formulas back. So we built a sheet with named cells and formulas that compiled to rules underneath, and the tax team ran the design reviews. Alignment on a rule change went from 6 weeks to 2."
     },
     {
-      "id": "arbitr-recovery",
-      "project": "straker",
-      "title": "A stuck job and money already paid",
-      "questions": [
-        "Tell me about a production incident."
-      ],
-      "evidence": "production",
-      "publicText": "A paid 12-language job got stuck halfway through machine translation. I traced it through the logs and a read-only view of the production database: a timeout, then a pod restart that killed the request with nothing to pick the work back up. The obvious fix would have charged the client again, so I built a recovery that only re-ran the pending work. A senior engineer ran it, and the 9,084 credits the client had paid weren't charged twice."
-    },
-    {
       "id": "arbitr-guardrail",
       "project": "straker",
       "title": "A guardrail that didn't touch the agent",
@@ -829,48 +801,6 @@
       ],
       "evidence": "own-statement",
       "publicText": "Clients register exact terms, and machine translation didn't always use them. I designed an LLM repair agent that runs after the other agents, puts the exact term in and fixes the grammar around it. It's deterministic, it never trusts the model's own report of what it changed, and quality scoring waits until its repairs land."
-    },
-    {
-      "id": "arbitr-payrates",
-      "project": "straker",
-      "title": "Vendors paid $0 an hour",
-      "questions": [
-        "Tell me about a production incident.",
-        "How do you find a root cause?"
-      ],
-      "evidence": "merged",
-      "publicText": "Automated purchase orders for a new product were going out at $0 an hour. Working from production data, I found a recent filter had hidden about 93% of vendor rates from pricing. I worked with the person who wrote the filter to keep what they meant it to do, built a fix that reprices live $0 orders, and prepared corrections for 8 affected orders worth $1,594.67."
-    },
-    {
-      "id": "xss-story",
-      "project": "straker",
-      "title": "A security fix in week two",
-      "questions": [
-        "How fast do you ramp up?",
-        "Tell me about security work."
-      ],
-      "evidence": "merged",
-      "publicText": "In my second week, on a stack I'd just started learning, I closed a stored XSS flaw. I wrote down why encoding on output wouldn't work for us, then moved 138 request schemas across 5 services onto a shared sanitising base model with an explicit opt-out. Review feedback turned into a wider audit of 171 classes, fixed in phases."
-    },
-    {
-      "id": "arbitr-offers",
-      "project": "straker",
-      "title": "Duplicate offers from a timeout",
-      "questions": [
-        "Tell me about a performance problem."
-      ],
-      "evidence": "merged",
-      "publicText": "Sending offers to vendors timed out, and retries created duplicates the operations team had to clean up by hand. The logs showed a loop making 2 calls per vendor behind a 30 second gateway limit. I added a bulk endpoint so it's one call per language pair, checked the logs again after deploy, and moved the remaining slow parts to background work."
-    },
-    {
-      "id": "arbitr-review-stuck",
-      "project": "straker",
-      "title": "A project stuck in review for 17.5 hours",
-      "questions": [
-        "Tell me about working with product on a fix."
-      ],
-      "evidence": "merged",
-      "publicText": "An enterprise client's project sat in review for 17.5 hours. I built a timeline from logs, the database and audit records: completion waited on 6 of 13 vendor orders being confirmed. With a senior engineer I got a product decision to separate client-facing completion from that, then fixed it and 3 cancel paths that also left projects stuck."
     },
     {
       "id": "arbitr-dashboard",
@@ -941,26 +871,6 @@
       ],
       "evidence": "merged",
       "publicText": "The platform only knew whether a whole job was meant to be automated, so after a step moved on it couldn't tell which stages should still be automatic. I tested two designs. One failed a test because it would undo a manager's switch to manual; the other had a hidden bug a proof test found, which I fixed with a guard. I also built the exception console the agents raise work into, and an early warning before offers expire."
-    },
-    {
-      "id": "arbitr-dupes",
-      "project": "straker",
-      "title": "A bug that came back",
-      "questions": [
-        "Tell me about a tricky bug."
-      ],
-      "evidence": "merged",
-      "publicText": "PDF uploads were creating duplicate deliverables, a bug that had been fixed before. The git history showed how a later rework brought it back, and there were 2 causes: conversion changed the file id, and two insert paths could race. I fixed the first with a source-file column and the second with a partial unique index built concurrently, using ON CONFLICT DO NOTHING against that exact index."
-    },
-    {
-      "id": "arbitr-team",
-      "project": "straker",
-      "title": "Helping the team move faster",
-      "questions": [
-        "How do you help your team?"
-      ],
-      "evidence": "own-statement",
-      "publicText": "I reviewed about 35 of my teammates' pull requests and caught a tenant-isolation issue and a broken migration chain before they reached shared environments. I kept pre-production deployable with 10+ migration fixes, wrote runbooks for the operations team, and helped 2 QA colleagues start using AI tools."
     },
     {
       "id": "cedar-story",
@@ -1122,22 +1032,6 @@
       "over": "Only the service's internal metrics.",
       "because": "The diner's screen is where problems show first, and I wanted to find the cause from one dashboard when paged at 3am.",
       "evidence": "production"
-    },
-    {
-      "project": "straker",
-      "question": "Clicking \"Send offer\" timed out on large jobs, and retries sent vendors duplicate offers. How do we fix it?",
-      "chose": "Added bulk endpoints, so it makes one call per language pair.",
-      "over": "Keeping the loop that made two calls per vendor.",
-      "because": "The loop ran past the gateway's 30 second limit, and every retry sent the same vendors another offer.",
-      "evidence": "merged"
-    },
-    {
-      "project": "straker",
-      "question": "Clients sometimes got the same translated file delivered twice, when two processes saved it at the same moment. How do we stop that?",
-      "chose": "Added a PostgreSQL rule that allows only one visible deliverable per file and language (a partial unique index, built without blocking live traffic).",
-      "over": "Catching the duplicate error in application code.",
-      "because": "Only the database sees both saves at once, so it's the one place that can block the second.",
-      "evidence": "merged"
     },
     {
       "project": "landednz",
@@ -1569,18 +1463,13 @@
         "secure",
         "auth",
         "access control",
-        "xss",
         "vulnerab"
       ],
-      "text": "At DBS I built an access control engine on Cedar at the API gateway for 30+ services, and unauthorised access attempts dropped 95%. At Arbitr I closed a stored XSS flaw across 5 services in my second week.",
+      "text": "At DBS I built an access control engine on Cedar at the API gateway for 30+ services, and unauthorised access attempts dropped 95%. It became the pattern for new services.",
       "links": [
         {
           "label": "DBS work",
           "project": "dega"
-        },
-        {
-          "label": "Arbitr work",
-          "project": "straker"
         }
       ]
     },
@@ -1647,7 +1536,7 @@
         "on-call",
         "outage"
       ],
-      "text": "At GrubTech I added distributed tracing to the order service from day one, and time to spot an incident went from 45 minutes to 9. At Arbitr I trace production problems through the logs and a read-only view of the database, like the stuck job where I protected 9,084 credits from being charged twice.",
+      "text": "At GrubTech I added distributed tracing to the order service from day one, and time to spot an incident went from 45 minutes to 9. At Arbitr I trace production problems through the logs and a read-only view of the database before I change anything.",
       "links": [
         {
           "label": "GrubTech",
@@ -1720,7 +1609,7 @@
         "ramp",
         "learn fast"
       ],
-      "text": "I came to Arbitr as a Java engineer and learned Python, FastAPI, SQLAlchemy and Vue with Nuxt on the job. I had security fixes merged for release in my second week.",
+      "text": "I came to Arbitr as a Java engineer and learned Python, FastAPI, SQLAlchemy and Vue with Nuxt on the job.",
       "links": [
         {
           "label": "Arbitr work",

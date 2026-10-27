@@ -30,3 +30,6 @@ test("orgName trims the org to the company", () => expect(orgName("straker")).to
 
 test("before-Arbitr answer uses the new full-stack wording", () =>
   expect(ANSWERS.some((a) => a.text.includes("Before Arbitr I was at DBS Bank"))).toBe(true));
+
+test("no confidential Arbitr wording on the site", () =>
+  expect(all).not.toMatch(/xss|9,084|\$0 an hour|tenant-isolation/i));

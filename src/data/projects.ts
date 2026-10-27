@@ -16,8 +16,8 @@ export const PROJECTS: Project[] = [
     edges: [["a", "b"], ["b", "c"], ["c", "d"], ["c", "e", "review"]],
     metrics: [
       { v: "0.80", l: "quality score cap that sends doubtful translations to a reviewer" },
-      { v: "9,084", l: "credits protected when a client job got stuck" },
-      { v: "5", l: "services covered by a security fix I merged in week two" }
+      { v: "350", l: "merged pull requests in about four and a half months, on a stack new to me" },
+      { v: "80k", l: "lines of tests behind that work" }
     ],
     stack: ["Python", "FastAPI", "PydanticAI", "Redis Streams", "LiteLLM", "Vue", "Nuxt"],
     problem: "AI agents make a lot of small decisions on Arbitr: which vendor gets a job, whether a translation is good enough, whether the client's required terms are used. Most of those calls are fine. The ones that aren't can cost a client money or trust.",
@@ -25,12 +25,12 @@ export const PROJECTS: Project[] = [
       "Added a guardrail to the AI agent that picks translation vendors, so it only auto-selects approved ones. A project manager can override it with a logged reason. It went live for a new product's first client jobs.",
       "Capped a quality score at 0.80 for one enterprise client, so machine translation with the wrong meaning goes to a human reviewer before delivery.",
       "Designed an LLM agent that repairs client terminology after the other agents finish, so the final text uses the client's exact terms.",
-      "When a 12-language client job got stuck, I traced it through the logs and the database and had a recovery fix merged within about a day. A senior engineer ran the recovery, and the 9,084 credits the client had already paid for were not charged again."
+      "Built the human-in-the-loop layer that decides, for each workflow step, whether agents or people handle a job. Exceptions are tagged, and early warnings flag work at risk before it stalls."
     ],
     result: "The agents handle more on their own, and the risky cases reach a person. I came in as a Java engineer and learned Python and Vue on the job. I also review a lot of my teammates' code, about 35 pull requests so far."
   },
   {
-    id: "landednz", org: "LandedNZ", role: "Built it alone", when: "February 2026 to now", years: "2026 to now",
+    id: "landednz", org: "LandedNZ", role: "Founder & Engineer", when: "February 2026 to now", years: "2026 to now",
     title: "A planner for moving to New Zealand",
     summary: "When my wife got into university in Auckland, we planned the move from dozens of browser tabs that disagreed with each other. So I built the planner we wished we'd had.",
     h: 200, label: "Your details go into a rules engine that builds your plan. An AI chat reads the plan and answers questions.",
@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     result: "If the chat is slow or down, your plan is still there and still correct, because the AI never sits on the critical path."
   },
   {
-    id: "globe", org: "DBS Bank, Singapore", role: "Lead Solutions Architect", when: "June 2024 to June 2025", years: "2024 to 2025",
+    id: "globe", org: "DBS Bank, Singapore", role: "Senior Software Engineer, technical lead", when: "June 2024 to June 2025", years: "2024 to 2025",
     title: "A global minimum tax engine",
     summary: "New OECD rules set a 15% global minimum tax from 2025, with different formulas in every country. I designed an engine where tax teams edit the rules themselves, so a formula change doesn't wait for a software release.",
     h: 110, label: "Tax teams edit rule templates, the engine runs them, and results come out for more than 15 countries.",
